@@ -30,10 +30,11 @@ En XML, los elementos deben estar correctamente anidados, es decir, un elemento 
 
 ✅ Correcto:
 
-<!--<persona>
+```xml
+<persona>
     <nombre>Juan</nombre>
     <apellido>Pérez</apellido>
-</persona>-->
+</persona>
 
 🚫 Incorrecto (cierre incorrecto de <nombre>):
 
