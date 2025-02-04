@@ -35,6 +35,7 @@ En XML, los elementos deben estar correctamente anidados, es decir, un elemento 
     <nombre>Juan</nombre>
     <apellido>Pérez</apellido>
 </persona>
+```
 
 🚫 Incorrecto (cierre incorrecto de <nombre>):
 
