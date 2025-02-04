@@ -30,17 +30,17 @@ En XML, los elementos deben estar correctamente anidados, es decir, un elemento 
 
 ✅ Correcto:
 
-<persona>
+<!--<persona>
     <nombre>Juan</nombre>
     <apellido>Pérez</apellido>
-</persona>
+</persona>-->
 
 🚫 Incorrecto (cierre incorrecto de <nombre>):
 
-<persona>
+<!--<persona>
     <nombre>Juan
     <apellido>Pérez</apellido>
-</persona>
+</persona>-->
 
 Esto causará un error porque <nombre> no tiene una etiqueta de cierre adecuada. Son reglas similares a las de etiquetas de html.
 
@@ -50,21 +50,21 @@ Cada etiqueta en XML debe tener una etiqueta de cierre correspondiente o ser una
 
 ✅ Correcto:
 
-<producto>
+<!--<producto>
     <nombre>Computadora</nombre>
-</producto>
+</producto>-->
 
 🚫 Incorrecto (falta la etiqueta de cierre de <nombre>):
 
-<producto>
+<!--<producto>
     <nombre>Computadora
-</producto>
+</producto>-->
 
 También se pueden usar etiquetas auto-contenidas para elementos sin contenido, usando / antes de cerrar la etiqueta:
 
 ✅ Correcto (etiqueta auto-contenida):
 
-<imagen src="foto.jpg" />
+<!--<imagen src="foto.jpg" />-->
 
 3. Atributos con valores entre comillas
 
@@ -72,11 +72,11 @@ Los atributos deben llevar sus valores entre comillas simples (') o dobles (").
 
 ✅ Correcto:
 
-<usuario id="123" nombre="Ana" />
+<!--<usuario id="123" nombre="Ana" />-->
 
 🚫 Incorrecto (atributo sin comillas):
 
-<usuario id=123 nombre=Ana />
+<!--<usuario id=123 nombre=Ana />-->
 
 Esto generará un error de sintaxis.
 
@@ -87,18 +87,18 @@ Para garantizar que un documento XML cumpla con una estructura específica, se p
 ✅ Ejemplo de un documento XML validado con DTD:
 DTD (definiendo la estructura):
 
-<!DOCTYPE persona [
+<!--<!DOCTYPE persona [
     <!ELEMENT persona (nombre, edad)>
     <!ELEMENT nombre (#PCDATA)>
     <!ELEMENT edad (#PCDATA)>
-]>
+]>-->
 
 Documento XML válido con esta DTD:
 
-<persona>
+<!--<persona>
     <nombre>Lucía</nombre>
     <edad>30</edad>
-</persona>
+</persona>-->
 
 Si el documento XML no sigue esta estructura, será inválido.
 
@@ -108,15 +108,15 @@ XML es sensible a mayúsculas y minúsculas, lo que significa que <Nombre> y <no
 
 ✅ Correcto:
 
-<Persona>
+<!--<Persona>
     <Nombre>Pedro</Nombre>
-</Persona>
+</Persona>-->
 
 🚫 Incorrecto (las etiquetas deben coincidir exactamente):
 
-<Persona>
+<!--<Persona>
     <nombre>Pedro</Nombre>
-</Persona>
+</Persona>-->
 
 Esto causará un error porque <nombre> y <Nombre> no coinciden.
 
@@ -126,12 +126,12 @@ Cuando se combinan diferentes fuentes de datos en XML, los espacios de nombres a
 
 ✅ Ejemplo de espacio de nombres:
 
-<catalogo xmlns:libro="http://example.com/libros">
+<!--<catalogo xmlns:libro="http://example.com/libros">
     <libro:titulo>XML para principiantes</libro:titulo>
-</catalogo>
+</catalogo>-->
 
 Aquí, el prefijo libro: se asocia con la URI http://example.com/libros, asegurando que el elemento titulo pertenece a ese contexto.
 
 En conclusión
 Estas reglas aseguran que un documento XML sea bien formado y, si se requiere validación, también válido. 
-Siguiéndolas, se garantiza que XML pueda ser procesado correctamente por diferentes sistemas y aplicaciones. 🚀
+Siguiéndolas, se garantiza que XML pueda ser procesado correctamente por diferentes sistemas y aplicaciones.
