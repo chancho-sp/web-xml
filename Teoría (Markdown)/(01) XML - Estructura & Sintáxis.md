@@ -2,10 +2,10 @@
 
 ## Índice
 #### - [¿Qué es XML?](#qué-es-xml)
-#### - [Historia de XML: Cómo empezó y porque](#historia-de-xml:-cómo-empezó-y-porque)
-#### - [Diferencias entre XML & HTML](#diferencias-entre-xml-&-html)
-#### - [Estructura (Tree)](#estructura-(tree))
-#### - [Sintaxis][#sintaxis)
+#### - [Historia de XML: Cómo empezó y porque](#historia-de-xml-cómo-empezó-y-porque)
+#### - [Diferencias entre XML y HTML](#diferencias-entre-xml-y-html)
+#### - [Estructura (Tree)](#estructura-tree)
+#### - [Sintaxis](#sintaxis)
 #### - [Webgrafía](#webgrafía)
 
 ---
@@ -22,7 +22,7 @@ HTML, aunque ampliamente adoptado, se volvió problemático debido a la falta de
 
 En respuesta a estas limitaciones, un grupo liderado por Jon Bosak, Tim Bray y James Clark desarrolló XML, con la idea de ofrecer un estándar flexible para almacenar y compartir datos estructurados en cualquier plataforma. XML fue respaldado por el W3C y adoptado rápidamente por la industria, incluyendo a Microsoft, que lo utilizó como base para su estrategia de interoperabilidad con .NET. Aunque XML no pertenece a ninguna empresa, su utilidad ha sido clave para conectar sistemas y facilitar el intercambio de información en múltiples sectores.
 
-## Diferencias entre XML & HTML
+## Diferencias entre XML y HTML
 
 Aunque XML y HTML son muy parecidos, se diseñaron para cosas distintas y distintas metas en mente:
   - El diseño de XML está centrado en **TRANSPORTAR** datos, teniendo en consideración y centrándose en que son los datos.
