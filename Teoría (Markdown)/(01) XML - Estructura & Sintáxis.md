@@ -201,10 +201,12 @@ Ejemplo donde SÍ importa:
 
 ## Webgrafía
 
-https://www.w3schools.com/xml/
-https://www.itwriting.com/xmlintro.php
-https://en.wikipedia.org/wiki/XML_tree
-https://www.geeksforgeeks.org/how-to-define-structure-of-xml-document/
+> [!NOTE]
+> https://www.w3schools.com/xml/
+> https://www.itwriting.com/xmlintro.php
+> https://en.wikipedia.org/wiki/XML_tree
+> https://www.geeksforgeeks.org/how-to-define-structure-of-xml-document/
+
 
 > [!TIP]
 > Para verificar siempre que vuestro archivo XML esté exento de fallos y errores, se recomienda pasarlo por un validador, hay varios:
