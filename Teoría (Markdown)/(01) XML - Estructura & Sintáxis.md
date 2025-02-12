@@ -202,10 +202,10 @@ Ejemplo donde SÍ importa:
 ## Webgrafía
 
 > [!NOTE]
-> https://www.w3schools.com/xml/
-> https://www.itwriting.com/xmlintro.php
-> https://en.wikipedia.org/wiki/XML_tree
-> https://www.geeksforgeeks.org/how-to-define-structure-of-xml-document/
+> - General - https://www.w3schools.com/xml/
+> - Introducción e Historia - https://www.itwriting.com/xmlintro.php
+> - Estructura - https://en.wikipedia.org/wiki/XML_tree
+> - Estructura y Reglas - https://www.geeksforgeeks.org/how-to-define-structure-of-xml-document/
 
 
 > [!TIP]
