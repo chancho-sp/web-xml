@@ -16,6 +16,7 @@ El objetivo de este trabajo es aplicar lo aprendido en las clases de **desarroll
 - **Markdown**
 
 A lo largo del proceso, no solo hemos profundizado en la teoría detrás de estos formatos, sino que también hemos enfocado nuestros esfuerzos en **enseñar a los demás** cómo y por qué se utilizan en el desarrollo web y en otros contextos.
+
 ---
 
 # 01. XML - Estructura y sintaxis
