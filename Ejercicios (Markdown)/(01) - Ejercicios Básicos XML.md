@@ -2,6 +2,9 @@
 
 Estos ejercicios están diseñados para ayudarte a comprender y practicar los conceptos fundamentales del lenguaje XML. A lo largo de los ejercicios, trabajarás con la estructura básica de archivos XML, la identificación y corrección de errores, el uso de atributos, la validación de documentos bien formados, y otros aspectos clave como la anidación de elementos y el manejo de caracteres especiales. Al completar estos ejercicios, podrás desarrollar una comprensión sólida de cómo crear, estructurar y validar archivos XML en diversas situaciones.
 
+>[!IMPORTANT]
+>A lo largo de los ejercicios verás que tendrás que **validarlos**, para eso realizar eso, puedes utilizar [la siguiente página.](https://www.xmlvalidation.com/)
+
 # Ejercicio 1: Crear un archivo XML básico
 **Objetivo:** Crear un archivo XML con estructura básica.
 
