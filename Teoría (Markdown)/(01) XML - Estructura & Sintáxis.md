@@ -12,7 +12,13 @@
 
 ## ¿Qué es XML?
 
-XML es el acrónimo de "eXtensible Markup Language", es decir, Lenguaje de Marcas Extensible. Tiene una gran similutd con HTML y se diseñó para que almacenenar datos, transportarlos y además de ser autodescriptivo.
+XML es el acrónimo de "eXtensible Markup Language", que en español significa Lenguaje de Marcas Extensible. Se trata de un lenguaje de marcado con una estructura similar a HTML, pero con un enfoque diferente. Mientras que HTML está diseñado para mostrar información en un navegador web, XML se centra en almacenar y transportar datos de una manera estructurada y legible tanto para humanos como para máquinas.
+
+XML es un lenguaje altamente flexible y autodescriptivo, lo que significa que los datos contenidos en un documento XML pueden entenderse sin necesidad de programas adicionales o formatos predefinidos. Su principal ventaja es que permite definir etiquetas personalizadas para organizar la información de acuerdo con las necesidades específicas de cada usuario o aplicación.
+
+Gracias a su estructura jerárquica basada en nodos y elementos anidados, XML es ampliamente utilizado en el intercambio de datos entre sistemas, en la configuración de aplicaciones y en la representación de información estructurada en diversos dominios, como bases de datos, servicios web y documentos de configuración.
+
+A continuación, exploraremos la historia de XML, su evolución y su impacto en el mundo de la tecnología.
 
 ## Historia de XML: Cómo empezó y porque
 
