@@ -76,13 +76,3 @@ services:
     environment:
       POSTGRES_PASSWORD: ejemplo
 ```
-
-## 4. Buenas Prácticas al Usar YAML
-
-### 4.1. Mantener la Consistencia
-- **Indentación Consistente**: Utilizar el mismo número de espacios para la indentación en todo el archivo.
-- **Comentarios**: Añadir comentarios para explicar configuraciones complejas y mejorar la legibilidad.
-
-### 4.2. Validación de Archivos YAML
-- **Herramientas de Validación**: Utilizar herramientas y linters para validar la sintaxis y estructura de los archivos YAML.
-- **Pruebas Automatizadas**: Implementar pruebas automatizadas para asegurar que los archivos YAML sean correctos y funcionales.
