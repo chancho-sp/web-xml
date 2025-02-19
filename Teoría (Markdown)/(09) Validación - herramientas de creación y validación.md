@@ -12,19 +12,19 @@ La validación asegura que los documentos XML cumplen con las estructuras y regl
 
 ## 2. Métodos de Validación 
 
-### DTD (Document Type Definition) 
+### **DTD (Document Type Definition)**
 
 DTD define la estructura y los elementos válidos de un documento XML. 
 
 Es más simple pero menos flexible que XML Schema y RELAX NG. 
 
-### XML Schema (XSD) 
+### **XML Schema (XSD)**
 
 XML Schema es una forma avanzada de definir la estructura de un documento XML y los tipos de datos. 
 
 Proporciona más precisión y es más robusto que DTD. 
 
-### RELAX NG 
+### **RELAX NG** 
 
 RELAX NG es un lenguaje simple y legible para validar documentos XML. 
 
@@ -32,50 +32,49 @@ Es más flexible y tiene una sintaxis más sencilla que XML Schema.
 
 ## 3. Validación con DTD (Document Type Definition) 
 
-### ¿Qué es DTD?
+### **¿Qué es DTD?**
 
 DTD define la estructura legal y los elementos y atributos válidos de un documento XML. Ayuda a garantizar que el documento XML sigue un formato específico. 
 
-#### Ejemplo de DTD 
+**Ejemplo de DTD**
 
-<?xml version="1.0"?>
-<!DOCTYPE libro SYSTEM "libro.dtd">
-<libro>
-    <titulo>Aprender XML</titulo>
-    <autor>Juan Pérez</autor>
-</libro>
-
+```
+<!DOCTYPE libro [ 
+<!ELEMENT libro (titulo, autor)> 
+<!ELEMENT titulo (#PCDATA)> 
+<!ELEMENT autor (#PCDATA)> 
+]>
+```
  
 
-#### Ejemplo de XML 
+**Ejemplo de XML**
 
-
+```
 <?xml version="1.0"?> 
 <!DOCTYPE libro SYSTEM "libro.dtd"> 
 <libro> 
     <titulo>Aprender XML</titulo> 
     <autor>Juan Pérez</autor> 
 </libro>
- 
+ ```
 
-#### Uso de xmllint para validar 
-
+#### **Uso de xmllint para validar** 
+```
  xmllint --noout --dtdvalid libro.dtd libro.xml 
- 
+ ```
 
-### Explicación 
 
-En este ejemplo, el DTD define que un elemento <libro> contiene un <titulo> y un <autor>, los cuales deben ser datos de texto (PCDATA). 
 
 ## 4. Validación con XML Schema (XSD) 
 
-### ¿Qué es XML Schema? 
+### **¿Qué es XML Schema?**
 
 XML Schema (XSD) proporciona una forma más avanzada y flexible de definir la estructura y los tipos de datos en un documento XML. A diferencia de DTD, XSD utiliza el espacio de nombres XML y es más detallado. 
 
-#### Ejemplo de XML Schema 
+**Ejemplo de XML Schema**
 
 
+```
  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
   <xs:element name="libro"> 
     <xs:complexType> 
@@ -86,65 +85,61 @@ XML Schema (XSD) proporciona una forma más avanzada y flexible de definir la es
     </xs:complexType> 
   </xs:element> 
 </xs:schema> 
- 
+ ```
 
-#### Ejemplo de XML 
+**Ejemplo de XML**
 
-
+```
  <?xml version="1.0"?> 
 <libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="libro.xsd"> 
     <titulo>Aprender XML</titulo> 
     <autor>Juan Pérez</autor> 
 </libro> 
- 
+ ```
 
-#### Uso de xmllint para validar 
-
+#### **Uso de xmllint para validar**
+```
  xmllint --noout --schema libro.xsd libro.xml 
- 
+ ```
 
-#### Explicación 
 
-En este ejemplo, el XML Schema define que un elemento <libro> contiene un <titulo> y un <autor>, ambos como cadenas de texto (xs:string). 
 
 ## 5. Validación con RELAX NG  
 
-### ¿Qué es RELAX NG? 
+### **¿Qué es RELAX NG?**
 
 RELAX NG es un lenguaje para validar la estructura de documentos XML. Es más simple y más flexible que DTD y XML Schema, y tiene una sintaxis altamente legible. 
 
-#### Ejemplo de RELAX NG 
+**Ejemplo de RELAX NG **
 
-
+```
  element libro { 
   element titulo { text }, 
   element autor { text } 
 } 
- 
+ ```
 
-#### Ejemplo de XML 
+**Ejemplo de XML**
 
-
+```
  <?xml version="1.0"?> 
 <libro> 
     <titulo>Aprender XML</titulo> 
     <autor>Juan Pérez</autor> 
 </libro> 
- 
+ ```
 
-#### Explicación 
 
-En este ejemplo, el esquema RELAX NG define que un elemento <libro> contiene un <titulo> y un <autor>, ambos como texto. 
 
 ## 6. Herramientas Indispensables para Validar 
 
  xmllint: Una herramienta de línea de comandos para validar XML contra DTD y XSD. 
 
-#### Ejemplo de uso: 
-
- xmllint --noout --dtdvalid libro.dtd libro.xml
+#### **Ejemplo**
+```
+xmllint --noout --dtdvalid libro.dtd libro.xml
 xmllint --noout --schema libro.xsd libro.xml 
- 
+ ```
 
 ### XML Validator: Una herramienta en línea para validar XML contra DTD, XSD y RELAX NG. 
 
