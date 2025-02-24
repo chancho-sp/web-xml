@@ -64,9 +64,10 @@ Ejemplo:
 ```
 
 En el ejemplo anterior:
-
+```xml
     El espacio de nombres teoria se utiliza para calificar elementos relacionados con libros de teoría. Por ejemplo, <teoria:libro>, <teoria:autor>, <teoria:editorial>.
     El espacio de nombres ejercicios se utiliza para calificar elementos relacionados con libros de ejercicios. Por ejemplo, <ejercicios:libro>, <ejercicios:autor>, <ejercicios:editorial>.
+```
 
 Esto permite que los elementos con los mismos nombres, como <libro>, <autor>, y <editorial>, sean distinguidos y asociados con su contexto específico. Sin los espacios de nombres, podría haber ambigüedad si se utilizan los mismos nombres para elementos en diferentes partes del documento XML.
 
