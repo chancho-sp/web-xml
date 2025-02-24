@@ -91,8 +91,10 @@ Veamos otro ejemplo más visual que representa vehículos con diferentes especif
 
 Este ejemplo representa un documento XML que describe diferentes tipos de vehículos, en este caso, coches y motocicletas, utilizando espacios de nombres XML (xmlns).
 
+```xml
     La primera línea <?xml version="1.0" encoding="UTF-8"?> es una declaración XML estándar que especifica la versión y codificación del documento.
     <vehiculos> es el elemento raíz del documento XML. Dentro de este elemento, se definen dos espacios de nombres XML utilizando los atributos xmlns:coche y xmlns:moto. Esto significa que los elementos que comienzan con coche: y moto: están asociados a los espacios de nombres http://www.example.com/coche y http://www.example.com/moto, respectivamente.
     <coche:vehiculo> es un elemento que representa un coche. Se utiliza el prefijo coche para indicar que pertenece al espacio de nombres http://www.example.com/coche. Dentro de este elemento, hay tres subelementos que describen las propiedades del coche: marca, modelo, y potencia.
     <moto:vehiculo> es otro elemento que representa una motocicleta. Similar al coche, se utiliza el prefijo moto para indicar que pertenece al espacio de nombres http://www.example.com/moto. Este elemento tiene cuatro subelementos que describen las propiedades de la motocicleta: marca, modelo, cilindrada, y aceleración.
+```
 
