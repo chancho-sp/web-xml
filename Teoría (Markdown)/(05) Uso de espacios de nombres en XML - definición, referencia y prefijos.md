@@ -38,15 +38,18 @@ Los espacios de nombres se definen utilizando una sintaxis especial en XML. El f
 Donde prefijo es un identificador único que se utiliza para hacer referencia al espacio de nombres dentro del documento, y URI del espacio de nombres es una cadena que identifica de manera única el espacio de nombres.
 
 A continuación, se muestra un ejemplo de uso de espacios de nombres en XML:
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <root xmlns:ns1="http://www.example.com/ns1" xmlns:ns2="http://www.example.com/ns2">
    <ns1:elemento>Contenido del elemento 1</ns1:elemento1>
    <ns2:elemento>Contenido del elemento 2</ns2:elemento2>
 </root>
+```
 
 En este ejemplo, se definen dos espacios de nombres utilizando los prefijos ns1 y ns2. Los elementos <elemento> pertenecen a diferentes espacios de nombres y se distinguen por el prefijo utilizado.
 
 Ejemplo:
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <libros xmlns:teoria="http://www.ejemplo.com/teoria" xmlns:ejercicios="http://www.ejemplo.com/ejercicios">
    <teoria:libro>
@@ -58,6 +61,7 @@ Ejemplo:
        <ejercicios:editorial>Editorial XYZ</ejercicios:editorial>
    </ejercicios:libro>
 </libros>
+```
 
 En el ejemplo anterior:
 
@@ -67,6 +71,7 @@ En el ejemplo anterior:
 Esto permite que los elementos con los mismos nombres, como <libro>, <autor>, y <editorial>, sean distinguidos y asociados con su contexto específico. Sin los espacios de nombres, podría haber ambigüedad si se utilizan los mismos nombres para elementos en diferentes partes del documento XML.
 
 Veamos otro ejemplo más visual que representa vehículos con diferentes especificaciones según si es un coche o una moto:
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <vehiculos xmlns:coche="http://www.example.com/coche" xmlns:moto="http://www.example.com/moto">
    <coche:vehiculo>
@@ -81,6 +86,7 @@ Veamos otro ejemplo más visual que representa vehículos con diferentes especif
       <moto:aceleracion>0-60 mph en 3.2 segundos</moto:aceleracion>
    </moto:vehiculo>
 </vehiculos>
+```
 
 Este ejemplo representa un documento XML que describe diferentes tipos de vehículos, en este caso, coches y motocicletas, utilizando espacios de nombres XML (xmlns).
 
