@@ -25,10 +25,8 @@ https://www.w3.org/TR/REC-xml-names/ (inglés)
 
 Los espacios de nombres en XML (XML namespaces) se utilizan para evitar conflictos de nombres entre elementos y atributos en un documento XML. Permiten asignar un identificador único a cada elemento y atributo, incluso si tienen el mismo nombre pero pertenecen a diferentes vocabularios o dominios.
 
-Contenidos del artículo
 
-    8. Espacios de nombres en XML
-    Ejercicio propuesto
+8. Espacios de nombres en XML
 
 Los espacios de nombres se definen utilizando una sintaxis especial en XML. El formato típico de un espacio de nombres es:
 <elemento xmlns:prefijo="URI del espacio de nombres">
