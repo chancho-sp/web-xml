@@ -1,105 +1,201 @@
-Etiquetas en XML:
+# Etiquetas en XML
 
 Las etiquetas constituyen la base de XML. Definen el alcance de un elemento en el documento y también se pueden utilizar para insertar comentarios, declarar ajustes y para insertar instrucciones especiales.
 
+## Clasificación de etiquetas XML
+
 Las etiquetas XML se pueden clasificar de la siguiente manera:
 
--Etiquetas de inicio:
+### 1. Etiquetas de inicio
 
-Cada elemento no-vacío en XML es marcada por una etiqueta de inicio. Por ejemplo:
+Cada elemento no-vacío en XML es marcado por una etiqueta de inicio. 
 
+**Ejemplo:**
+```xml
 <address>
+```
 
--Etiquetas de cierre:
+### 2. Etiquetas de cierre
 
-Cada elemento que tenga una etiqueta de inicio ha de terminar con una etiqueta de cierre. Por ejemplo:
+Cada elemento que tenga una etiqueta de inicio ha de terminar con una etiqueta de cierre.
 
+**Ejemplo:**
+```xml
 </address>
+```
 
--Etiquetas vacias:
+### 3. Etiquetas vacías
 
-Los elementos que no tienen contenido se denominan vacios. Un vacio puede ser representado de dos maneras:
+Los elementos que no tienen contenido se denominan vacíos. Un elemento vacío puede ser representado de dos maneras:
 
-1.Con una etiqueta de inicio seguida inmediatamente de una etiqueta de cierre:
-
+1. Con una etiqueta de inicio seguida inmediatamente de una etiqueta de cierre:
+```xml
 <hr></hr>
+```
 
-2.Con una etiqueta de elemento vacio, de la siguiente manera:
-
+2. Con una etiqueta de elemento vacío (forma abreviada):
+```xml
 <hr />
+```
 
-Reglas de las etiquetas XML:
+## Reglas de las etiquetas XML
 
-1.Son case-sensitive, por lo que las etiquetas, tanto de inicio como de cierre deberan ser escritas ambas de la misma manera.
+### 1. Son case-sensitive (sensibles a mayúsculas y minúsculas)
 
-Incorrecto:
+Las etiquetas, tanto de inicio como de cierre, deberán ser escritas ambas de la misma manera.
 
-<address>Valle de los Caidos</Address>
+**Incorrecto:**
+```xml
+<address>Valle de los Caídos</Address>
+```
 
-Correcto:
+**Correcto:**
+```xml
+<address>Valle de los Caídos</address>
+```
 
-<address>Valle de los Caidos</address>
+### 2. Deben cerrarse en orden anidado
 
-2.Deben de cerrarse en orden. Como en el ejemplo:
+Las etiquetas deben cerrarse en el orden inverso al que fueron abiertas, respetando el anidamiento.
 
+**Ejemplo:**
+```xml
 <elemento_externo>
-	<elemento_interno>
-		Juanma Castaño
-	</elemento_interno>
+    <elemento_interno>
+        Juanma Castaño
+    </elemento_interno>
 </elemento_externo>
+```
 
-Instrucciones de procesamiento:
+<details>
+<summary>Ejemplo extendido de anidamiento correcto e incorrecto</summary>
 
-En XML, una instruccion de procesamiento sirve para indicar cierta informacion al programa que procese dicho documento. Las instrucciones se escriben empezando con “<?” y finalizando con “?>”
+**Correcto:**
+```xml
+<persona>
+    <nombre>Ana</nombre>
+    <dirección>
+        <calle>Gran Vía</calle>
+        <número>123</número>
+        <ciudad>Madrid</ciudad>
+    </dirección>
+</persona>
+```
 
-Ejemplo:
+**Incorrecto:**
+```xml
+<persona>
+    <nombre>Ana</nombre>
+    <dirección>
+        <calle>Gran Vía</calle>
+        <número>123</número>
+    </persona>
+    <!-- ERROR: Se cierra persona antes que dirección -->
+    <ciudad>Madrid</ciudad>
+</dirección>
+```
+</details>
 
+## Instrucciones de procesamiento
+
+En XML, una instrucción de procesamiento sirve para indicar cierta información al programa que procese dicho documento. Las instrucciones se escriben empezando con `<?` y finalizando con `?>`.
+
+**Ejemplo:**
+```xml
 <?xml-stylesheet type="text/css" href="estilo-animales.css"?>
+```
 
-Esta instrucción serviría para asociar un archivo CSS.
+Esta instrucción serviría para asociar un archivo CSS con el documento XML.
 
-Referencias a entidades:
+<details>
+<summary>Otros ejemplos de instrucciones de procesamiento</summary>
 
-En XML existen algunos caracteres que son especiales por el significado que tienen y para hacer uso de estos se pueden usar las siguientes referencias:
+**Declaración XML:**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+```
 
-Carácter 
-Referencia 
-< (menor que)
-&lt;
-> (mayor que)
-&gt;
-“ (comilla doble)
-&quot;
-‘ (comilla simple)
-&apos;
-& (ampersand)
-&amp;
+**Instrucción para un procesador específico:**
+```xml
+<?php echo "Esto será procesado por PHP"; ?>
+```
 
+**Instrucción para Apache Cocoon:**
+```xml
+<?cocoon-process type="xslt" stylesheet="mi-transformacion.xsl"?>
+```
+</details>
 
-Explicación:
+## Referencias a entidades
 
-“<” es problemático porque indica el comienzo de una etiqueta.
+En XML existen algunos caracteres que son especiales por el significado que tienen. Para utilizar estos caracteres en el contenido del documento, se deben usar referencias a entidades.
 
-“>” este carácter si puede utilizarse y no sería incorrecto utilizarlo, pero aun así se recomienda hacer uso de su referencia.
+| Carácter | Descripción | Referencia |
+|----------|-------------|------------|
+| < | menor que | `&lt;` |
+| > | mayor que | `&gt;` |
+| " | comilla doble | `&quot;` |
+| ' | comilla simple | `&apos;` |
+| & | ampersand | `&amp;` |
 
-Si el valor de un atributo se escribe entre comillas dobles, dicho valor no podrá contener dicho carácter. Por ejemplo:
+### Explicación y casos de uso
 
+- **`<` (menor que)**: Es problemático porque indica el comienzo de una etiqueta.
+
+```xml
+<!-- Incorrecto -->
+<mensaje>Si 5 < 10 entonces...</mensaje>
+
+<!-- Correcto -->
+<mensaje>Si 5 &lt; 10 entonces...</mensaje>
+```
+
+- **`>` (mayor que)**: Este carácter sí puede utilizarse y no sería incorrecto, pero aun así se recomienda hacer uso de su referencia para mayor claridad y consistencia.
+
+```xml
+<!-- Recomendado -->
+<mensaje>Si 10 &gt; 5 entonces...</mensaje>
+```
+
+- **`"` (comilla doble)**: Si el valor de un atributo se escribe entre comillas dobles, dicho valor no podrá contener este carácter sin usar su referencia.
+
+```xml
+<!-- Incorrecto -->
 <dato caracter="comilla doble(")"/>
 
-Es por ello que hay que utilizar la referencia: 
-
+<!-- Correcto -->
 <dato caracter="comilla doble(&quot;)"/>
+```
 
-De igual modo ocurre con la comilla simple:
+- **`'` (comilla simple)**: De igual modo ocurre con la comilla simple:
 
-Incorrecto:
-
+```xml
+<!-- Incorrecto -->
 <dato caracter='comilla simple(')'/>
 
-Correcto:
-
-<dato caracter='comilla simple(&apos)'/>
-
+<!-- Correcto -->
 <dato caracter='comilla simple(&apos;)'/>
+```
 
+- **`&` (ampersand)**: Se debe usar su referencia para evitar confusiones con el inicio de otras referencias de entidad.
 
+```xml
+<!-- Incorrecto -->
+<empresa>Johnson & Johnson</empresa>
+
+<!-- Correcto -->
+<empresa>Johnson &amp; Johnson</empresa>
+```
+
+### Entidades predefinidas vs. personalizadas
+
+Además de las entidades predefinidas, XML permite definir entidades personalizadas en la DTD del documento:
+
+```xml
+<!DOCTYPE documento [
+    <!ENTITY copyright "© 2023 Mi Empresa. Todos los derechos reservados.">
+]>
+<documento>
+    <pie>&copyright;</pie>
+</documento>
+```
