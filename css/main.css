@@ -1,167 +1,261 @@
 /* Import Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* Global styles */
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    background-color: #EDEDE9;
-    color: #333;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  background-color: #edede9;
+  color: #333;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header styles */
 header {
-    background: linear-gradient(135deg, #D5BDAF, #D6CCC2);
-    color: #333;
-    text-align: center;
-    padding: 4rem 1rem;
-    min-height: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(135deg, #d5bdaf, #d6ccc2);
+  color: #333;
+  text-align: center;
+  padding: 4rem 1rem;
+  min-height: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
-    font-size: 3.5rem;
-    margin: 0;
-    letter-spacing: 1px;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 3.5rem;
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 header p {
-    font-size: 1.6rem;
-    margin-top: 0.8rem;
-    opacity: 0.9;
+  font-size: 1.6rem;
+  margin-top: 0.8rem;
+  opacity: 0.9;
 }
 
 /* Main content */
 .content {
-    width: 70%;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: center;
-    background-color: #F5EBE0;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    flex: 1 0 auto;
+  width: 70%;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  background-color: #f5ebe0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  flex: 1 0 auto;
 }
 
 .content h2 {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    color: #8B7D6B;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #8b7d6b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .content p {
-    font-size: 1.05rem;
-    color: #555;
-    margin-bottom: 2rem;
-    line-height: 1.8;
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
 /* Footer */
 footer {
-    background-color: #D5BDAF;
-    color: #333;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: auto;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  background-color: #d5bdaf;
+  color: #333;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 footer p {
-    margin: 0;
-    font-size: 0.95rem;
-    opacity: 0.9;
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* Links */
 a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
-    color: #D5BDAF;
-    text-decoration: underline;
+  color: #d5bdaf;
+  text-decoration: underline;
 }
 
 /* Navigation */
 .navbar {
-    background-color: #D5BDAF;
-    padding: 0.8rem 1.5rem;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 65px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: #d5bdaf;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  overflow-y: auto;
+  top: 0;
+  z-index: 1000;
+  height: 65px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.menu-icon {
-    font-size: 1.6rem;
-    color: #333;
-    cursor: pointer;
-    margin-right: 1.2rem;
-    position: relative;
-    z-index: 1100;
-    transition: transform 0.3s ease, color 0.3s ease;
+/* Personalización de la barra de desplazamiento */
+.navbar::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+  height: 8px; /* Altura de la barra de desplazamiento horizontal */
 }
 
-.menu-icon.open {
-    color: #333;
-    transform: rotate(90deg);
+/* Estilo para el track (fondo de la barra de desplazamiento) */
+.navbar::-webkit-scrollbar-track {
+  background-color: #333; /* Fondo del track */
+  border-radius: 10px; /* Bordes redondeados del track */
 }
 
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 1.5rem 0;
-    flex-direction: column;
-    background-color: #D6CCC2;
-    position: fixed;
-    top: 0;
-    left: -270px;
-    height: 100%;
-    width: 270px;
-    transition: left 0.4s ease;
-    z-index: 1000;
-    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+/* Estilo para el pulgar (la parte que arrastra) */
+.navbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del pulgar */
+  border-radius: 10px; /* Bordes redondeados del pulgar */
 }
 
-.nav-links.show {
-    left: 0;
+/* Estilo para el pulgar al pasar el ratón por encima */
+.navbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color del pulgar al pasar el ratón */
 }
 
-/* Navigation links styles */
-.nav-links li {
-    padding: 0.8rem 1.5rem;
-    margin: 0.3rem 0;
-    transition: background-color 0.3s ease;
+/* For the weeks that will be togglable */
+ul .week-points {
+  display: none;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
-.nav-links li:hover {
-    background-color: #E3D5CA;
+ul .week-points li {
+  font-size: 0.9rem;
 }
 
-.nav-links a {
-    color: #333;
-    display: block;
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-    transition: transform 0.2s ease;
+/* Estilo para el overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Oscurecimiento */
+  backdrop-filter: blur(3px); /* Efecto de desenfoque */
+  display: none; /* Está oculto por defecto */
+  z-index: 1; /* Asegura que esté por encima del contenido */
+  transition: opacity 0.3s ease-in-out, backdrop-filter 0.6s ease-in-out; /* La transición del blur es más lenta */
 }
 
-.nav-links a:hover {
-    transform: translateX(5px);
-    text-decoration: none;
+/* Cuando el navbar está abierto, mostramos el overlay */
+.navbar.open ~ .overlay {
+  display: block;
+  opacity: 1;
+}
+
+/* Navbar configuraciones */
+.navbar-container {
+  display: flex;
+}
+
+.navbar {
+  position: fixed;
+  font-size: 16px;
+  top: 0;
+  left: -100%;
+  width: 350px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 2;
+}
+
+.navbar.open {
+  left: 0;
+}
+
+.hamburger {
+  font-size: 30px;
+  padding: 20px;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.navbar ul {
+  padding: 10px;
+  list-style-type: none;
+  margin: 0;
+}
+
+.navbar li {
+  padding: 5px 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 3px;
+}
+
+.close-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+ul .week-points {
+  display: none;
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+ul .week-points li {
+  font-size: 0.9rem;
+}
+
+/* Personalización de la barra de desplazamiento de la página */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+  height: 8px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+/* Estilo para el track (fondo de la barra de desplazamiento) */
+::-webkit-scrollbar-track {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Fondo con opacidad 0 (totalmente transparente) */
+  border-radius: 10px; /* Bordes redondeados del track */
+}
+
+/* Estilo para el pulgar (la parte que arrastra) */
+::-webkit-scrollbar-thumb {
+  background-color: #8b7d6b; /* Color del pulgar */
+  border-radius: 10px; /* Bordes redondeados del pulgar */
+}
+
+/* Estilo para el pulgar al pasar el ratón por encima */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ad9a8f; /* Color del pulgar al pasar el ratón */
 }
