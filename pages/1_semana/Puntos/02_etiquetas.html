@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Etiquetas, instrucciones de procesamiento y referencia a entidades
+    </title>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/puntos.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Etiquetas, instrucciones de procesamiento y referencia a entidades
+      </h1>
+      <p>Semana 1</p>
+    </header>
+
+    <!-- Agregar al inicio del archivo de cada página -->
+    <div class="overlay"></div>
+    <div class="navbar-container">
+      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="../../../index.html">Inicio</a></li>
+          <li>
+            <a href="../../1_semana/semana1.html" class="toggle-week"
+              >Semana 1</a
+            >
+            <ul class="week-points">
+              <li>XML - Historia, estructura y sintáxis</li>
+              <li>
+                Etiquetas, instrucciones de procesamiento y referencia a
+                entidades
+              </li>
+              <li>Declaración de tipos de documento</li>
+            </ul>
+          </li>
+          <li>
+            <a href="../../2_semana/semana2.html" class="toggle-week"
+              >Semana 2</a
+            >
+            <ul class="week-points">
+              <li>Elaboración de documentos XML válidos y bien formados</li>
+              <li>
+                Uso de espacios de nombres en XML - definición, referencia y
+                prefijos
+              </li>
+              <li>Ventajas de los espacios de nombres</li>
+              <li>Métodos de definición de documentos XML</li>
+            </ul>
+          </li>
+          <li>
+            <a href="../../3_semana/semana3.html" class="toggle-week"
+              >Semana 3</a
+            >
+            <ul class="week-points">
+              <li>Creación de descripciones y asociación con documentos XML</li>
+              <li>Validación - herramientas de creación y validación</li>
+              <li>
+                Extensibilidad de los esquemas - tipos derivados y esquemas para
+                múltiples documentos
+              </li>
+              <li>Documentación de especificaciones</li>
+            </ul>
+          </li>
+          <li>
+            <a href="../../4_semana/semana4.html" class="toggle-week"
+              >Semana 4</a
+            >
+            <ul class="week-points">
+              <li>Otros lenguajes - YAML</li>
+              <li>Otros lenguajes - JSON</li>
+              <li>Otros lenguajes - Markdown</li>
+            </ul>
+          </li>
+          <li><a href="../../formulario.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      <aside class="sidebar">
+        <nav class="nav-secundario">
+          <h2>Secciones</h2>
+          <ul>
+            <li><a href="#etiquetas">Etiquetas en XML</a></li>
+            <li>
+              <a href="#reglas">Reglas de las etiquetas XML</a>
+            </li>
+            <li>
+              <a href="#instrucciones-de-procesamiento"
+                >Instrucciones de procesamiento</a
+              >
+            </li>
+            <li><a href="#referencias">Referencias a entidades</a></li>
+            <li><a href="#casos-de-uso">Explicación y casos de uso</a></li>
+            <li><a href="#entidades">Entidades predefinidas vs personalizadas</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section>
+        <h2 class="titulo-section">Etiquetas, instrucciones y referencias</h2>
+        <article id="etiquetas">
+          <h2>Etiquetas en XML</h2>
+          <p>
+            Las etiquetas constituyen la base de XML. Definen el alcance de un
+            elemento en el documento y también se pueden utilizar para insertar
+            comentarios, declarar ajustes y para insertar instrucciones
+            especiales.
+          </p>
+          <h3>Clasificación de las etiquetas XML</h3>
+          <ul>
+            <li>
+              <p>
+                <strong>Etiquetas de inicio: </strong>
+                Cada elemento no-vacío en XML es marcado por una etiqueta de
+                inicio.
+              </p>
+              <code>&lt;address&gt;</code>
+            </li>
+            <li>
+              <p>
+                <strong>Etiquetas de cierre: </strong>
+                Cada elemento que tenga una etiqueta de inicio ha de terminar
+                con una etiqueta de cierre.
+              </p>
+              <code>&lt;/address&gt;</code>
+            </li>
+            <li>
+              <p>
+                <strong>Etiquetas vacías: </strong>
+                Los elementos que no tienen contenido se denominan vacíos. Un
+                elemento vacío puede ser representado de dos maneras:
+              </p>
+              <code
+                >&lt;hr&gt;&lt;/hr&gt; &lt;!-- Con una etiqueta de inicio
+                seguidamente de la de cierre --&gt;</code
+              >
+              <br />
+              <code
+                >&lt;hr /&gt; &lt;!-- Con una etiqueta de elemento vacío (forma
+                abreviada) --&gt;</code
+              >
+            </li>
+          </ul>
+        </article>
+
+        <article id="reglas">
+          <h2>Reglas de las etiquetas XML</h2>
+          <h3>Son case-sensitive (sensibles a mayúsculas y minúsculas)</h3>
+          <p>
+            Las etiquetas, tanto de inicio como de cierre, deberán ser escritas
+            ambas de la misma manera.
+          </p>
+
+          <p><strong>Incorrecto:</strong></p>
+          <pre><code>&lt;address&gt;Valle de los Caídos&lt;/Address&gt;</code></pre>
+
+          <p><strong>Correcto:</strong></p>
+          <pre><code>&lt;address&gt;Valle de los Caídos&lt;/address&gt;</code></pre>
+
+          <h3>Deben cerrarse en orden anidado</h3>
+          <p>
+            Las etiquetas deben cerrarse en el orden inverso al que fueron
+            abiertas, respetando el anidamiento.
+          </p>
+
+          <p><strong>Ejemplo:</strong></p>
+          <pre><code>&lt;elemento_externo&gt;
+          &lt;elemento_interno&gt;
+              Juanma Castaño
+          &lt;/elemento_interno&gt;
+      &lt;/elemento_externo&gt;</code></pre>
+
+          <p>Ejemplo extendido de anidamiento correcto e incorrecto</p>
+
+          <p><strong>Correcto:</strong></p>
+          <pre><code>&lt;persona&gt;
+  &lt;nombre&gt;Ana&lt;/nombre&gt;
+  &lt;dirección&gt;
+      &lt;calle&gt;Gran Vía&lt;/calle&gt;
+      &lt;número&gt;123&lt;/número&gt;
+      &lt;ciudad&gt;Madrid&lt;/ciudad&gt;
+  &lt;/dirección&gt;
+&lt;/persona&gt;</code></pre>
+
+          <p><strong>Incorrecto:</strong></p>
+          <pre><code>&lt;persona&gt;
+  &lt;nombre&gt;Ana&lt;/nombre&gt;
+  &lt;dirección&gt;
+      &lt;calle&gt;Gran Vía&lt;/calle&gt;
+      &lt;número&gt;123&lt;/número&gt;
+  &lt;/persona&gt;
+  &lt;!-- ERROR: Se cierra persona antes que dirección --&gt;
+  &lt;ciudad&gt;Madrid&lt;/ciudad&gt;
+  &lt;/dirección&gt;</code></pre>
+        </article>
+
+        <article id="instrucciones-de-procesamiento">
+          <h2>Instrucciones de procesamiento</h2>
+          <p>
+            En XML, una instrucción de procesamiento sirve para indicar cierta
+            información al programa que procese dicho documento. Las
+            instrucciones se escriben empezando con <code>&lt;? </code> y
+            finalizando con <code>?&gt;</code>.
+          </p>
+
+          <p><strong>Ejemplo:</strong></p>
+          <pre><code>&lt;?xml-stylesheet type="text/css" href="estilo-animales.css"?&gt;</code></pre>
+          <p>
+            Esta instrucción serviría para asociar un archivo CSS con el
+            documento XML.
+          </p>
+
+          <p>
+            <strong>Otros ejemplos de instrucciones de procesamiento:</strong>
+          </p>
+
+          <p><strong>Declaración XML:</strong></p>
+          <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></pre>
+
+          <p><strong>Instrucción para un procesador específico:</strong></p>
+          <pre><code>&lt;?php echo "Esto será procesado por PHP"; ?&gt;</code></pre>
+
+          <p><strong>Instrucción para Apache Cocoon:</strong></p>
+          <pre><code>&lt;?cocoon-process type="xslt" stylesheet="mi-transformacion.xsl"?&gt;</code></pre>
+        </article>
+
+        <article id="referencias">
+          <h2>Referencias a entidades</h2>
+          <p>
+            En XML existen algunos caracteres que son especiales por el
+            significado que tienen. Para utilizar estos caracteres en el
+            contenido del documento, se deben usar referencias a entidades.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Carácter</th>
+                <th>Descripción</th>
+                <th>Referencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>&lt;</td>
+                <td>menor que</td>
+                <td>&amp;lt;</td>
+              </tr>
+              <tr>
+                <td>&gt;</td>
+                <td>mayor que</td>
+                <td>&amp;gt;</td>
+              </tr>
+              <tr>
+                <td>&quot;</td>
+                <td>comilla doble</td>
+                <td>&amp;quot;</td>
+              </tr>
+              <tr>
+                <td>&apos;</td>
+                <td>comilla simple</td>
+                <td>&amp;apos;</td>
+              </tr>
+              <tr>
+                <td>&amp;</td>
+                <td>ampersand</td>
+                <td>&amp;amp;</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article id="casos-de-uso">
+          <h2>Explicación y casos de uso</h2>
+          <p>
+            <strong>&lt; (menor que)</strong>: Es problemático porque indica el
+            comienzo de una etiqueta.
+          </p>
+          <pre><code>&lt;!-- Incorrecto --&gt;
+      &lt;mensaje&gt;Si 5 &lt; 10 entonces...&lt;/mensaje&gt;
+      
+      &lt;!-- Correcto --&gt;
+      &lt;mensaje&gt;Si 5 &amp;lt; 10 entonces...&lt;/mensaje&gt;</code></pre>
+
+          <p>
+            <strong>&gt; (mayor que)</strong>: Este carácter sí puede utilizarse
+            y no sería incorrecto, pero aun así se recomienda hacer uso de su
+            referencia para mayor claridad y consistencia.
+          </p>
+          <pre><code>&lt;!-- Recomendado --&gt;
+      &lt;mensaje&gt;Si 10 &amp;gt; 5 entonces...&lt;/mensaje&gt;</code></pre>
+
+          <p>
+            <strong>&quot; (comilla doble)</strong>: Si el valor de un atributo
+            se escribe entre comillas dobles, dicho valor no podrá contener este
+            carácter sin usar su referencia.
+          </p>
+          <pre><code>&lt;!-- Incorrecto --&gt;
+      &lt;dato caracter="comilla doble(")&gt;/&gt;
+      
+      &lt;!-- Correcto --&gt;
+      &lt;dato caracter="comilla doble(&amp;quot;)" /&gt;</code></pre>
+
+          <p>
+            <strong>&#39; (comilla simple)</strong>: De igual modo ocurre con la
+            comilla simple:
+          </p>
+          <pre><code>&lt;!-- Incorrecto --&gt;
+      &lt;dato caracter='comilla simple(')&gt;/&gt;
+      
+      &lt;!-- Correcto --&gt;
+      &lt;dato caracter='comilla simple(&amp;apos;)' /&gt;</code></pre>
+
+          <p>
+            <strong>&amp; (ampersand)</strong>: Se debe usar su referencia para
+            evitar confusiones con el inicio de otras referencias de entidad.
+          </p>
+          <pre><code>&lt;!-- Incorrecto --&gt;
+      &lt;empresa&gt;Johnson &amp; Johnson&lt;/empresa&gt;
+      
+      &lt;!-- Correcto --&gt;
+      &lt;empresa&gt;Johnson &amp;amp; Johnson&lt;/empresa&gt;</code></pre>
+        </article>
+
+        <article id="entidades">
+          <h2>Entidades predefinidas vs personalizadas</h2>
+          <p>
+            Además de las entidades predefinidas, XML permite definir entidades
+            personalizadas en la DTD del documento:
+          </p>
+          <pre><code>&lt;!DOCTYPE documento [
+          &lt;!ENTITY copyright "© 2023 Mi Empresa. Todos los derechos reservados."&gt;
+      ]&gt;
+      &lt;documento&gt;
+          &lt;pie&gt;&amp;copyright;&lt;/pie&gt;
+      &lt;/documento&gt;</code></pre>
+        </article>
+
+        <div class="navegacion">
+          <!-- Botón para ir al anterior punto -->
+          <a href="../Puntos/01_intro.html" class="btn-siguiente">
+            &larr; Volver al anterior punto
+          </a>
+
+          <!-- Botón para ir al siguiente punto -->
+          <a href="../Puntos/03_declaracion.html" class="btn-siguiente">
+            Ir al siguiente punto &rarr;
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
+    </footer>
+
+    <button id="btnSubir" class="btn-subir">▲</button>
+
+    <script src="../../../js/puntos.js"></script>
+  </body>
+</html>
