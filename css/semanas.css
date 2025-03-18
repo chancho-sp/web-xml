@@ -1,0 +1,59 @@
+/* Ajustes para la sección de puntos */
+.content {
+    width: 90%;
+}
+
+.points {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.point {
+  background-color: #faf1e9;
+  border: 1px solid #d6ccc2;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 30%; /* Ajuste para 3 puntos en línea */
+  box-shadow: 0 4px 8px rgba(213, 189, 175, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.point:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(213, 189, 175, 0.3);
+}
+
+.point h3 {
+  color: #ad9d87;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.point ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.point ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .points {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .point {
+    width: 100%;
+  }
+}

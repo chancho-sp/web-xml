@@ -6,12 +6,154 @@
     <title>Curso XML</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
   </head>
   <body>
     <header>
       <h1>XML</h1>
       <p>Aprende lo básico de XML en tan solo 4 semanas</p>
     </header>
+
+        <!-- Agregar al inicio del archivo de cada página -->
+        <div class="overlay"></div>
+        <div class="navbar-container">
+          <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li class="main-nav-li">
+                <a href="./index.html"><strong>Inicio</strong></a>
+              </li>
+              <li class="main-nav-li">
+                <a href="./pages/1_semana/semana1.html" class="toggle-week"
+                  ><strong>&darr; Semana 1</strong></a
+                >
+                <ul class="week-points">
+                  <li>
+                    <a href="./pages/1_semana/semana1.html">Ir a la Semana 1</a>
+                  </li>
+                  <li>
+                    <a href="./pages/1_semana/Puntos/01_intro.html"
+                      >XML - Historia, estructura y sintáxis</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/1_semana/Puntos/02_etiquetas.html"
+                      >Etiquetas, instrucciones de procesamiento y referencia a
+                      entidades</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/1_semana/Puntos/03_declaracion.html"
+                      >Declaración de tipos de documento</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/1_semana/Puntos/01_ejercicios.html">Ejercicios 01</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-nav-li">
+                <a href="./pages/2_semana/semana2.html" class="toggle-week"
+                  ><strong>&darr; Semana 2</strong></a
+                >
+                <ul class="week-points">
+                  <li>
+                    <a href="./pages/2_semana/semana2.html">Ir a la Semana 2</a>
+                  </li>
+                  <li>
+                    <a href="./pages/2_semana/Puntos/04_elaboracion.html"
+                      >Elaboración de documentos XML válidos y bien formados</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/2_semana/Puntos/05_espacios.html">
+                      Uso de espacios de nombres en XML - definición, referencia y
+                      prefijos</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/2_semana/Puntos/06_ventajas.html"
+                      >Ventajas de los espacios de nombres</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/2_semana/Puntos/07_metodos.html"
+                      >Métodos de definición de documentos XML</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/2_semana/Puntos/02_ejercicios.html">Ejercicios 02</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-nav-li">
+                <a href="./pages/3_semana/semana3.html" class="toggle-week"
+                  ><strong>&darr; Semana 3</strong></a
+                >
+                <ul class="week-points">
+                  <li>
+                    <a href="./pages/3_semana/semana3.html">Ir a la Semana 3</a>
+                  </li>
+                  <li>
+                    <a href="./pages/3_semana/Puntos/08_creacion.html"
+                      >Creación de descripciones y asociación con documentos XML</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/3_semana/Puntos/09_validacion.html"
+                      >Validación - herramientas de creación y validación</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/3_semana/Puntos/10_extensibilidad.html"
+                      >Extensibilidad de los esquemas - tipos derivados y esquemas
+                      para múltiples documentos</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/3_semana/Puntos/11_documentacion.html"
+                      >Documentación de especificaciones</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/3_semana/Puntos/03_ejercicios.html">Ejercicios 03</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-nav-li">
+                <a href="./pages/4_semana/semana4.html" class="toggle-week"
+                  ><strong>&darr; Semana 4</strong></a
+                >
+                <ul class="week-points">
+                  <li>
+                    <a href="./pages/4_semana/semana4.html">Ir a la Semana 4</a>
+                  </li>
+                  <li>
+                    <a href="./pages/4_semana/Puntos/12_yaml.html"
+                      >Otros lenguajes - YAML</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/4_semana/Puntos/13_json.html"
+                      >Otros lenguajes - JSON</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/4_semana/Puntos/14_markdown.html"
+                      >Otros lenguajes - Markdown</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./pages/4_semana/Puntos/04_ejercicios.html">Ejercicios 04</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="main-nav-li">
+                <a href="./pages/formulario.html"><strong>Contacto</strong></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
     <section class="content">
       <h2>Conceptos repartidos en 4 semanas de aprendizaje</h2>
@@ -118,7 +260,8 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
+      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</a></p>
     </footer>
+    <script src="./js/navbar.js"></script>
   </body>
 </html>

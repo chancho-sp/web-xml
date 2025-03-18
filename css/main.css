@@ -268,3 +268,7 @@ ul .week-points li {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #ad9a8f; /* Color del pulgar al pasar el ratón */
 }
+
+.enlace-contacto:hover {
+  color: #8a837c;
+}
