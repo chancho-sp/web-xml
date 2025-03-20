@@ -5,8 +5,6 @@ Los espacios de nombres en XML sirven para evitar conflictos de nombres cuando s
 
 Una vez definido, un espacio de nombres se puede utilizar en los elementos y atributos XML para diferenciarlos de otros con el mismo nombre pero pertenecientes a diferentes contextos.
 
-Los espacios de nombres pueden utilizar prefijos personalizados para referirse a ellos de manera más sencilla en el documento. Por ejemplo:
-
 ## 1. Definición de espacios de nombres
 Un espacio de nombres en XML es una forma de identificar de manera única los elementos y atributos dentro de un documento XML. Se utiliza para evitar que haya elementos con el mismo nombre pero con significados diferentes, especialmente cuando se integran múltiples XML de diferentes fuentes o esquemas.
 
@@ -72,11 +70,13 @@ Los prefijos en atributos se usan cuando el atributo pertenece a un espacio de n
 Espacios de nombres definidos:
 
 p → Para la información del producto.
+
 desc → Para información descriptiva.
 
 Uso en atributos:
 
 desc:info="Edición limitada" → Aquí el prefijo desc indica que el atributo info pertenece al espacio de nombres http://www.ejemplo.com/descripciones.
+
 moneda="USD" → No tiene prefijo porque pertenece al espacio de nombres predeterminado.
 
 ## 5. Posibles Conflictos y Resolución
