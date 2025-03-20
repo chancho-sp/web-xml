@@ -178,30 +178,21 @@ Si necesitas generar PDFs desde XML, XSL-FO es la mejor opción.
 Si quieres combinarlo con HTML, XSLT puede ayudarte.
 
 ## 5. Especificaciones de aplicaciones
-Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:​
+Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:  
 
-​- SOAP (Simple Object Access Protocol): Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).​
+- SOAP (Simple Object Protocol): Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).  
+- SVG (Scalable Vector Graphics): Lenguaje XML para gráficos vectoriales.  
+- RSS y Atom: Formatos XML para sindicación de contenido en la web (feeds de noticias).  
+- MathML: Lenguaje XML para representar expresiones matemáticas.  
+- VoiceXML: Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.  
 
-- SVG (Scalable Vector Graphics): Lenguaje XML para gráficos vectoriales.​
+Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:  
 
-- RSS y Atom: Formatos XML para sindicación de contenido en la web (feeds de noticias).​
-
-- MathML: Lenguaje XML para representar expresiones matemáticas.​
-
-- VoiceXML: Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.​
-
-Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:​
-
-​- Mensajería y comunicación: ​SOAP, XMPP
-
-- Publicaciones y documentos:​ DITA, XHTML)
-
-- Finanzas y negocios:​ XBRL, UBL)
-
-- Ciencias y salud:​nHL7, CML
-
-- Gráficos y multimedia:​ SVG, SMIL)
-
-- Datos y metadatos:​ RDF, OWL)
+- Mensajería y comunicación: SOAP, XMPP  
+- Publicaciones y documentos: DITA, XHTML  
+- Finanzas y negocios: XBRL, UBL  
+- Ciencias y salud: HL7, CML  
+- Gráficos y multimedia: SVG, SMIL  
+- Datos y metadatos: RDF, OWL  
 
 ​Si necesitas compartir datos estructurados, XML tiene una especificación para casi cualquier industria, cada una con su propia sintaxis y propósito especializado.
