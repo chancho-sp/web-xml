@@ -92,10 +92,6 @@ where $l/autor = "George Orwell"
 return $l/titulo
 ```
 
-Se ha definido el prefijo lib para el espacio de nombres http://www.ejemplo.com/libros. El elemento titulo ahora está prefijado como lib:titulo.
-
-Los prefijos en elementos ayudan a distinguir estructuras similares dentro de un XML.​ 
-
 ## 4. Especificaciones para transformación
 Permiten convertir documentos XML a otros formatos como HTML, JSON, CSV o incluso otros XML.​
 
