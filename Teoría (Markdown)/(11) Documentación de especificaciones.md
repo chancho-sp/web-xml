@@ -8,11 +8,11 @@ Las especificaciones se agrupan en 5 grandes categorías según su función dent
 ## 1. Especificaciones fundamentales
 Son las especificaciones esenciales sobre cómo se estructura y procesa XML:​
 
--​XML 1.0: Define la sintaxis básica del lenguaje.​
+- ​XML 1.0: Define la sintaxis básica del lenguaje.​
 
--XML 1.1: Una versión con mejoras menores, poco utilizada.​
+- XML 1.1: Una versión con mejoras menores, poco utilizada.​
 
--Espacios de nombres: Permite evitar conflictos de nombres cuando se combinan distintos vocabularios XML.
+- Espacios de nombres: Permite evitar conflictos de nombres cuando se combinan distintos vocabularios XML.
 
 XML 1.1 fue introducida en 2004 e incluye mejoras como mayor compatibilidad con caracteres de Unicode, mayor flexibilidad en nombres, o mejor manejo de los finales de línea. ​
 
@@ -21,11 +21,11 @@ XML 1.1 fue introducida en 2004 e incluye mejoras como mayor compatibilidad con 
 ## 2. Especificaciones para validación
 Estas son las especificaciones que definen como se estructuran los datos XML:​
 
--​DTD (Document Type Definition): La forma más antigua de definir la estructura de un XML.​
+- DTD (Document Type Definition): La forma más antigua de definir la estructura de un XML.​
 
--XML Schema (XSD - XML Schema Definition): Lenguaje más avanzado que DTD para definir la estructura y tipos de datos en XML.​
+- XML Schema (XSD - XML Schema Definition): Lenguaje más avanzado que DTD para definir la estructura y tipos de datos en XML.​
 
--RELAX NG: Alternativa a XSD, más sencilla y flexible. RelaxNG tiene una sintaxis más clara y menos redundante, y permite reutilizar definicones sin problemas. ​
+- RELAX NG: Alternativa a XSD, más sencilla y flexible. RelaxNG tiene una sintaxis más clara y menos redundante, y permite reutilizar definicones sin problemas. ​
 
 XSD es el estándar de W3C y está integrado en la mayoría de herramientas de XML.
 
@@ -60,8 +60,8 @@ XSD es el estándar de W3C y está integrado en la mayoría de herramientas de X
 ## 3. Especificaciones para consultas y navegación
 Estas especificaciones permiten acceder, extraer y manipular datos de los documentos XML:​
 
--​XPath: Lenguaje para seleccionar nodos dentro de un documento XML.​
--XQuery: Lenguaje avanzado de consultas para extraer datos de XML (parecido a SQL pero para XML).​
+- ​XPath: Lenguaje para seleccionar nodos dentro de un documento XML.​
+- XQuery: Lenguaje avanzado de consultas para extraer datos de XML (parecido a SQL pero para XML).​
 
 **Ejemplo de XML:**
 ```
@@ -99,8 +99,8 @@ Los prefijos en elementos ayudan a distinguir estructuras similares dentro de un
 ## 4. Especificaciones para transformación
 Permiten convertir documentos XML a otros formatos como HTML, JSON, CSV o incluso otros XML.​
 
--XSLT (Extensible Stylesheet Language Transformations): Permite transformar XML en otros formatos como HTML, JSON, etc.​
--XSL-FO (XSL Formatting Objects): Usado para formatear XML y generar documentos impresos o PDFs.
+- XSLT (Extensible Stylesheet Language Transformations): Permite transformar XML en otros formatos como HTML, JSON, etc.​
+- XSL-FO (XSL Formatting Objects): Usado para formatear XML y generar documentos impresos o PDFs.
 
 **Ejemplo de XML de entrada:**
 ```
@@ -184,28 +184,28 @@ Si quieres combinarlo con HTML, XSLT puede ayudarte.
 ## 5. Especificaciones de aplicaciones
 Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:​
 
-​-SOAP (Simple Object Access Protocol): Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).​
+​- SOAP (Simple Object Access Protocol): Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).​
 
--SVG (Scalable Vector Graphics): Lenguaje XML para gráficos vectoriales.​
+- SVG (Scalable Vector Graphics): Lenguaje XML para gráficos vectoriales.​
 
--RSS y Atom: Formatos XML para sindicación de contenido en la web (feeds de noticias).​
+- RSS y Atom: Formatos XML para sindicación de contenido en la web (feeds de noticias).​
 
--MathML: Lenguaje XML para representar expresiones matemáticas.​
+- MathML: Lenguaje XML para representar expresiones matemáticas.​
 
--VoiceXML: Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.​
+- VoiceXML: Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.​
 
 Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:​
 
-​-Mensajería y comunicación: ​SOAP, XMPP
+​- Mensajería y comunicación: ​SOAP, XMPP
 
--Publicaciones y documentos:​ DITA, XHTML)
+- Publicaciones y documentos:​ DITA, XHTML)
 
--Finanzas y negocios:​ XBRL, UBL)
+- Finanzas y negocios:​ XBRL, UBL)
 
--Ciencias y salud:​nHL7, CML
+- Ciencias y salud:​nHL7, CML
 
--Gráficos y multimedia:​ SVG, SMIL)
+- Gráficos y multimedia:​ SVG, SMIL)
 
--Datos y metadatos:​ RDF, OWL)
+- Datos y metadatos:​ RDF, OWL)
 
 ​Si necesitas compartir datos estructurados, XML tiene una especificación para casi cualquier industria, cada una con su propia sintaxis y propósito especializado.
