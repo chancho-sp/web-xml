@@ -102,7 +102,7 @@ XML Schema (XSD) proporciona una forma más avanzada y flexible de definir la es
  xmllint --noout --schema libro.xsd libro.xml 
  ```
 
-## 6. Herramientas Indispensables para Validar 
+## 5. Herramientas Indispensables para Validar 
 
  xmllint: Una herramienta de línea de comandos para validar XML contra DTD y XSD. 
 
