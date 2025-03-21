@@ -1,151 +1,198 @@
-Conceptos básicos:
+# Documentación de especificaciones
 
-La documentación de especificaciones de XML define las reglas y estándares para la creación y validación de documentos XML. Sus principales aspectos incluyen:
+## ***¿Qué son los espacios de nombres?***
+La documentación de especificaciones XML se refiere a los estándares y guías técnicas que definen cómo estructurar, validar y manipular documentos en XML (Extensible Markup Language).
 
-1. Estructura:
-    XML es un lenguaje de marcado basado en etiquetas jerárquicas, que deben estar correctamente anidadas y bien formadas.
+Las especificaciones se agrupan en 5 grandes categorías según su función dentro de XML. Las especificaciones oficiales están publicadas y pueden consultarse en la página del W3C.
 
-2.Espacios de nombres:
-    Se utilizan para evitar conflictos de nombres al combinar elementos de diferentes fuentes, usando la declaración xmlns.
+## 1. Especificaciones fundamentales
+Son las especificaciones esenciales sobre cómo se estructura y procesa XML:​
 
-3.DTD y XML Schema:
-    DTD (Document Type Definition) define la estructura y los elementos permitidos en un documento XML.
-    XML Schema (XSD) es una alternativa más avanzada que permite tipos de datos y validaciones más detalladas.
+- ​XML 1.0: Define la sintaxis básica del lenguaje.​
 
-4.Procesamiento y Validación:
-    Los documentos XML pueden ser procesados con herramientas como DOM y SAX. También pueden validarse contra un DTD o XSD para garantizar que cumplen con las reglas definidas.
+- XML 1.1: Una versión con mejoras menores, poco utilizada.​
 
-5.Extensibilidad y Compatibilidad:
-    XML es extensible, lo que significa que se pueden agregar nuevos elementos sin afectar los documentos existentes. 
-    Es ampliamente utilizado en la web, servicios web y almacenamiento de datos estructurados.
+- Espacios de nombres: Permite evitar conflictos de nombres cuando se combinan distintos vocabularios XML.
 
-En resumen, XML proporciona un formato estructurado, flexible y extensible para representar datos, con reglas bien definidas para su creación, validación e interoperabilidad.
-La documentación de especificaciones básicamente define las reglas que deben seguirse al crear documentos XML, en cuanto a estructura, sintaxis y demás.
+XML 1.1 fue introducida en 2004 e incluye mejoras como mayor compatibilidad con caracteres de Unicode, mayor flexibilidad en nombres, o mejor manejo de los finales de línea. ​
 
-Criterios más desarrollados:
+​Sin embargo, tiene problemas de retrocompatibilidad con XML 1.0, por lo que no ha sido adoptada ampliamente. XML 1.0 sigue siendo el estándar más utilizado.
 
-1. Elementos correctamente anidados
+## 2. Especificaciones para validación
+Estas son las especificaciones que definen como se estructuran los datos XML:​
 
-En XML, los elementos deben estar correctamente anidados, es decir, un elemento que abre dentro de otro debe cerrarse antes de que el elemento externo se cierre.
+- DTD (Document Type Definition): La forma más antigua de definir la estructura de un XML.​
 
-✅ Correcto:
+- XML Schema (XSD - XML Schema Definition): Lenguaje más avanzado que DTD para definir la estructura y tipos de datos en XML.​
 
-```xml
-<persona>
-    <nombre>Juan</nombre>
-    <apellido>Pérez</apellido>
-</persona>
+- RELAX NG: Alternativa a XSD, más sencilla y flexible. RelaxNG tiene una sintaxis más clara y menos redundante, y permite reutilizar definicones sin problemas. ​
+
+XSD es el estándar de W3C y está integrado en la mayoría de herramientas de XML.
+
+**Ejemplo de definición RELAX NG:**
+```
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+    <start>
+        <element name="libro">
+            <element name="titulo">
+                <text/>
+            </element>
+            <element name="autor">
+                <text/>
+            </element>
+        </element>
+    </start>
+</grammar>
 ```
 
-🚫 Incorrecto (cierre incorrecto de <nombre>):
+| Característica        | RELAX NG | XML Schema (XSD) |
+|----------------------|----------|------------------|
+| **Simplicidad**      | Más simple y fácil de leer | Más complejo y verboso |
+| **Sintaxis**         | Disponible en XML y Compact (RNC) | Solo XML |
+| **Definición de Tipos** | Basado en patrones | Basado en tipos de datos de XML Schema |
+| **Extensibilidad**   | Más flexible para definir reglas | Estricto y basado en una jerarquía de tipos |
+| **Soporte de Espacios de Nombres** | Opcional y más flexible | Obligatorio y más rígido |
+| **Reutilización de Definiciones** | Más fácil mediante referencias y patrones | Puede ser más complicado con `xs:include` y `xs:import` |
+| **Validación**       | Menos restrictivo, más declarativo | Más estricto en validaciones |
+| **Herramientas y Adopción** | Menos adoptado pero soportado en varias herramientas | Amplio soporte en editores XML y lenguajes como Java |
+| **Ejemplo de Uso**   | Mejor para documentos con estructuras flexibles | Mejor para bases de datos XML y documentos con validación estricta |
 
-```xml
-<persona>
-    <nombre>Juan
-    <apellido>Pérez</apellido>
-</persona>
+## 3. Especificaciones para consultas y navegación
+Estas especificaciones permiten acceder, extraer y manipular datos de los documentos XML:​
+
+- ​XPath: Lenguaje para seleccionar nodos dentro de un documento XML.​
+- XQuery: Lenguaje avanzado de consultas para extraer datos de XML (parecido a SQL pero para XML).​
+
+**Ejemplo de XML:**
+```
+<biblioteca>
+    <libro>
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+    </libro>
+    <libro>
+        <titulo>Un mundo feliz</titulo>
+        <autor>Aldous Huxley</autor>
+    </libro>
+</biblioteca>
 ```
 
-Esto causará un error porque <nombre> no tiene una etiqueta de cierre adecuada. Son reglas similares a las de etiquetas de html.
+| **Consulta XPath** | **Descripción** | **Resultado Esperado** |
+|--------------------|----------------|------------------------|
+| `/biblioteca/libro` | Selecciona todos los libros dentro de `<biblioteca>`. | Todos los elementos `<libro>`. |
+| `/biblioteca/libro/titulo` | Obtiene los títulos de todos los libros. | `<titulo>1984</titulo>`, `<titulo>Un mundo feliz</titulo>`, etc. |
+| `/biblioteca/libro[1]/titulo` | Obtiene el título del primer libro. | `<titulo>1984</titulo>` |
+| `/biblioteca/libro[titulo='1984']/autor` | Obtiene el autor del libro "1984". | `<autor>George Orwell</autor>` |
+| `//libro` | Selecciona todos los elementos `<libro>` sin importar su ubicación en el XML. | Todos los elementos `<libro>`. |
 
-2. Etiquetas de apertura y cierre obligatorias
-
-Cada etiqueta en XML debe tener una etiqueta de cierre correspondiente o ser una etiqueta auto-contenida.
-
-✅ Correcto:
-```xml
-<producto>
-    <nombre>Computadora</nombre>
-</producto>-->
+**Ejemplo de XQuery:**
+```
+for $l in /biblioteca/libro
+where $l/autor = "George Orwell"
+return $l/titulo
 ```
 
-🚫 Incorrecto (falta la etiqueta de cierre de <nombre>):
-```xml
-<producto>
-    <nombre>Computadora
-</producto>-->
+## 4. Especificaciones para transformación
+Permiten convertir documentos XML a otros formatos como HTML, JSON, CSV o incluso otros XML.​
+
+- XSLT (Extensible Stylesheet Language Transformations): Permite transformar XML en otros formatos como HTML, JSON, etc.​
+- XSL-FO (XSL Formatting Objects): Usado para formatear XML y generar documentos impresos o PDFs.
+
+**Ejemplo de XML de entrada:**
+```
+<biblioteca>
+    <libro>
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+    </libro>
+    <libro>
+        <titulo>Un mundo feliz</titulo>
+        <autor>Aldous Huxley</autor>
+    </libro>
+</biblioteca>
 ```
 
-También se pueden usar etiquetas auto-contenidas para elementos sin contenido, usando / antes de cerrar la etiqueta:
+**Ejemplo de XSLT. XML a HTML:**
+```
+<xsl:stylesheet version="1.0" 
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <xsl:template match="/">
+    <html>
+      <body>
+        <h2>Lista de libros</h2>
+        <ul>
+          <xsl:for-each select="biblioteca/libro">
+            <li><xsl:value-of select="titulo"/> - <xsl:value-of select="autor"/></li>
+          </xsl:for-each>
+        </ul>
+      </body>
+    </html>
+  </xsl:template>
 
-✅ Correcto (etiqueta auto-contenida):
-```xml
-<imagen src="foto.jpg" />
+</xsl:stylesheet>
 ```
 
-3. Atributos con valores entre comillas
+**Ejemplo de XSL-FO para transformar a PDF:**
+```
+<xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <xsl:template match="/">
+    <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 
-Los atributos deben llevar sus valores entre comillas simples (') o dobles (").
+      <fo:layout-master-set>
+        <fo:simple-page-master master-name="pagina"
+          page-height="29.7cm" page-width="21cm"
+          margin-top="2cm" margin-bottom="2cm"
+          margin-left="2.5cm" margin-right="2.5cm">
+          <fo:region-body/>
+        </fo:simple-page-master>
+      </fo:layout-master-set>
 
-✅ Correcto:
-```xml
-<usuario id="123" nombre="Ana" />
+      <fo:page-sequence master-reference="pagina">
+        <fo:flow flow-name="xsl-region-body">
+
+          <fo:block font-size="14pt" font-weight="bold" text-align="center">
+            Biblioteca
+          </fo:block>
+
+          <xsl:for-each select="biblioteca/libro">
+            <fo:block font-size="12pt" font-weight="bold" margin-top="10pt">
+              <xsl:value-of select="titulo"/>
+            </fo:block>
+            <fo:block font-size="10pt" font-style="italic">
+              <xsl:value-of select="autor"/>
+            </fo:block>
+          </xsl:for-each>
+
+        </fo:flow>
+      </fo:page-sequence>
+
+    </fo:root>
+  </xsl:template>
+</xsl:stylesheet>
 ```
 
-🚫 Incorrecto (atributo sin comillas):
-```xml
-<usuario id=123 nombre=Ana />
-```
+Si necesitas generar PDFs desde XML, XSL-FO es la mejor opción.
+Si quieres combinarlo con HTML, XSLT puede ayudarte.
 
-Esto generará un error de sintaxis.
+## 5. Especificaciones de aplicaciones
+Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:  
 
-4. Uso opcional de DTD o XML Schema para validación
+- SOAP (Simple Object Protocol): Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).  
+- SVG (Scalable Vector Graphics): Lenguaje XML para gráficos vectoriales.  
+- RSS y Atom: Formatos XML para sindicación de contenido en la web (feeds de noticias).  
+- MathML: Lenguaje XML para representar expresiones matemáticas.  
+- VoiceXML: Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.  
 
-Para garantizar que un documento XML cumpla con una estructura específica, se puede usar una DTD (Document Type Definition) o un XML Schema (XSD).
+Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:  
 
-✅ Ejemplo de un documento XML validado con DTD:
-DTD (definiendo la estructura):
-```xml
-<!DOCTYPE persona [
-    <!ELEMENT persona (nombre, edad)>
-    <!ELEMENT nombre (#PCDATA)>
-    <!ELEMENT edad (#PCDATA)>
-]>
-```
+- Mensajería y comunicación: SOAP, XMPP  
+- Publicaciones y documentos: DITA, XHTML  
+- Finanzas y negocios: XBRL, UBL  
+- Ciencias y salud: HL7, CML  
+- Gráficos y multimedia: SVG, SMIL  
+- Datos y metadatos: RDF, OWL  
 
-Documento XML válido con esta DTD:
-```xml
-<persona>
-    <nombre>Lucía</nombre>
-    <edad>30</edad>
-</persona>
-```
-
-Si el documento XML no sigue esta estructura, será inválido.
-
-5. Sensibilidad a mayúsculas y minúsculas
-
-XML es sensible a mayúsculas y minúsculas, lo que significa que <Nombre> y <nombre> son elementos diferentes.
-
-✅ Correcto:
-```xml
-<Persona>
-    <Nombre>Pedro</Nombre>
-</Persona>
-```
-
-🚫 Incorrecto (las etiquetas deben coincidir exactamente):
-```xml
-<Persona>
-    <nombre>Pedro</Nombre>
-</Persona>
-```
-
-Esto causará un error porque <nombre> y <Nombre> no coinciden.
-
-6. Uso de espacios de nombres (namespaces)
-
-Cuando se combinan diferentes fuentes de datos en XML, los espacios de nombres ayudan a evitar conflictos.
-
-✅ Ejemplo de espacio de nombres:
-```xml
-<catalogo xmlns:libro="http://example.com/libros">
-    <libro:titulo>XML para principiantes</libro:titulo>
-</catalogo>
-```
-
-Aquí, el prefijo libro: se asocia con la URI http://example.com/libros, asegurando que el elemento titulo pertenece a ese contexto.
-
-En conclusión
-Estas reglas aseguran que un documento XML sea bien formado y, si se requiere validación, también válido. 
-Siguiéndolas, se garantiza que XML pueda ser procesado correctamente por diferentes sistemas y aplicaciones.
+​Si necesitas compartir datos estructurados, XML tiene una especificación para casi cualquier industria, cada una con su propia sintaxis y propósito especializado.
