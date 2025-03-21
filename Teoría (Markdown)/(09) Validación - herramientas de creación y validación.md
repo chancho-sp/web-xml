@@ -102,35 +102,6 @@ XML Schema (XSD) proporciona una forma más avanzada y flexible de definir la es
  xmllint --noout --schema libro.xsd libro.xml 
  ```
 
-
-
-## 5. Validación con RELAX NG  
-
-### **¿Qué es RELAX NG?**
-
-RELAX NG es un lenguaje para validar la estructura de documentos XML. Es más simple y más flexible que DTD y XML Schema, y tiene una sintaxis altamente legible. 
-
-**Ejemplo de RELAX NG **
-
-```
- element libro { 
-  element titulo { text }, 
-  element autor { text } 
-} 
- ```
-
-**Ejemplo de XML**
-
-```
- <?xml version="1.0"?> 
-<libro> 
-    <titulo>Aprender XML</titulo> 
-    <autor>Juan Pérez</autor> 
-</libro> 
- ```
-
-
-
 ## 6. Herramientas Indispensables para Validar 
 
  xmllint: Una herramienta de línea de comandos para validar XML contra DTD y XSD. 
