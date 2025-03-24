@@ -164,47 +164,150 @@
         <nav class="nav-secundario">
           <h2>Secciones</h2>
           <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
+            <li>
+              <a href="#introduccion">Introducción</a>
+            </li>
+            <li>
+              <a href="#desambiguacion">Desambiguación de Elementos y Atributos</a>
+            </li>
+            <li>
+              <a href="#organizacion">Organización y Mantenimiento del Documento</a>
+            </li>
+            <li>
+              <a href="#interoperabilidad">Interoperabilidad</a>
+            </li>
+            <li>
+              <a href="#validacion">Mejora en la Validación</a>
+            </li>
+            <li>
+              <a href="#escalabilidad">Escalabilidad y Flexibilidad</a>
+            </li>
           </ul>
         </nav>
       </aside>
 
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
+          <h2>Ventajas de los Espacios de Nombres en XML</h2>
+
+          <article id="introduccion">
+            <h3>Introducción</h3>
+            <p>
+              Los espacios de nombres en XML son una característica esencial que facilita la creación de documentos XML claros, organizados y libres de conflictos. A continuación, se detallan las numerosas ventajas de utilizar espacios de nombres en XML.
+            </p>
+          </article>
+
+          <article id="desambiguacion">
+            <h3>1. Desambiguación de Elementos y Atributos</h3>
+
+            <h4>1.1. Evitar Conflictos de Nombres</h4>
+            <p>
+              En un documento XML, es posible que se necesiten usar nombres idénticos para elementos y atributos provenientes de diferentes vocabularios. Sin embargo, esto puede causar conflictos. Los espacios de nombres permiten diferenciar estos elementos y atributos, evitando colisiones de nombres.
+            </p>
+            <pre>
+&lt;libro xmlns:ns1="http://editorial1.com" xmlns:ns2="http://editorial2.com"&gt;
+    &lt;ns1:titulo&gt;Programación en Python&lt;/ns1:titulo&gt;
+    &lt;ns2:titulo&gt;Introducción a la Filosofía&lt;/ns2:titulo&gt;
+&lt;/libro&gt;
+            </pre>
+
+            <h4>1.2. Compatibilidad con Múltiples Vocabularios</h4>
+            <p>
+              Al utilizar espacios de nombres, es posible integrar múltiples vocabularios XML en un solo documento, sin que haya conflicto entre ellos. Esto es especialmente útil en aplicaciones que requieren combinar datos de diferentes fuentes.
+            </p>
+          </article>
+
+          <article id="organizacion">
+            <h3>2. Organización y Mantenimiento del Documento</h3>
+
+            <h4>2.1. Claridad y Orden</h4>
+            <p>
+              Los espacios de nombres proporcionan un contexto explícito para cada elemento y atributo, lo que mejora la claridad y organización del documento. Esto facilita la lectura y comprensión del mismo.
+            </p>
+
+            <h4>2.2. Facilita la Extensión</h4>
+            <p>
+              Permiten extender los vocabularios XML sin riesgo de conflictos, facilitando el mantenimiento y la evolución del documento. Esto es crucial para aplicaciones en constante desarrollo y actualización.
+            </p>
+            <pre>
+&lt;catalogo xmlns:lib="http://biblioteca.com/libros" xmlns:rev="http://biblioteca.com/revistas"&gt;
+    &lt;lib:titulo&gt;El Quijote&lt;/lib:titulo&gt;
+    &lt;rev:titulo&gt;Ciencia Hoy&lt;/rev:titulo&gt;
+&lt;/catalogo&gt;
+            </pre>
+          </article>
+
+          <article id="interoperabilidad">
+            <h3>3. Interoperabilidad</h3>
+
+            <h4>3.1. Integración de Múltiples Fuentes</h4>
+            <p>
+              Los espacios de nombres facilitan la integración de datos de diversas fuentes, ya que cada fuente puede definir sus propios espacios de nombres sin interferir con los demás. Esto promueve la interoperabilidad entre diferentes sistemas y aplicaciones.
+            </p>
+
+            <h4>3.2. Reutilización de Componentes</h4>
+            <p>
+              Permiten la reutilización de componentes XML de diferentes fuentes o bibliotecas, promoviendo la interoperabilidad y la modularidad. Esto es esencial para el desarrollo de aplicaciones complejas y escalables.
+            </p>
+            <pre>
+&lt;documento xmlns:empresa="http://empresa.com" xmlns:proyecto="http://proyecto.com"&gt;
+    &lt;empresa:empleado&gt;
+        &lt;empresa:nombre&gt;Juan Pérez&lt;/empresa:nombre&gt;
+    &lt;/empresa:empleado&gt;
+    &lt;proyecto:detalles&gt;
+        &lt;proyecto:nombre&gt;Sistema de Gestión&lt;/proyecto:nombre&gt;
+    &lt;/proyecto:detalles&gt;
+&lt;/documento&gt;
+            </pre>
+          </article>
+
+          <article id="validacion">
+            <h3>4. Mejora en la Validación</h3>
+
+            <h4>4.1. Validación Precisa</h4>
+            <p>
+              Los espacios de nombres ayudan en la validación precisa de los documentos XML, asegurando que cada elemento y atributo pertenezca al vocabulario correcto. Esto es crucial para mantener la integridad y consistencia de los datos.
+            </p>
+
+            <h4>4.2. Herramientas de Validación</h4>
+            <p>
+              Las herramientas y esquemas de validación pueden utilizar espacios de nombres para verificar la correcta estructura y semántica del documento. Esto facilita la detección de errores y la corrección de los mismos.
+            </p>
+            <pre>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lib="http://biblioteca.com/libros"&gt;
+    &lt;xs:element name="libro" type="lib:LibroType"/&gt;
+    &lt;xs:complexType name="LibroType"&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="titulo" type="xs:string"/&gt;
+        &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+            </pre>
+          </article>
+
+          <article id="escalabilidad">
+            <h3>5. Escalabilidad y Flexibilidad</h3>
+
+            <h4>5.1. Documentos Escalables</h4>
+            <p>
+              Los espacios de nombres permiten crear documentos XML que puedan escalar fácilmente con la incorporación de nuevos vocabularios y elementos. Esto es esencial para aplicaciones que crecen y evolucionan con el tiempo.
+            </p>
+
+            <h4>5.2. Flexibilidad en el Diseño</h4>
+            <p>
+              Ofrecen flexibilidad en el diseño de esquemas XML, permitiendo definir elementos complejos y específicos sin riesgo de colisión. Esto facilita la adaptación de los documentos a diversas necesidades y requisitos.
+            </p>
+            <pre>
+&lt;universidad xmlns:curso="http://universidad.com/cursos" xmlns:profesor="http://universidad.com/profesores"&gt;
+    &lt;curso:informatica&gt;
+        &lt;curso:nombre&gt;Algoritmos y Estructuras de Datos&lt;/curso:nombre&gt;
+    &lt;/curso:informatica&gt;
+    &lt;profesor:datos&gt;
+        &lt;profesor:nombre&gt;María García&lt;/profesor:nombre&gt;
+    &lt;/profesor:datos&gt;
+&lt;/universidad&gt;
+            </pre>
           </article>
       </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
     </main>
 
     <footer>
