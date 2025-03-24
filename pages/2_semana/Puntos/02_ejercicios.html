@@ -2,10 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>02. Ejercicios de final de Semana</title>
-    <link rel="stylesheet" href="../../../css/main.css" />
-    <link rel="stylesheet" href="../../../css/puntos.css" />
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/puntos.css">
     <link rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
   </head>
   <body>
@@ -181,10 +181,84 @@
       </aside>
 
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
+          <h2>Ejercicios XML</h2>
+
+          <article id="catalogo-software">
+            <h2>1. Catálogo de software informático</h2>
+            <pre>
+              <code>
+                &lt;catalogo xmlns:so="http://sistemas-operativos.com" xmlns:of="http://oficina.com"&gt;
+                  &lt;so:software&gt;
+                    &lt;so:nombre&gt;Windows 11&lt;/so:nombre&gt;
+                    &lt;so:creador&gt;Microsoft&lt;/so:creador&gt;
+                    &lt;so:precio&gt;139.99&lt;/so:precio&gt;
+                  &lt;/so:software&gt;
+                  &lt;of:software&gt;
+                    &lt;of:nombre&gt;Microsoft Office 365&lt;/of:nombre&gt;
+                    &lt;of:creador&gt;Microsoft&lt;/of:creador&gt;
+                    &lt;of:precio&gt;99.99&lt;/of:precio&gt;
+                  &lt;/of:software&gt;
+                &lt;/catalogo&gt;
+              </code>
+            </pre>
+          </article>
+
+          <article id="libro-autor">
+            <h2>2. Información de un libro y su autor</h2>
+            <pre>
+              <code>
+                &lt;biblioteca xmlns:lib="http://libros.com" xmlns:aut="http://autores.com"&gt;
+                  &lt;lib:libro&gt;
+                    &lt;lib:titulo&gt;Cien Años de Soledad&lt;/lib:titulo&gt;
+                    &lt;lib:anioPublicacion&gt;1967&lt;/lib:anioPublicacion&gt;
+                  &lt;/lib:libro&gt;
+                  &lt;aut:autor&gt;
+                    &lt;aut:nombre&gt;Gabriel García Márquez&lt;/aut:nombre&gt;
+                    &lt;aut:nacionalidad&gt;Colombiana&lt;/aut:nacionalidad&gt;
+                  &lt;/aut:autor&gt;
+                &lt;/biblioteca&gt;
+              </code>
+            </pre>
+          </article>
+
+          <article id="espacios-nombres">
+            <h2>3. Documento XML con espacios de nombres diferenciados</h2>
+            <pre>
+              <code>
+                &lt;documento xmlns:curso="http://curso.com" xmlns:libro="http://libro.com"&gt;
+                  &lt;curso:titulo&gt;Programación Avanzada&lt;/curso:titulo&gt;
+                  &lt;libro:titulo&gt;Gestión Empresarial&lt;/libro:titulo&gt;
+                &lt;/documento&gt;
+              </code>
+            </pre>
+          </article>
+
+          <article id="analisis-xml">
+            <h2>4. Análisis de documento XML</h2>
+            <p>
+              <strong>Espacios de nombres declarados:</strong>
+              <ul>
+                <li><code>http://empresa.com</code></li>
+                <li><code>http://proyecto.com</code></li>
+              </ul>
+              <strong>Elementos por espacio de nombres:</strong>
+              <ul>
+                <li><code>http://empresa.com</code>: <code>emp:empleado</code>, <code>emp:nombre</code></li>
+                <li><code>http://proyecto.com</code>: <code>pro:proyecto</code>, <code>pro:nombre</code></li>
+              </ul>
+            </p>
+          </article>
+
+          <article id="correccion-xml">
+            <h2>5. Corrección de errores en el uso de espacios de nombres</h2>
+            <pre>
+              <code>
+                &lt;catalogo xmlns="http://biblioteca.com" xmlns:lib="http://tienda.com"&gt;
+                  &lt;lib:titulo&gt;Don Quijote&lt;/lib:titulo&gt;
+                  &lt;autor&gt;Miguel de Cervantes&lt;/autor&gt;
+                &lt;/catalogo&gt;
+              </code>
+            </pre>
           </article>
       </section>
 
