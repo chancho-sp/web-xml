@@ -155,7 +155,118 @@
     </div>
 
     <main class="content">
-      <!-- Poned aquí el formulario -->
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <table>
+        
+        
+                <!-- Identificar usuario -->
+        	<tr class="centrar">
+        	<td colspan="2">
+                <label for="usuario">Identificador de usuario:</label>
+                <input type="text" id="usuario" name="usuario" value="usu_012345" readonly title="Nombre de usuario">
+        	</td>
+        	</tr>
+        
+                <!-- Nombre y apellidos -->
+        	<tr>
+        	<td>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" title="Introduce nombre real">
+        	</td>
+        	<td>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" title="Introduce tus apellidos">
+        	</td>
+        	</tr>
+        
+        	<!-- Contraseñas -->
+        	<tr>
+        	<td>
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña" title="Introduce tu contraseña">
+        	</td>
+        	<td>
+                <label for="confirma_contraseña">Confirmar contraseña:</label>
+                <input type="password" id="confirma_contraseña" name="confirma_contraseña" title="Confirma tu contraseña">
+        	</td>
+        	</tr>
+                
+        	<!-- Email -->
+        	<tr>
+        	<td colspan="2">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" title="Introduce tu correo">
+        	</td>
+        	</tr>
+        
+        	<!-- Sexo -->
+        	<tr>
+        	<td>
+                <label for="sexo">Sexo:</label>
+        	</td>
+        	<td>
+                        <input type="radio" id="sexo" name="sexo"> Hombre
+                        <input type="radio" name="sexo"> Mujer
+        	</td>
+        	</tr>
+        
+                <!-- Aficiones -->
+        	<tr>
+        	<td>
+                <label for="aficiones">Aficiones:</label>
+        	</td>
+        	<td>
+                   	<input type="checkbox" id="aficiones" name="aficiones"> Deporte<br>
+                   	<input type="checkbox" name="aficiones"> Lectura<br>
+                    	<input type="checkbox" name="aficiones"> Cine<br>
+                </td>
+        	</tr>
+        
+                <!-- País -->
+        	<tr>
+        	<td>
+                <label for="pais">País:</label>
+        	</td>
+        	<td>
+                <select id="pais" name="pais">
+                    <option value="españa">España</option>
+                    <option value="francia">Francia</option>
+                    <option value="portugal">Portugal</option>
+                </select>
+        	</td>
+        	</tr>
+        
+                <!-- Foto -->
+        	<tr>
+        	<td>
+                <label for="foto">Subir su foto:</label>
+        	</td>
+        	<td>
+                <input type="file" id="foto">
+        	</td>
+        	</tr>
+        
+                <!-- Comentarios personales -->
+        	<tr>
+        	<td>
+                <label for="comentarios">Comentarios personales:</label>
+        	</td>
+        	<td>
+                <textarea id="comentarios" placeholder="Escriba aquí sus comentarios" cols="40" rows="5"></textarea>
+        	</td>
+        	</tr>
+        
+                <!-- Botones -->
+        	<tr>
+        	<td class="centrar">
+                <button name="reset" type="reset">Resetear</button>
+        	</td>
+        	<td class="centrar">
+                <button name="enviar" type="submit">Enviar</button>
+        	</td>
+        	</tr>
+        </table>
+      </form>
     </main>
 
     <footer>
