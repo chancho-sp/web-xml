@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="contactForm.xsl"?>
+<Formulario>
+    <!-- Usuario: Alex -->
+    <Usuario>
+        <Nombre>Alex</Nombre>
+        <Apellidos>Vicente Lopez</Apellidos>
+        <Descripcion>Desarrollador apasionado por la tecnología y el aprendizaje continuo.</Descripcion>
+        <RedesSociales>
+            <Twitter>https://x.com/aleexx_005</Twitter>
+            <Instagram>https://www.instagram.com/aleexx_005/</Instagram>
+            <LinkedIn>https://www.linkedin.com/in/alex-vicente-lopez-083821309/</LinkedIn>
+            <GitHub>https://github.com/AVL05</GitHub>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Ali (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Ali</Nombre>
+        <Apellidos>Lekhal</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Eduardo (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Eduardo Enrique</Nombre>
+        <Apellidos>Osorio Sandoval</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Gabi (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Gabriel</Nombre>
+        <Apellidos>Daniel Manea</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Jose Miguel (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Jose Miguel</Nombre>
+        <Apellidos>Seara Martinez</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Minda (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Minda</Nombre>
+        <Apellidos>Huang</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+
+    <!-- Usuario: Pablo (Contenido libre para completar) -->
+    <Usuario>
+        <Nombre>Pablo</Nombre>
+        <Apellidos>Solis Valdelvira</Apellidos>
+        <Descripcion></Descripcion>
+        <RedesSociales>
+            <Twitter></Twitter>
+            <Instagram></Instagram>
+            <LinkedIn></LinkedIn>
+        </RedesSociales>
+    </Usuario>
+</Formulario>
