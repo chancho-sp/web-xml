@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<libro>
-    <titulo>El Principito</titulo>
-    <autor>Antoine de Saint-Exupéry</autor>
-    <año>1943</año>
-    <genero>Ficción</genero>
-</libro>
+<Formulario>
+    <Usuario>
+        <Nombre></Nombre>
+        <Apellidos></Apellidos>
+        <Contraseña></Contraseña>
+        <Correo></Correo>
+        <Sexo></Sexo>
+        <Aficiones></Aficiones>
+        <Pais></Pais>
+        <Foto></Foto>
+        <Comentarios></Comentarios>
+    </Usuario>
+</Formulario>
