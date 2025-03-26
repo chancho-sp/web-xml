@@ -164,47 +164,132 @@
         <nav class="nav-secundario">
           <h2>Secciones</h2>
           <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
+	      <li>
+                <a href="#primer-punto">Definición de espacios de nombres</a>
+              </li>
+              <li>
+                <a href="#segundo-punto">Referencia de espacios de nombres</a>
+              </li>
+	      <li>
+                <a href="#tercer-punto">Prefijos en espacios de nombres</a>
+              </li>
+	      <li>
+                <a href="#cuarto-punto">Uso de espacios de nombres en atributos</a>
+              </li>
+	      <li>
+                <a href="#quinto-punto">Posibles conflictos y resolución</a>
+              </li>
           </ul>
         </nav>
       </aside>
 
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
+          <h2>Espacios de nombres</h2> <!-- Aquí pones un título representativo de la página, corto -->
+          <article id="primer-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Definición de espacios de nombres</h2>
+            <p>Un espacio de nombres en XML es una forma de identificar de manera única los elementos y atributos dentro de un documento XML. 
+               Se utiliza para evitar que haya elementos con el mismo nombre pero con significados diferentes, especialmente cuando se integran 
+               múltiples XML de diferentes fuentes o esquemas.</br>
+	       </br>
+               Los espacios de nombres se definen utilizando una sintaxis especial en XML. El formato típico de un espacio de nombres es:</br>
+		   <pre>
+                     <code>
+                        &lt;catalog xmlns:book="http://example.com/books"&gt;
+                            &lt;book:title&gt;XML Guide&lt;/book:title&gt;
+                        &lt;/catalog&gt;
+                     </code>
+                   </pre>
+	       Donde prefijo es un identificador único que se utiliza para hacer referencia al espacio de nombres dentro del documento, y URI del 
+               espacio de nombres es una cadena que identifica de manera única el espacio de nombres. Aquí, book: es el prefijo asociado con el espacio de nombres 
+               http://example.com/books.</br>
+               </br>
+               En resumen, los espacios de nombres ayudan a organizar y evitar conflictos en documentos XML al proporcionar identificadores únicos para los elementos y atributos.
+	    </p>
+          </article>
+	  <article id="segundo-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Prefijos de espacios de nombres</h2>
+            <p>En XML, un espacio de nombres se define mediante un prefijo asociado con una URI (Uniform Resource Identifier). La URI no 
+               necesariamente tiene que ser una URL válida, aunque normalmente se usa una URL como estándar W3C. El propósito de esta URI 
+               es actuar como un identificador único.​</br>
+               </br>
+               Se utilizan URLs como identificadores en los espacios de nombres XML porque las URLs son únicas y ayudan a evitar conflictos 
+               de nombres. Si cada desarrollador usa su propio dominio o subdominio, se minimiza el riesgo de que dos partes diferentes usen 
+               el mismo nombre de espacio de nombres por accidente.</br>
+               </br>
+               <strong>Ejemplo:</strong>
+		   <pre>
+                     http://ejemplo.com/libros
+		     http://ejemplo.com/usuarios
+                   </pre>
+	    </p>
+          </article>
+          <article id="tercer-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Prefijos en espacios de nombres</h2>
+            <p>El prefijo es un alias que se asocia a un espacio de nombres en un documento XML. Es una forma abreviada de referirse a la 
+               URI en lugar de escribir la URI completa cada vez.​</br>
+               </br>
+	       Un prefijo se declara en el atributo xmlns:prefijo, y luego se usa como prefijo en los nombres de los elementos o atributos.</br>
+		   <pre>
+                     <code>
+                        &lt;libro xmlns:lib="http://www.ejemplo.com/libros"&gt;
+                           &lt;lib:titulo&gt;Introducción a XML&lt;/lib:titulo&gt;
+			&lt;/libro&gt;
+                     </code>
+                   </pre>
+	       Se ha definido el prefijo lib para el espacio de nombres http://www.ejemplo.com/libros. El elemento titulo ahora está prefijado como lib:titulo.</br>
+               </br>
+               Los prefijos en elementos ayudan a distinguir estructuras similares dentro de un XML.​
+	    </p>
+          </article>
+          </article>
+          <article id="cuarto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Uso de espacios de nombres en atributos</h2>
+            <p>Los espacios de nombres también pueden ser usados en atributos, no solo en elementos. Esto es útil cuando se tienen elementos o atributos que deben diferenciarse 
+               según el contexto en que se usan.</br>
+               </br>
+	       Los prefijos en atributos se usan cuando el atributo pertenece a un espacio de nombres diferente al del elemento que lo contiene.</br>
+		   <pre>
+                     <code>
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;producto xmlns:p="http://www.ejemplo.com/productos"
+                                  xmlns:desc="http://www.ejemplo.com/descripciones"&gt;
+
+                       &lt;p:item desc:info="Edición limitada"&gt;
+                          &lt;p:nombre&gt;Smartphone X&lt;/p:nombre&gt;
+                          &lt;p:precio moneda="USD"&gt;799&lt;/p:precio&gt;
+                       &lt;/p:item&gt;
+
+                       &lt;/producto&gt;
+                     </code>
+                   </pre>
+	       Espacios de nombres definidos:</br>
+               </br>
+
+               p → Para la información del producto.</br>
+               </br>
+
+               desc → Para información descriptiva.</br>
+               </br>
+
+              Uso en atributos:</br>
+              </br>
+
+              desc:info="Edición limitada" → Aquí el prefijo desc indica que el atributo info pertenece al espacio de nombres http://www.ejemplo.com/descripciones.</br>
+              </br>
+
+              moneda="USD" → No tiene prefijo porque pertenece al espacio de nombres predeterminado.</br>
+	    </p>
+          </article>
+          <article id="quinto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Prefijos de espacios de nombres</h2>
+            <p>Cuando trabajas con varios espacios de nombres, es importante evitar conflictos de prefijos y de nombres. Si hay elementos o 
+               atributos con el mismo nombre, aunque tengan diferentes espacios de nombres, el prefijo ayuda a diferenciarlos.</br>
+               </br>
+               Si dos espacios de nombres se definen en el mismo documento XML pero con el mismo prefijo, eso crearía ambigüedad, por lo que 
+               cada espacio de nombres debe ser asignado a un prefijo único.
+	    </p>
           </article>
       </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
     </main>
 
     <footer>
