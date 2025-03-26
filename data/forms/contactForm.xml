@@ -42,11 +42,12 @@
     <Usuario>
         <Nombre>Gabriel</Nombre>
         <Apellidos>Daniel Manea</Apellidos>
-        <Descripcion></Descripcion>
+        <Descripcion>Estudiante de DAW, interesado en IA y automatización en desarrollo web.</Descripcion>
         <RedesSociales>
-            <Twitter></Twitter>
-            <Instagram></Instagram>
-            <LinkedIn></LinkedIn>
+            <Twitter>https://x.com/G4DM_</Twitter>
+            <Instagram>https://www.instagram.com/g4biim/</Instagram>
+            <LinkedIn>https://www.linkedin.com/in/gabriel-daniel-manea-82b246216/</LinkedIn>
+            <GitHub>https://github.com/G4DM</GitHub>
         </RedesSociales>
     </Usuario>
 
