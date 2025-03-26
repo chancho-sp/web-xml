@@ -160,51 +160,103 @@
     </div>
 
     <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
+        <aside class="sidebar">
+            <nav class="nav-secundario">
+                <h2>Secciones</h2>
+                <ul>
+                    <li><a href="#que-son">¿Qué son?</a></li>
+                    <li><a href="#dtd">DTD (Definición de Tipo de Documento)</a></li>
+                    <li><a href="#xsd">XML Schema (XSD)</a></li>
+                    <li><a href="#diferencias">Diferencias entre DTD y XSD</a></li>
+                    <li><a href="#conclusion">Conclusión</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
+        <section>
+            <article id="que-son">
+                <h2>¿Qué son?</h2>
+                <p>Son formas en que se pueden definir y estructurar los documentos XML para garantizar que sigan ciertas reglas y esquemas. Hay dos métodos principales:</p>
+            </article>
 
-                  -->
-          </ul>
-        </nav>
-      </aside>
+            <article id="dtd">
+                <h2>1. DTD (Definición de Tipo de Documento)</h2>
+                <p>Es una forma antigua de definir la estructura de un documento XML. Algunas de sus características:</p>
+                <ul>
+                    <li>Especifica qué elementos y atributos están permitidos en un documento XML.</li>
+                    <li>No es compatible con XML Namespaces.</li>
+                    <li>Se define dentro del documento XML o en un archivo externo con extensión <code>.dtd</code>.</li>
+                    <li>Usa una sintaxis diferente a la de XML.</li>
+                </ul>
+                <h3>Ejemplo de DTD:</h3>
+                <pre>
+&lt;!DOCTYPE persona [
+    &lt;!ELEMENT persona (nombre, edad)&gt;
+    &lt;!ELEMENT nombre (#PCDATA)&gt;
+    &lt;!ELEMENT edad (#PCDATA)&gt;
+]&gt;
+                </pre>
+            </article>
 
-      <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
-          </article>
-      </section>
+            <article id="xsd">
+                <h2>2. XML Schema (XSD - XML Schema Definition)</h2>
+                <p>Es un estándar más avanzado y flexible que DTD. Algunas características:</p>
+                <ul>
+                    <li>Usa una sintaxis basada en XML, lo que facilita su lectura y procesamiento.</li>
+                    <li>Soporta tipos de datos (números, fechas, booleanos, etc.).</li>
+                    <li>Es compatible con XML Namespaces.</li>
+                </ul>
+                <h3>Ejemplo de XSD:</h3>
+                <pre>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;xs:element name="persona"&gt;
+        &lt;xs:complexType&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="nombre" type="xs:string"/&gt;
+                &lt;xs:element name="edad" type="xs:int"/&gt;
+            &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+                </pre>
+            </article>
 
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
+            <article id="diferencias">
+                <h2>Diferencias clave entre DTD y XSD</h2>
+                <table>
+                    <tr>
+                        <th>Característica</th>
+                        <th>DTD</th>
+                        <th>XSD</th>
+                    </tr>
+                    <tr>
+                        <td>Sintaxis</td>
+                        <td>Propia (no XML)</td>
+                        <td>Basada en XML</td>
+                    </tr>
+                    <tr>
+                        <td>Soporte de tipos de datos</td>
+                        <td>No</td>
+                        <td>Sí (números, fechas, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Namespaces</td>
+                        <td>No</td>
+                        <td>Sí</td>
+                    </tr>
+                    <tr>
+                        <td>Expresividad</td>
+                        <td>Limitada</td>
+                        <td>Más flexible y detallada</td>
+                    </tr>
+                </table>
+            </article>
 
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
+            <article id="conclusion">
+                <h2>Conclusión</h2>
+                <p>Los métodos de definición de documentos XML son esenciales para validar la estructura y contenido de los documentos XML. Aunque DTD es más simple, XSD es más potente y recomendado para aplicaciones modernas.</p>
+            </article>
+        </section>
     </main>
 
     <footer>
