@@ -1,6 +1,6 @@
 # Documentación de especificaciones
 
-## ***¿Qué son los espacios de nombres?***
+## ***¿Qué es la documentación de especificaciones?***
 La documentación de especificaciones XML se refiere a los estándares y guías técnicas que definen cómo estructurar, validar y manipular documentos en XML (Extensible Markup Language).
 
 Las especificaciones se agrupan en 5 grandes categorías según su función dentro de XML. Las especificaciones oficiales están publicadas y pueden consultarse en la página del W3C.
