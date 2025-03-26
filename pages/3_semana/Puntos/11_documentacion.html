@@ -228,19 +228,19 @@
 		      <pre>
     		       <code>
         		        &lt;grammar xmlns="http://relaxng.org/ns/structure/1.0"&gt;
-            		    &lt;start&gt;
-                     		&lt;element name="libro"&gt;
-                                   &lt;element name="titulo"&gt;
-                                      &lt;text/&gt;
-                                   &lt;/element&gt;
-                                   &lt;element name="autor"&gt;
-                                      &lt;text/&gt;
-                                   &lt;/element&gt;
-                                &lt;/element&gt;
-                             &lt;/start&gt;
-                         &lt;/grammar&gt;
-                   </code>
-		          </pre>
+			            &lt;start&gt;
+			                &lt;element name="libro"&gt;
+			                    &lt;element name="titulo"&gt;
+			                        &lt;text/&gt;
+			                    &lt;/element&gt;
+			                    &lt;element name="autor"&gt;
+			                        &lt;text/&gt;
+			                    &lt;/element&gt;
+			                &lt;/element&gt;
+			            &lt;/start&gt;
+			        &lt;/grammar&gt;
+                   	</code>
+		      </pre>
           </article>
           <article id="cuarto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
             <h2>Especificaciones para consultas y navegación</h2>
@@ -271,17 +271,17 @@
         	   <pre>
             		<code>
                 		/biblioteca/libro -> selecciona todos los libros de biblioteca
-        			      /biblioteca/libro/titulo -> obtiene todos los títulos de libros
-        			      /biblioteca/libro[1]/titulo -> obtiene el título del primer libro
-        			      /biblioteca/libro[titulo='1984']/autor -> obtiene el autor del libro 1984
+        			/biblioteca/libro/titulo -> obtiene todos los títulos de libros
+        			/biblioteca/libro[1]/titulo -> obtiene el título del primer libro
+        			/biblioteca/libro[titulo='1984']/autor -> obtiene el autor del libro 1984
             		</code>
         	   </pre>
         	   <p><strong>Ejemplo de XQuery:</strong></p>
         	   <pre>
             		<code>
                 		for $l in /biblioteca/libro
-        			      where $l/autor = "George Orwell"
-        			      return $l/titulo
+        			where $l/autor = "George Orwell"
+        			return $l/titulo
             		</code>
         	   </pre>
       </article>
