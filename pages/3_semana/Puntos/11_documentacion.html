@@ -166,47 +166,243 @@
         <nav class="nav-secundario">
           <h2>Secciones</h2>
           <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
+	      <li>
+                <a href="#primer-punto">¿Qué es la documentación de especificaciones?</a>
+              </li>
+              <li>
+                <a href="#segundo-punto">Especificaciones fundamentales</a>
+              </li>
+	      <li>
+                <a href="#tercer-punto">Especificaciones para validación</a>
+              </li>
+	      <li>
+                <a href="#cuarto-punto">Especificaciones para consultas y navegación</a>
+              </li>
+	      <li>
+                <a href="#quinto-punto">Especificaciones para transformación</a>
+              </li>
+ 	      <li>
+                <a href="#sexto-punto">Especificaciones de aplicaciones</a>
+              </li>
           </ul>
         </nav>
       </aside>
 
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
+          <h2>Documentación de especificaciones</h2> <!-- Aquí pones un título representativo de la página, corto -->
+          <article id="primer-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>¿Qué es la documentación de especificaciones?</h2>
+            <p>La documentación de especificaciones XML se refiere a los estándares y guías técnicas que definen cómo estructurar, validar y manipular documentos en XML (Extensible Markup Language).</br>
+	       </br>
+               Las especificaciones se agrupan en 5 grandes categorías según su función dentro de XML. Las especificaciones oficiales están publicadas y pueden consultarse en la página del W3C.</br>
+	    </p>
+          </article>
+	  <article id="segundo-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Especificaciones fundamentales</h2>
+            <p>Son las especificaciones esenciales sobre cómo se estructura y procesa XML:</p>  
+
+		<ul>  
+    		   <li><strong>XML 1.0:</strong> Define la sintaxis básica del lenguaje.</li>  
+                   <li><strong>XML 1.1:</strong> Una versión con mejoras menores, poco utilizada.</li>  
+                   <li><strong>Espacios de nombres:</strong> Permite evitar conflictos de nombres cuando se combinan distintos vocabularios XML.</li>  
+		</ul>  
+
+	    <p>XML 1.1 fue introducido en 2004 e incluye mejoras como mayor compatibilidad con caracteres de Unicode, mayor flexibilidad en nombres y mejor manejo de los finales de línea.</p>  
+
+            <p>Sin embargo, tiene problemas de retrocompatibilidad con XML 1.0, por lo que no ha sido adoptado ampliamente. XML 1.0 sigue siendo el estándar más utilizado.</p>
+          </article>
+          <article id="tercer-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Especificaciones para validación</h2>
+            <p>Estas son las especificaciones que definen cómo se estructuran los datos XML:</p>  
+
+		<ul>  
+    		   <li><strong>DTD (Document Type Definition):</strong> La forma más antigua de definir la estructura de un XML.</li>  
+    		   <li><strong>XML Schema (XSD - XML Schema Definition):</strong> Lenguaje más avanzado que DTD para definir la estructura y tipos de datos en XML.</li>  
+    		   <li><strong>RELAX NG:</strong> Alternativa a XSD, más sencilla y flexible. RELAX NG tiene una sintaxis más clara y menos redundante, y permite reutilizar definiciones sin problemas.</li>  
+		</ul>  
+
+	    <p>XSD es el estándar de W3C y está integrado en la mayoría de herramientas de XML.</p>  
+
+            <p><strong>Ejemplo de definición RELAX NG:</strong></p>  
+
+		      <pre>
+    		       <code>
+        		        &lt;grammar xmlns="http://relaxng.org/ns/structure/1.0"&gt;
+            		    &lt;start&gt;
+                     		&lt;element name="libro"&gt;
+                                   &lt;element name="titulo"&gt;
+                                      &lt;text/&gt;
+                                   &lt;/element&gt;
+                                   &lt;element name="autor"&gt;
+                                      &lt;text/&gt;
+                                   &lt;/element&gt;
+                                &lt;/element&gt;
+                             &lt;/start&gt;
+                         &lt;/grammar&gt;
+                   </code>
+		          </pre>
+          </article>
+          <article id="cuarto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Especificaciones para consultas y navegación</h2>
+            <p>Estas especificaciones permiten acceder, extraer y manipular datos de los documentos XML:</p>
+
+        	  <ul>
+            		<li><strong>XPath:</strong> Lenguaje para seleccionar nodos dentro de un documento XML.</li>
+            		<li><strong>XQuery:</strong> Lenguaje avanzado de consultas para extraer datos de XML (parecido a SQL pero para XML).</li>
+            </ul>
+        
+        	  <p><strong>Ejemplo de XML:</strong></p>
+        
+        	    <pre>
+            		<code>
+                		&lt;biblioteca&gt;
+                    			&lt;libro&gt;
+                        			&lt;titulo&gt;1984&lt;/titulo&gt;
+                        			&lt;autor&gt;George Orwell&lt;/autor&gt;
+                    			&lt;/libro&gt;
+                    			&lt;libro&gt;
+                        			&lt;titulo&gt;Un mundo feliz&lt;/titulo&gt;
+                        			&lt;autor&gt;Aldous Huxley&lt;/autor&gt;
+                    			&lt;/libro&gt;
+                		&lt;/biblioteca&gt;
+            		</code>
+        	   </pre>
+        	   <p><strong>Ejemplo de XPath:</strong></p>
+        	   <pre>
+            		<code>
+                		/biblioteca/libro -> selecciona todos los libros de biblioteca
+        			      /biblioteca/libro/titulo -> obtiene todos los títulos de libros
+        			      /biblioteca/libro[1]/titulo -> obtiene el título del primer libro
+        			      /biblioteca/libro[titulo='1984']/autor -> obtiene el autor del libro 1984
+            		</code>
+        	   </pre>
+        	   <p><strong>Ejemplo de XQuery:</strong></p>
+        	   <pre>
+            		<code>
+                		for $l in /biblioteca/libro
+        			      where $l/autor = "George Orwell"
+        			      return $l/titulo
+            		</code>
+        	   </pre>
+      </article>
+      <article id="quinto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Especificaciones para transformación</h2>
+            <p>Permiten convertir documentos XML a otros formatos como HTML, JSON, CSV o incluso otros XML:</p>
+
+            <ul>
+                  <li><strong>XSLT (Extensible Stylesheet Language Transformations):</strong> Permite transformar XML en otros formatos como HTML, JSON, etc.</li>
+                  <li><strong>XSL-FO (XSL Formatting Objects):</strong> Usado para formatear XML y generar documentos impresos o PDFs.</li>
+            </ul>
+              
+            <p><strong>Ejemplo de XML de entrada:</strong></p>
+              
+              <pre>
+                  <code>
+                      &lt;biblioteca&gt;
+                          &lt;libro&gt;
+                              &lt;titulo&gt;1984&lt;/titulo&gt;
+                              &lt;autor&gt;George Orwell&lt;/autor&gt;
+                          &lt;/libro&gt;
+                          &lt;libro&gt;
+                              &lt;titulo&gt;Un mundo feliz&lt;/titulo&gt;
+                              &lt;autor&gt;Aldous Huxley&lt;/autor&gt;
+                          &lt;/libro&gt;
+                      &lt;/biblioteca&gt;
+                  </code>
+              </pre>
+              
+              <p><strong>Ejemplo de XSLT. XML a HTML:</strong></p>
+              
+              <pre>
+                  <code>
+                      &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+                      
+                          &lt;xsl:template match="/"&gt;
+                              &lt;html&gt;
+                                  &lt;body&gt;
+                                      &lt;h2&gt;Lista de libros&lt;/h2&gt;
+                                      &lt;ul&gt;
+                                          &lt;xsl:for-each select="biblioteca/libro"&gt;
+                                              &lt;li&gt;&lt;xsl:value-of select="titulo"/&gt; - &lt;xsl:value-of select="autor"/&gt;&lt;/li&gt;
+                                          &lt;/xsl:for-each&gt;
+                                      &lt;/ul&gt;
+                                  &lt;/body&gt;
+                              &lt;/html&gt;
+                          &lt;/xsl:template&gt;
+                      
+                      &lt;/xsl:stylesheet&gt;
+                  </code>
+              </pre>
+              
+              <p><strong>Ejemplo de XSL-FO para transformar a PDF:</strong></p>
+              
+              <pre>
+                  <code>
+                      &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+                      
+                          &lt;xsl:template match="/"&gt;
+                              &lt;fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"&gt;
+                      
+                                  &lt;fo:layout-master-set&gt;
+                                      &lt;fo:simple-page-master master-name="pagina" page-height="29.7cm" page-width="21cm" margin-top="2cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="2.5cm"&gt;
+                                          &lt;fo:region-body/&gt;
+                                      &lt;/fo:simple-page-master&gt;
+                                  &lt;/fo:layout-master-set&gt;
+                      
+                                  &lt;fo:page-sequence master-reference="pagina"&gt;
+                                      &lt;fo:flow flow-name="xsl-region-body"&gt;
+                      
+                                          &lt;fo:block font-size="14pt" font-weight="bold" text-align="center"&gt;
+                                              Biblioteca
+                                          &lt;/fo:block&gt;
+                      
+                                          &lt;xsl:for-each select="biblioteca/libro"&gt;
+                                              &lt;fo:block font-size="12pt" font-weight="bold" margin-top="10pt"&gt;
+                                                  &lt;xsl:value-of select="titulo"/&gt;
+                                              &lt;/fo:block&gt;
+                                              &lt;fo:block font-size="10pt" font-style="italic"&gt;
+                                                  &lt;xsl:value-of select="autor"/&gt;
+                                              &lt;/fo:block&gt;
+                                          &lt;/xsl:for-each&gt;
+                      
+                                      &lt;/fo:flow&gt;
+                                  &lt;/fo:page-sequence&gt;
+                      
+                              &lt;/fo:root&gt;
+                          &lt;/xsl:template&gt;
+                      
+                      &lt;/xsl:stylesheet&gt;
+                  </code>
+              </pre>
+              
+              <p>Si necesitas generar PDFs desde XML, XSL-FO es la mejor opción. Si quieres combinarlo con HTML, XSLT puede ayudarte.</p>
+          </article>
+          <article id="sexto-punto"> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
+            <h2>Especificaciones de aplicaciones</h2>
+            <p>Son especificaciones que tienen varios usos en diferentes industrias y tecnologías:</p>
+
+            <ul>
+                <li><strong>SOAP (Simple Object Protocol):</strong> Protocolo basado en XML para comunicación entre sistemas (usado en servicios web).</li>
+                <li><strong>SVG (Scalable Vector Graphics):</strong> Lenguaje XML para gráficos vectoriales.</li>
+                <li><strong>RSS y Atom:</strong> Formatos XML para sindicación de contenido en la web (feeds de noticias).</li>
+                <li><strong>MathML:</strong> Lenguaje XML para representar expresiones matemáticas.</li>
+                <li><strong>VoiceXML:</strong> Lenguaje XML para aplicaciones de voz e interacción con asistentes virtuales.</li>
+            </ul>
+            
+            <p>Las especificaciones de aplicaciones se organizan en distintos sectores según su propósito:</p>
+            
+            <ul>
+                <li><strong>Mensajería y comunicación:</strong> SOAP, XMPP</li>
+                <li><strong>Publicaciones y documentos:</strong> DITA, XHTML</li>
+                <li><strong>Finanzas y negocios:</strong> XBRL, UBL</li>
+                <li><strong>Ciencias y salud:</strong> HL7, CML</li>
+                <li><strong>Gráficos y multimedia:</strong> SVG, SMIL</li>
+                <li><strong>Datos y metadatos:</strong> RDF, OWL</li>
+            </ul>
+            
+            <p>Si necesitas compartir datos estructurados, XML tiene una especificación para casi cualquier industria, cada una con su propia sintaxis y propósito especializado.</p>
           </article>
       </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
     </main>
 
     <footer>
