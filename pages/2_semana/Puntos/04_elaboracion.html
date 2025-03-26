@@ -164,46 +164,102 @@
         <nav class="nav-secundario">
           <h2>Secciones</h2>
           <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
+                    <li><a href="#id-del-article">Elaboración de documentos XML válidos y bien formados</a></li>
+                    <li><a href="#xml-bien-formado">1. Documento XML Bien Formado</a></li>
+                    <li><a href="#xml-valido">2. Documento XML Válido</a></li>
+                    <li><a href="#Conclusion">Conclusión</a></li>
           </ul>
         </nav>
       </aside>
 
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
-          </article>
+          <h2>Elaboración de documentos XML</h2> <!-- Aquí pones un título representativo de la página, corto -->
+         <article id="xml-bien-formado">
+    <h2>1. Documento XML Bien Formado</h2>
+    <p>
+      Un documento XML es bien formado cuando sigue las reglas básicas de sintaxis de XML. Estas son algunas de las reglas clave:
+    </p>
+    <ul>
+      <li>✅ Debe tener un único elemento raíz</li>
+      <li>🚫 Incorrecto (sin un único elemento raíz):</li>
+      <pre>
+        &lt;libro&gt;&lt;/libro&gt;
+        &lt;autor&gt;&lt;/autor&gt;
+      </pre>
+
+      <li>✅ Las etiquetas deben estar correctamente anidadas</li>
+      <li>🚫 Incorrecto (etiquetas mal anidadas):</li>
+      <pre>
+        &lt;b&gt;&lt;i&gt;Texto en negrita y cursiva&lt;/b&gt;&lt;/i&gt;
+      </pre>
+
+      <li>✅ Las etiquetas deben cerrarse correctamente</li>
+      <li>🚫 Incorrecto (falta de cierre de etiqueta):</li>
+      <pre>
+        &lt;titulo&gt;Mi libro
+      </pre>
+
+      <li>✅ Deben usarse comillas en los valores de los atributos</li>
+      <li>🚫 Incorrecto (falta de comillas en el atributo):</li>
+      <pre>
+        &lt;persona edad=30&gt;
+      </pre>
+    </ul>
+  </article>
+
+  <article id="xml-valido">
+    <h2>2. Documento XML Válido</h2>
+    <p>
+      Un documento XML es válido cuando, además de ser bien formado, sigue una estructura definida por un DTD o XSD.
+    </p>
+
+    <h3>Ejemplo con DTD (Definición de Tipo de Documento)</h3>
+    <p>DTD define qué elementos y atributos son permitidos en un XML.</p>
+    <pre>
+      &lt;!DOCTYPE persona [
+          &lt;!ELEMENT persona (nombre, edad)&gt;
+          &lt;!ELEMENT nombre (#PCDATA)&gt;
+          &lt;!ELEMENT edad (#PCDATA)&gt;
+      ]&gt;
+    </pre>
+    <p>Documento XML válido según el DTD:</p>
+    <pre>
+      &lt;persona&gt;
+          &lt;nombre&gt;Juan&lt;/nombre&gt;
+          &lt;edad&gt;30&lt;/edad&gt;
+      &lt;/persona&gt;
+    </pre>
+
+    <h3>Ejemplo con XSD (XML Schema Definition)</h3>
+    <p>XSD es más potente que DTD porque permite definir tipos de datos.</p>
+    <pre>
+      &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+          &lt;xs:element name="persona"&gt;
+              &lt;xs:complexType&gt;
+                  &lt;xs:sequence&gt;
+                      &lt;xs:element name="nombre" type="xs:string"/&gt;
+                      &lt;xs:element name="edad" type="xs:int"/&gt;
+                  &lt;/xs:sequence&gt;
+              &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+      &lt;/xs:schema&gt;
+    </pre>
+    <p>Documento XML válido según el XSD:</p>
+    <pre>
+      &lt;persona&gt;
+          &lt;nombre&gt;Ana&lt;/nombre&gt;
+          &lt;edad&gt;25&lt;/edad&gt;
+      &lt;/persona&gt;
+    </pre>
+  </article>
+        <article id="Conclusion">
+    <h2>Conclusión</h2>
+    <p>
+Para crear documentos XML correctos: ✅ Asegúrate de que sean bien formados siguiendo las reglas de sintaxis XML. ✅ Si necesitas validación estructural, usa DTD o XSD.<br>
+Siguiendo estas reglas, garantizas que los documentos XML sean compatibles y procesables sin errores.
+    </p>
+        </article>
       </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
 
     </main>
 
