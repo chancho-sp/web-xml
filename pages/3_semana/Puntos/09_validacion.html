@@ -162,51 +162,118 @@
     </div>
 
     <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
-          </ul>
-        </nav>
-      </aside>
-
-      <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
-          </article>
-      </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
+        <aside class="sidebar">
+            <nav class="nav-secundario">
+              <h2>Secciones</h2>
+              <ul>
+    
+                <li>
+                  <a href="#introduccion">Introducción</a>
+                </li>
+                <li>
+                  <a href="#metodos-validacion">Métodos de Validación</a>
+                </li>
+                <li>
+                  <a href="#validacion-dtd">Validación con DTD</a>
+                </li>
+                <li>
+                  <a href="#validacion-xsd">Validación con XML Schema</a>
+                </li>
+                <li>
+                  <a href="#herramientas-validacion">Herramientas para Validar</a>
+                </li>
+    
+              </ul>
+            </nav>
+          </aside>
+    
+          <section>
+            <h2>Validación de XML</h2> 
+    
+            <article id="introduccion"> 
+              <h2>Introducción</h2>
+              <p>XML (Extensible Markup Language) es un lenguaje de marcado utilizado para almacenar y transportar datos. A diferencia de HTML, XML no define la presentación, sino la estructura y el significado de los datos.</p>
+              <p>La validación de XML es fundamental para asegurar que los documentos cumplen con las reglas definidas, evitando errores en el procesamiento y facilitando la integración entre sistemas.</p>
+            </article>
+    
+            <article id="metodos-validacion">
+              <h2>Métodos de Validación</h2>
+              <p>Existen varios métodos para validar documentos XML:</p>
+              <ul>
+                <li><strong>DTD (Document Type Definition)</strong>: Define la estructura y los elementos válidos de un documento XML. Es una opción simple pero menos flexible.</li>
+                <li><strong>XML Schema (XSD)</strong>: Permite definir con mayor precisión la estructura y los tipos de datos en XML. Es más avanzado que DTD.</li>
+                <li><strong>RELAX NG</strong>: Un lenguaje más flexible y legible para la validación de XML, con una sintaxis sencilla.</li>
+              </ul>
+            </article>
+    
+            <article id="validacion-dtd">
+              <h2>Validación con DTD</h2>
+              <p>DTD define la estructura legal de un documento XML, asegurando que se ajuste a un formato específico.</p>
+    
+              <h3>Ejemplo de DTD</h3>
+              <pre>
+              &lt;!DOCTYPE libro [ 
+              &lt;!ELEMENT libro (titulo, autor)> 
+              &lt;!ELEMENT titulo (#PCDATA)> 
+              &lt;!ELEMENT autor (#PCDATA)> 
+              ]>
+              </pre>
+    
+              <h3>Ejemplo de XML</h3>
+              <pre>
+              &lt;?xml version="1.0"?> 
+              &lt;!DOCTYPE libro SYSTEM "libro.dtd"> 
+              &lt;libro> 
+                  &lt;titulo>Aprender XML&lt;/titulo> 
+                  &lt;autor>Juan Pérez&lt;/autor> 
+              &lt;/libro>
+              </pre>
+    
+              <h3>Uso de xmllint para validar</h3>
+              <pre>xmllint --noout --dtdvalid libro.dtd libro.xml</pre>
+            </article>
+    
+            <article id="validacion-xsd">
+              <h2>Validación con XML Schema (XSD)</h2>
+              <p>XML Schema (XSD) es una alternativa más robusta y flexible que DTD para definir la estructura de documentos XML.</p>
+    
+              <h3>Ejemplo de XML Schema</h3>
+              <pre>
+              &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+                &lt;xs:element name="libro"> 
+                  &lt;xs:complexType> 
+                    &lt;xs:sequence> 
+                      &lt;xs:element name="titulo" type="xs:string"/> 
+                      &lt;xs:element name="autor" type="xs:string"/> 
+                    &lt;/xs:sequence> 
+                  &lt;/xs:complexType> 
+                &lt;/xs:element> 
+              &lt;/xs:schema>
+              </pre>
+    
+              <h3>Ejemplo de XML</h3>
+              <pre>
+              &lt;?xml version="1.0"?> 
+              &lt;libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="libro.xsd"> 
+                  &lt;titulo>Aprender XML&lt;/titulo> 
+                  &lt;autor>Juan Pérez&lt;/autor> 
+              &lt;/libro>
+              </pre>
+    
+              <h3>Uso de xmllint para validar</h3>
+              <pre>xmllint --noout --schema libro.xsd libro.xml</pre>
+            </article>
+    
+            <article id="herramientas-validacion">
+              <h2>Herramientas para Validar</h2>
+              <p>Existen diversas herramientas para validar documentos XML:</p>
+              <ul>
+                <li><strong>xmllint</strong>: Herramienta de línea de comandos para validar XML contra DTD y XSD.</li>
+                <li><strong>XML Validator</strong>: Servicio en línea para validar XML contra DTD, XSD y RELAX NG.</li>
+                <li><strong>Oxygen XML Editor</strong>: Editor avanzado que incluye validación en tiempo real y soporte para múltiples esquemas.</li>
+              </ul>
+            </article>
+          </section>
     </main>
 
     <footer>
