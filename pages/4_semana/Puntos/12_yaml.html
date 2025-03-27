@@ -187,13 +187,12 @@
         <article id="introduccion">
           <h2>Introducción</h2>
           <p>
-            YAML (YAML Ain't Markup Language) es un lenguaje de serialización de
-            datos legible por humanos. Es ampliamente utilizado para la
-            configuración de archivos, el intercambio de datos y la gestión de
-            configuraciones en diversas aplicaciones. A continuación, se
-            detallan las características y ventajas de YAML, así como ejemplos
-            prácticos de su uso y una comparación con otros lenguajes de
-            serialización de datos.
+            YAML, cuyo acrónimo originalmente significaba "Yet Another Markup Language" 
+            pero se redefine como "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), 
+            es una herramienta versátil y poderosa. Su principal fortaleza reside en su capacidad 
+            para representar datos estructurados de manera legible para humanos, siendo ampliamente 
+            utilizado en configuraciones de software, infraestructura como código, intercambio de datos 
+            y automatización de procesos.
           </p>
         </article>
 
@@ -207,41 +206,84 @@
           </p>
           <ul>
             <li>
-              <strong>Sintaxis Simple y Clara:</strong> La sintaxis de YAML es
-              sencilla y fácil de leer, lo que facilita la comprensión y edición
-              de los archivos.
+              <strong>Formato Simplificado:</strong> YAML se construye con una sintaxis 
+              minimalista basada en indentación, evitando caracteres que complican la 
+              legibilidad como {}, [] o ;. Por ejemplo:
             </li>
+            <pre><code>
+persona:
+  nombre: Alex
+    edad: 29 
+      ocupacion: Desarrollador
+            </code></pre>
             <li>
-              <strong>Indentación Significativa:</strong> YAML utiliza la
-              indentación para denotar la estructura de los datos, similar a
-              Python. Esto hace que sea intuitivo visualizar la jerarquía de los
-              datos.
+              <strong>Uso de Comentarios:</strong> Los comentarios se añaden con #, 
+              permitiendo documentar configuraciones dentro de los archivos:
             </li>
+            <pre><code>
+#Informacion del usuario
+usuario:
+  nombre: Alex
+  activo: true
+                          </code></pre>
+
+          <li>
+            <strong>Estructura Basada en Espaciado:</strong> La indentación no solo es una 
+            característica estética, sino que define jerarquías y relaciones entre los datos. 
+            Esto lo hace intuitivo y natural para los desarrolladores acostumbrados a lenguajes como Python.
+          </li>
           </ul>
-          <h3>1.2. Formato de Datos Versátil</h3>
+          <h3>1.2. Soporte Extenso para Tipos de Datos</h3>
+          <p> YAML puede representar una gama variada de estructuras y tipos de datos:</p>
           <ul>
             <li>
-              <strong>Compatibilidad con Varios Tipos de Datos:</strong> YAML
-              admite cadenas de texto, números, booleanos, listas y
-              diccionarios.
+              <strong>Datos Escalares:</strong> Cadenas, enteros, decimales y valores booleanos (true/false).
             </li>
             <li>
-              <strong>Serialización y Deserialización:</strong> Permite la
-              conversión fácil de datos entre formato YAML y otros formatos de
-              datos.
+              <strong>Estructuras Complejas:</strong> Listas, mapas/diccionarios y mapas dentro de listas o listas dentro de mapas:
             </li>
+            <pre><code>
+habilidades:
+  - programacion
+  - diseño
+  - liderazgo
+            </code></pre>
+            <pre><code>
+configuracion:
+  base_de_datos:
+    host: localhost
+    puerto: 5432
+  servidores:
+    - servidor1
+    - servidor2
+            </code></pre>
+            <li>
+              <strong>Cadenas Multilinea:</strong> Permite representar texto extenso en formato legible utilizando caracteres especiales:
+            </li>
+            <p> | (Bloque literal) conserva saltos de linea</p>
+            <pre><code>
+mensaje: |
+  Hola Alex,
+  Este es un texto que conserva el formato.
+            </code></pre>
+            <p>> (Bloque plegado) convierte saltos de linea en espacios</p>
+            <pre><code>
+descripcion: >
+  Este texto sera interpretado como una linea continua
+  aunque se escriba en varias lineas
+            </code></pre>
           </ul>
-          <h3>1.3. Integración con Herramientas y Lenguajes</h3>
+          <h3>1.3. Integración con Herramientas y Tecnologias</h3>
+          <p>Gracias a su diseño flexible, YAML se integra con un gran número de lenguajes de programación y plataformas:</p>
           <ul>
             <li>
-              <strong>Ampliamente Soportado:</strong> Muchos lenguajes de
-              programación y herramientas de desarrollo admiten YAML para la
-              configuración y gestión de datos.
+              <strong>Lenguajes de programacion:</strong>Soporte en Python (PyYAML), Ruby, Java, JavaScript (js-yaml), y otros.
             </li>
             <li>
-              <strong>Uso en DevOps y CI/CD:</strong> YAML es comúnmente
-              utilizado en herramientas de DevOps como Ansible, Kubernetes y
-              CI/CD pipelines.
+              <strong>Uso en DevOps y CI/CD:</strong> Es el estándar en herramientas como Kubernetes, Docker Compose, GitHub Actions, GitLab CI/CD, Ansible, y más.
+            </li>
+            <li>
+              <strong>Infraestructura como Codigo:</strong> Herramientas como Terraform pueden aprovechar archivos YAML para gestionar configuraciones complejas.
             </li>
           </ul>
         </article>
@@ -251,119 +293,162 @@
           <h3>2.1. Facilidad de Uso</h3>
           <ul>
             <li>
-              <strong>Curva de Aprendizaje Baja:</strong> La simplicidad de YAML
-              permite a los desarrolladores aprender y utilizar el lenguaje
-              rápidamente.
+              <strong>Aprendizaje Intuitivo:</strong> Al estar basado en una estructura clara, los desarrolladores pueden adoptar YAML rápidamente sin necesidad de aprender convenciones complejas.
             </li>
             <li>
-              <strong>Menos Errores de Sintaxis:</strong> La sintaxis clara y
-              estructurada reduce la posibilidad de errores y facilita la
-              depuración.
+              <strong>Depuración Simple:</strong> Los errores son fáciles de detectar debido a su diseño legible y su validación en herramientas modernas como Visual Studio Code, IntelliJ IDEA y editores especializados.
             </li>
           </ul>
-          <h3>2.2. Flexibilidad y Escalabilidad</h3>
+          <h3>2.2. Flexibilidad en Aplicaciones Complejas</h3>
           <ul>
             <li>
-              <strong>Configuraciones Modulares:</strong> YAML permite dividir
-              configuraciones complejas en archivos más pequeños y manejables.
+              <strong>Organización Modular:</strong> Las configuraciones grandes se pueden dividir en múltiples archivos YAML, promoviendo la reutilización y mantenimiento.
             </li>
             <li>
-              <strong>Escalable:</strong> Adecuado tanto para configuraciones
-              simples como para estructuras de datos complejas.
+              <strong>Escalabilidad Natural:</strong> Desde configuraciones pequeñas hasta arquitecturas completas de microservicios, YAML puede manejar estructuras de datos complejas sin perder claridad.
             </li>
           </ul>
           <h3>2.3. Interoperabilidad</h3>
           <ul>
             <li>
-              <strong>Intercambio de Datos:</strong> Facilita el intercambio de
-              datos entre diferentes sistemas y aplicaciones.
+              <strong>Conversión Simple:</strong> Herramientas automatizadas pueden convertir YAML a JSON o viceversa.
             </li>
             <li>
-              <strong>Compatibilidad:</strong> Puede integrarse con JSON y XML,
-              permitiendo la interoperabilidad con otros formatos de datos.
+              <strong>Adaptabilidad Multiplataforma:</strong> Es utilizado tanto en configuraciones locales como en la nube, haciendo que sistemas dispares sean más compatibles.
             </li>
           </ul>
         </article>
 
         <article id="comparativa">
-          <h2>3. Comparativa con Otros Lenguajes de Serialización de Datos</h2>
-          <h3>3.1. YAML vs JSON</h3>
-          <ul>
-            <li>
-              <strong>Legibilidad:</strong> YAML es más legible para los humanos
-              debido a su sintaxis basada en la indentación, mientras que JSON
-              utiliza llaves y corchetes, lo que puede ser menos intuitivo.
-            </li>
-            <li>
-              <strong>Comentarios:</strong> YAML permite incluir comentarios, lo
-              que no es posible en JSON.
-            </li>
-            <li>
-              <strong>Uso en Configuraciones:</strong> YAML es preferido para
-              archivos de configuración debido a su claridad y legibilidad. JSON
-              es más comúnmente utilizado para la transmisión de datos entre
-              aplicaciones web.
-            </li>
-          </ul>
-          <h3>3.2. YAML vs XML</h3>
-          <ul>
-            <li>
-              <strong>Simplicidad:</strong> YAML es más simple y fácil de leer
-              en comparación con XML, que utiliza una sintaxis de etiquetas más
-              compleja.
-            </li>
-            <li>
-              <strong>Tamaño de los Archivos:</strong> Los archivos YAML tienden
-              a ser más pequeños y menos verbosos que los archivos XML.
-            </li>
-            <li>
-              <strong>Comentarios:</strong> Al igual que XML, YAML permite la
-              inclusión de comentarios, pero con una sintaxis más sencilla.
-            </li>
-          </ul>
+          <h2>3. Comparativa con Otros Lenguajes de Serialización</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Aspecto</th>
+                <th>YAML</th>
+                <th>JSON</th>
+                <th>XML</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Legibilidad</strong></td>
+                <td>Alta y basada en indentación</td>
+                <td>Moderada con llaves y corchetes</td>
+                <td>Baja debido a etiquetas verbosas</td>
+              </tr>
+              <tr>
+                <td><strong>Comentarios</strong></td>
+                <td>Soportados (<code>#</code>)</td>
+                <td>No soportados</td>
+                <td>Soportados con <code>&lt;!-- --&gt;</code></td>
+              </tr>
+              <tr>
+                <td><strong>Simplicidad</strong></td>
+                <td>Muy intuitivo</td>
+                <td>Compacto pero rígido</td>
+                <td>Complejo y detallado</td>
+              </tr>
+              <tr>
+                <td><strong>Uso Común</strong></td>
+                <td>Configuración y DevOps</td>
+                <td>API, transmisión de datos</td>
+                <td>Documentación y almacenamiento</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Ejemplo YAML frente a JSON</h3>
+          <p><strong>YAML:</strong></p>
+          <pre><code>
+producto:
+  nombre: Laptop
+  precio: 1200.50
+  características:
+    - pantalla: 15"
+    - procesador: Intel i7
+</code></pre>
+
+          <p><strong>JSON:</strong></p>
+          <pre><code>
+{
+  "producto": {
+    "nombre": "Laptop",
+    "precio": 1200.50,
+    "características": [
+      { "pantalla": "15\"" },
+      { "procesador": "Intel i7" }
+    ]
+  }
+}
+</code></pre>
         </article>
 
         <article id="ejemplos">
-          <h2>4. Ejemplos Prácticos de YAML</h2>
-          <h3>4.1. Configuración de Aplicaciones</h3>
+          <h2>4. Casos Prácticos y Aplicaciones de YAML</h2>
+
+          <h3>4.1. Configuraciones para Herramientas DevOps</h3>
+          <p>Ejemplo para Ansible:</p>
           <pre><code>
-app:
-  name: MiAplicación
-  version: 1.0.0
-  environment: producción
-  settings:
-    debug: false
-    logging: verbose
-    </code></pre>
-          <h3>4.2. Definición de Pipelines en CI/CD</h3>
+- name: Configurar Servidores
+  hosts: web
+  tasks:
+    - name: Instalar Apache
+      apt:
+        name: apache2
+        state: present
+</code></pre>
+
+          <h3>4.2. Orquestación de Contenedores con Docker Compose</h3>
           <pre><code>
-pipeline:
-  stages:
-    - stage: Build
-      jobs:
-        - job: Compilar
-          script: 
-            - npm install
-            - npm run build
-    - stage: Test
-      jobs:
-        - job: Pruebas
-          script: 
-            - npm test
-    </code></pre>
-          <h3>4.3. Configuración de Contenedores con Docker Compose</h3>
-          <pre><code>
-version: '3'
+version: '3.9'
 services:
-  web:
-    image: nginx:latest
+  app:
+    build: .
     ports:
-      - "80:80"
+      - "3000:3000"
   db:
-    image: postgres:latest
+    image: postgres:13
     environment:
       POSTGRES_PASSWORD: ejemplo
-    </code></pre>
+</code></pre>
+
+          <h3>4.3. Gestión de Recursos en Kubernetes</h3>
+          <pre><code>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ejemplo-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+</code></pre>
+
+          <h3>4.4. Automatización de CI/CD</h3>
+          <p>Ejemplo de pipeline con GitHub Actions:</p>
+          <pre><code>
+name: Build and Test
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: npm test
+</code></pre>
         </article>
       </section>
     </main>
