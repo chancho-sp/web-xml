@@ -12,7 +12,16 @@ fetch(rutaXML)
         const usuarios = xmlDoc.getElementsByTagName("Usuario");
         const contenidoDiv = document.getElementById("contenido");
 
+        let fila; // Contenedor para agrupar 3 tarjetas
+
         for (let i = 0; i < usuarios.length; i++) {
+            if (i % 3 === 0) {
+                // Crear una nueva fila cada 3 usuarios
+                fila = document.createElement("div");
+                fila.className = "fila";
+                contenidoDiv.appendChild(fila);
+            }
+
             const usuario = usuarios[i];
 
             // Extraer datos del usuario
@@ -24,10 +33,6 @@ fetch(rutaXML)
             const linkedin = usuario.getElementsByTagName("LinkedIn")[0]?.textContent || "#";
             const github = usuario.getElementsByTagName("GitHub")[0]?.textContent || "#";
 
-            // Añadir comentarios para cada usuario
-            const comentario = document.createComment(`Usuario: ${nombre} (Contenido libre para completar)`);
-            contenidoDiv.appendChild(comentario);
-
             // Crear el contenido HTML para el usuario
             const usuarioDiv = document.createElement("div");
             usuarioDiv.className = "usuario";
@@ -37,15 +42,15 @@ fetch(rutaXML)
                 <p>${descripcion}</p>
                 <h3>Redes Sociales</h3>
                 <ul>
-                    <li><strong>Twitter:</strong> <a href="${twitter}" target="_blank">Sigueme en X</a></li>
-                    <li><strong>Instagram:</strong> <a href="${instagram}" target="_blank">Sigueme en Instagram</a></li>
-                    <li><strong>LinkedIn:</strong> <a href="${linkedin}" target="_blank">Ir a LinkedIn</a></li>
-                    <li><strong>GitHub:</strong> <a href="${github}" target="_blank">Ver mi GitHub</a></li>
+                    <li><strong><i class="fab fa-twitter"></i></strong> <a href="${twitter}" target="_blank">Sigueme en X</a></li>
+                    <li><strong><i class="fab fa-instagram"></i></strong> <a href="${instagram}" target="_blank">Sigueme en Instagram</a></li>
+                    <li><strong><i class="fab fa-linkedin"></i></strong> <a href="${linkedin}" target="_blank">Ir a LinkedIn</a></li>
+                    <li><strong><i class="fab fa-github"></i></strong> <a href="${github}" target="_blank">Ver mi GitHub</a></li>
                 </ul>
             `;
 
-            // Añadir el contenedor del usuario al contenido principal
-            contenidoDiv.appendChild(usuarioDiv);
+            // Añadir la tarjeta a la fila actual
+            fila.appendChild(usuarioDiv);
         }
     })
     .catch(error => console.error('Error al cargar el archivo XML:', error));

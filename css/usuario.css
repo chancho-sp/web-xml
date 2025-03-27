@@ -1,18 +1,11 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #007BFF, #00C6FF);
-    color: #fff;
-    margin: 0;
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
+    gap: 16px;
     padding: 20px;
-    text-align: center; /* Alinea todo el texto al centro */
-}
-
-h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 900px; /* Limita el ancho total */
+    margin: 0 auto; /* Centrar el grid en la página */
+    
 }
 
 .usuario {
@@ -20,15 +13,29 @@ h1 {
     border: 2px solid #fff;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 600px; /* Limita el ancho del contenedor */
-    text-align: center; /* Alinea el texto dentro del contenedor */
+    text-align: center;
+    width: 100%; /* Ocupa toda la celda de la grid */
+    max-width: 550px; /* Aumenta el ancho máximo de las tarjetas */
+    height: 450px;
+    max-height: 450px;
+    margin: auto; /* Centrar si son menos de 3 */
 }
+
+.usuario ul {
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+.usuario li {
+    margin: 10px 0; /* Espaciado entre los elementos de la lista */
+    font-size: 1.2em;
+    color: #333;
+}
+
 
 .usuario h2 {
     margin: 0 0 15px;
-    color: #007BFF;
+    color: brown;
     font-size: 1.8em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -40,15 +47,24 @@ h1 {
 }
 
 .usuario p strong {
-    color: #007BFF;
+    color: brown;
 }
 
 a {
-    color: #007BFF;
+    color: brown;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    padding-top: 32px;
 }
