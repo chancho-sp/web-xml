@@ -10,48 +10,41 @@
   </head>
   <body>
     <header>
+        
       <h1>10. Extensibilidad de los esquemas - tipos derivados y esquemas para múltiples documentos</h1>
       <p>Semana 3</p>
-    </header>
-
-    <!-- Agregar al inicio del archivo de cada página -->
+          <!-- Agregar al inicio del archivo de cada página -->
     <div class="overlay"></div>
     <div class="navbar-container">
       <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
       <nav id="navbar" class="navbar">
         <ul>
-          <li class="main-nav-li">
-            <a href="../../../index.html"><strong>Inicio</strong></a>
-          </li>
+          <li class="main-nav-li"><a href="../../../index.html"><strong>Inicio</strong></a></li>
           <li class="main-nav-li">
             <a href="../../1_semana/semana1.html" class="toggle-week"
               ><strong>&darr; Semana 1</strong></a
             >
             <ul class="week-points">
               <li>
-                <a href="../../1_semana/semana1.html">Ir a la Semana 1</a>
+                <a href="../semana1.html">Ir a la Semana 1</a>
               </li>
               <li>
-                <a href="../../1_semana/Puntos/01_intro.html"
+                <a href="../Puntos/01_intro.html"
                   >XML - Historia, estructura y sintáxis</a
                 >
               </li>
               <li>
-                <a href="../../1_semana/Puntos/02_etiquetas.html"
+                <a href="../Puntos/02_etiquetas.html"
                   >Etiquetas, instrucciones de procesamiento y referencia a
                   entidades</a
                 >
               </li>
               <li>
-                <a href="../../1_semana/Puntos/03_declaracion.html"
+                <a href="../Puntos/03_declaracion.html"
                   >Declaración de tipos de documento</a
                 >
               </li>
-              <li>
-                <a href="../../1_semana/Puntos/01_ejercicios.html"
-                  >Ejercicios 01</a
-                >
-              </li>
+              <li><a href="../Puntos/01_ejercicios.html">Ejercicios 01</a></li>
             </ul>
           </li>
           <li class="main-nav-li">
@@ -91,36 +84,38 @@
             </ul>
           </li>
           <li class="main-nav-li">
-            <a href="./semana3.html" class="toggle-week"
+            <a href="../../3_semana/semana3.html" class="toggle-week"
               ><strong>&darr; Semana 3</strong></a
             >
             <ul class="week-points">
               <li>
-                <a href="./semana3.html">Ir a la Semana 3</a>
+                <a href="../../3_semana/semana3.html">Ir a la Semana 3</a>
               </li>
               <li>
-                <a href="./08_creacion.html"
+                <a href="../../3_semana/Puntos/08_creacion.html"
                   >Creación de descripciones y asociación con documentos XML</a
                 >
               </li>
               <li>
-                <a href="./09_validacion.html"
+                <a href="../../3_semana/Puntos/09_validacion.html"
                   >Validación - herramientas de creación y validación</a
                 >
               </li>
               <li>
-                <a href="./10_extensibilidad.html"
+                <a href="../../3_semana/Puntos/10_extensibilidad.html"
                   >Extensibilidad de los esquemas - tipos derivados y esquemas
                   para múltiples documentos</a
                 >
               </li>
               <li>
-                <a href="./11_documentacion.html"
+                <a href="../../3_semana/Puntos/11_documentacion.html"
                   >Documentación de especificaciones</a
                 >
               </li>
               <li>
-                <a href="./03_ejercicios.html">Ejercicios 03</a>
+                <a href="../../3_semana/Puntos/03_ejercicios.html"
+                  >Ejercicios 03</a
+                >
               </li>
             </ul>
           </li>
@@ -160,52 +155,101 @@
         </ul>
       </nav>
     </div>
-
+    </header>
+    <div class="overlay"></div>
+    <div class="navbar-container">
+      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+      <nav id="navbar" class="navbar">
+        <!-- Manteniendo el índice de semanas sin cambios -->
+      </nav>
+    </div>
+    
     <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
-          </ul>
-        </nav>
-      </aside>
-
+        <aside class="sidebar">
+            <nav class="nav-secundario">
+              <h2>Secciones</h2>
+              <ul>
+                <li><a href="#tipos">Tipos derivados en XML Schema</a></li>
+                <li>
+                  <a href="#uso">Uso de esquemas en multiples documentos</a>
+                </li>
+                <li><a href="#rest">Restricción</a></li>
+                <li><a href="#ext">Extensión</a></li>
+                <li><a href="#inc">Inclusión</a></li>
+                <li><a href="#imp">Importación</a></li>
+                <li><a href="#red">Redefinición</a></li>
+                
+              </ul>
+            </nav>
+          </aside>
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
-          </article>
+        <h2>Extensibilidad de los esquemas</h2>
+        <article id="tipos">
+          <h2>Tipos derivados en XML Schema</h2>
+          <p>Los tipos derivados permiten crear nuevos tipos de datos basados en otros existentes, lo que mejora la reutilización y flexibilidad de los esquemas XML. Esto se puede hacer de dos formas principales:</p>
+          <ul>
+            <li><strong>Restricción:</strong> Se crean reglas más estrictas sobre un tipo base. Por ejemplo, si tenemos un tipo "string", podemos restringirlo para que solo acepte valores con un patrón específico.</li>
+            <li><strong>Extensión:</strong> Se añaden nuevos elementos o atributos a un tipo base. Esto es útil cuando queremos ampliar la información de un elemento sin modificar su estructura original.</li>
+          </ul>
+          <p><strong>Ejemplo práctico:</strong> Imagina una tienda en línea donde hay un tipo base "Producto" con elementos como "nombre" y "precio". Si queremos definir un tipo "Electrodoméstico" que, además de esos atributos, incluya "potencia" y "voltaje", podemos extender el tipo "Producto".</p>
+        </article>
+        
+        <article id="uso">
+          <h2>Uso de esquemas en múltiples documentos</h2>
+          <p>Muchas veces, un mismo esquema XML puede ser usado por varios documentos XML distintos. Esto se logra mediante referencias a esquemas externos y modularización.</p>
+          <ul>
+            <li><strong>Inclusión (<code>&lt;include&gt;</code>):</strong> Permite dividir un esquema grande en varios archivos más pequeños y reutilizables.</li>
+            <li><strong>Importación (<code>&lt;import&gt;</code>):</strong> Se usa cuando los esquemas provienen de diferentes espacios de nombres.</li>
+            <li><strong>Redefinición (<code>&lt;redefine&gt;</code>):</strong> Facilita la modificación de esquemas sin alterar los archivos originales.</li>
+          </ul>
+          <p><strong>Ejemplo real:</strong> En una empresa de logística, se puede definir un esquema XML general para "Envío" y luego personalizarlo para distintas compañías sin necesidad de crear un esquema desde cero para cada una.</p>
+        </article>
       </section>
 
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
+<h1>Extensibilidad en XML</h1>
+    <article id="rest">
+    <h2>Restricción</h2>
+    <p>La restricción permite limitar el contenido de un tipo de dato derivado a un subconjunto de los valores permitidos por el tipo base.</p>
+    <pre><code>&lt;xs:simpleType name="TextoCorto"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:maxLength value="10"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre>
+    <article id="ext">
+    <h2>Extensión</h2>
+    <p>La extensión permite ampliar un tipo base agregando nuevos elementos o atributos.</p>
+    <pre><code>&lt;xs:complexType name="Empleado"&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base="Persona"&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="salario" type="xs:decimal"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre>
+    <article id="inc">
+    <h2>Inclusión</h2>
+    <p>La inclusión permite dividir un esquema XML en varios archivos y reutilizar definiciones dentro del mismo espacio de nombres.</p>
+    <pre><code>&lt;xs:include schemaLocation="base.xsd"/&gt;</code></pre>
+    <article id="imp">
+    <h2>Importación</h2>
+    <p>La importación permite reutilizar esquemas XML que pertenecen a diferentes espacios de nombres.</p>
+    <pre><code>&lt;xs:import namespace="http://ejemplo.com/direccion" schemaLocation="direccion.xsd"/&gt;</code></pre>
+    <article id="red">
+    <h2>Redefinición</h2>
+    <p>La redefinición permite modificar tipos definidos en otro esquema sin necesidad de cambiar el esquema original.</p>
+    <pre><code>&lt;xs:redefine schemaLocation="base.xsd"&gt;
+  &lt;xs:complexType name="Persona"&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="Persona"&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="telefono" type="xs:string"/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:redefine&gt;</code></pre>
 
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
 
     </main>
 
