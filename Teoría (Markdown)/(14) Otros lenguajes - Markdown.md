@@ -50,7 +50,7 @@ Las listas son esenciales para organizar información en puntos o ítems, facili
 ```
 - Elemento 1
 - Elemento 2
-  - Sub-elemento 1
+  - elemento 1
   - Sub-elemento 2
 ```
 **Ejemplo de lista ordenada:**
