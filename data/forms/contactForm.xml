@@ -15,17 +15,17 @@ u<?xml version="1.0" encoding="UTF-8"?>
     </Usuario>
 
     <!-- Usuario: Ali (Contenido libre para completar) -->
-    <Usuario>
+     <Usuario>
         <Nombre>Ali</Nombre>
         <Apellidos>Lekhal</Apellidos>
         <Descripcion></Descripcion>
         <RedesSociales>
-            <Twitter></Twitter>
-            <Instagram></Instagram>
-            <LinkedIn></LinkedIn>
+            <Twitter>https://x.com/AliLekhal56125</Twitter>
+            <Instagram>https://www.instagram.com/lekhal_al1/</Instagram>
         </RedesSociales>
     </Usuario>
 
+    
     <!-- Usuario: Eduardo (Contenido libre para completar) -->
     <Usuario>
         <Nombre>Eduardo Enrique</Nombre>
