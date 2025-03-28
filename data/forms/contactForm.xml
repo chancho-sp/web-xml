@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+u<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../../css/usuario.css"?>
 <Formulario>
     <!-- Usuario: Alex -->
@@ -79,7 +79,7 @@
     <Usuario>
         <Nombre>Pablo</Nombre>
         <Apellidos>Solis Valdelvira</Apellidos>
-        <Descripcion></Descripcion>
+        <Descripcion>Estudiante de Desarrollo de Aplicaciones Web</Descripcion>
         <RedesSociales>
             <Twitter></Twitter>
             <Instagram></Instagram>
