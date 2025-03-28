@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+u<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="../../../css/usuario.css"?>
 <Formulario>
     <!-- Usuario: Alex -->
@@ -15,22 +15,22 @@
     </Usuario>
 
     <!-- Usuario: Ali (Contenido libre para completar) -->
-    <Usuario>
+     <Usuario>
         <Nombre>Ali</Nombre>
         <Apellidos>Lekhal</Apellidos>
         <Descripcion></Descripcion>
         <RedesSociales>
-            <Twitter></Twitter>
-            <Instagram></Instagram>
-            <LinkedIn></LinkedIn>
+            <Twitter>https://x.com/AliLekhal56125</Twitter>
+            <Instagram>https://www.instagram.com/lekhal_al1/</Instagram>
         </RedesSociales>
     </Usuario>
 
+    
     <!-- Usuario: Eduardo (Contenido libre para completar) -->
     <Usuario>
         <Nombre>Eduardo Enrique</Nombre>
         <Apellidos>Osorio Sandoval</Apellidos>
-        <Descripcion></Descripcion>
+        <Descripcion>Estudiante de DAW</Descripcion>
         <RedesSociales>
             <Twitter></Twitter>
             <Instagram></Instagram>
@@ -79,7 +79,7 @@
     <Usuario>
         <Nombre>Pablo</Nombre>
         <Apellidos>Solis Valdelvira</Apellidos>
-        <Descripcion></Descripcion>
+        <Descripcion>Estudiante de Desarrollo de Aplicaciones Web</Descripcion>
         <RedesSociales>
             <Twitter></Twitter>
             <Instagram></Instagram>
