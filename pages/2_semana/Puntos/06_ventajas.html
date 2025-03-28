@@ -6,6 +6,7 @@
     <title>06. Ventajas de los espacios de nombres</title>
     <link rel="stylesheet" href="../../../css/main.css" />
     <link rel="stylesheet" href="../../../css/puntos.css" />
+    <link rel="stylesheet" href="../../../css/YAML.css" />
     <link rel="icon" type="image/x-icon" href="../../../../assets/img/favicon.ico">
   </head>
   <body>
@@ -203,12 +204,13 @@
             <p>
               En un documento XML, es posible que se necesiten usar nombres idénticos para elementos y atributos provenientes de diferentes vocabularios. Sin embargo, esto puede causar conflictos. Los espacios de nombres permiten diferenciar estos elementos y atributos, evitando colisiones de nombres.
             </p>
-            <pre>
+            <pre><code>
 &lt;libro xmlns:ns1="http://editorial1.com" xmlns:ns2="http://editorial2.com"&gt;
     &lt;ns1:titulo&gt;Programación en Python&lt;/ns1:titulo&gt;
     &lt;ns2:titulo&gt;Introducción a la Filosofía&lt;/ns2:titulo&gt;
 &lt;/libro&gt;
-            </pre>
+</code></pre>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
 
             <h4>1.2. Compatibilidad con Múltiples Vocabularios</h4>
             <p>
@@ -228,12 +230,13 @@
             <p>
               Permiten extender los vocabularios XML sin riesgo de conflictos, facilitando el mantenimiento y la evolución del documento. Esto es crucial para aplicaciones en constante desarrollo y actualización.
             </p>
-            <pre>
+            <pre><code>
 &lt;catalogo xmlns:lib="http://biblioteca.com/libros" xmlns:rev="http://biblioteca.com/revistas"&gt;
     &lt;lib:titulo&gt;El Quijote&lt;/lib:titulo&gt;
     &lt;rev:titulo&gt;Ciencia Hoy&lt;/rev:titulo&gt;
 &lt;/catalogo&gt;
-            </pre>
+</code></pre>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
           </article>
 
           <article id="interoperabilidad">
@@ -248,7 +251,7 @@
             <p>
               Permiten la reutilización de componentes XML de diferentes fuentes o bibliotecas, promoviendo la interoperabilidad y la modularidad. Esto es esencial para el desarrollo de aplicaciones complejas y escalables.
             </p>
-            <pre>
+            <pre><code>
 &lt;documento xmlns:empresa="http://empresa.com" xmlns:proyecto="http://proyecto.com"&gt;
     &lt;empresa:empleado&gt;
         &lt;empresa:nombre&gt;Juan Pérez&lt;/empresa:nombre&gt;
@@ -257,7 +260,8 @@
         &lt;proyecto:nombre&gt;Sistema de Gestión&lt;/proyecto:nombre&gt;
     &lt;/proyecto:detalles&gt;
 &lt;/documento&gt;
-            </pre>
+</code></pre>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
           </article>
 
           <article id="validacion">
@@ -272,7 +276,7 @@
             <p>
               Las herramientas y esquemas de validación pueden utilizar espacios de nombres para verificar la correcta estructura y semántica del documento. Esto facilita la detección de errores y la corrección de los mismos.
             </p>
-            <pre>
+            <pre><code>
 &lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:lib="http://biblioteca.com/libros"&gt;
     &lt;xs:element name="libro" type="lib:LibroType"/&gt;
     &lt;xs:complexType name="LibroType"&gt;
@@ -281,7 +285,8 @@
         &lt;/xs:sequence&gt;
     &lt;/xs:complexType&gt;
 &lt;/xs:schema&gt;
-            </pre>
+</code></pre>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
           </article>
 
           <article id="escalabilidad">
@@ -296,7 +301,7 @@
             <p>
               Ofrecen flexibilidad en el diseño de esquemas XML, permitiendo definir elementos complejos y específicos sin riesgo de colisión. Esto facilita la adaptación de los documentos a diversas necesidades y requisitos.
             </p>
-            <pre>
+            <pre><code>
 &lt;universidad xmlns:curso="http://universidad.com/cursos" xmlns:profesor="http://universidad.com/profesores"&gt;
     &lt;curso:informatica&gt;
         &lt;curso:nombre&gt;Algoritmos y Estructuras de Datos&lt;/curso:nombre&gt;
@@ -305,7 +310,8 @@
         &lt;profesor:nombre&gt;María García&lt;/profesor:nombre&gt;
     &lt;/profesor:datos&gt;
 &lt;/universidad&gt;
-            </pre>
+</code></pre>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copiar</button>
           </article>
       </section>
     </main>
@@ -314,5 +320,6 @@
       <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
     </footer>
     <script src="../../../../js/navbar.js"></script>
+    <script src="../../../js/YAML.js"></script>
   </body>
 </html>
