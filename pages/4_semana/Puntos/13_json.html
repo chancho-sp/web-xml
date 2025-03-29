@@ -162,61 +162,265 @@
         <nav class="nav-secundario">
           <h2>Secciones</h2>
           <ul>
-            <!-- Aquí pondréis <li><a>[NOMBRE]</a></li> por cada apartado que tenga (el apartado tendrá que tener un id="nombre"), para que
-                 al añadir el <a>, el href sea href="#[ID]" 
-                  
-                  Ejemplo sería:
-                  
-                  <li>
-                    <a href="#id-del-article">Nombre del Punto</a>
-                  </li>
-
-                  BORRA ESTE COMENTARIO CUANDO ESTÉ YA COMPLETO
-
-                  -->
+            <li><a href="#fund-conc">0. Fundamentos Conceptuales</a></li>
+            <li><a href="#mod-teorico">1. Modelo Teórico de JSON</a></li>
+            <li><a href="#gramatica-formal">2. Gramática Formal</a></li>
+            <li><a href="#teoria-tipos">3. Teoría de Tipos en JSON</a></li>
+            <li><a href="#complejidad-comp">4. Complejidad Computacional</a></li>
+            <li><a href="#modelo-seguridad">5. Modelo de Seguridad Formal</a></li>
+            <li><a href="#teoria-informacion">6. Teoría de la Información</a></li>
+            <li><a href="#extensiones">7. Extensiones Teóricas</a></li>
+            <li><a href="#demostraciones">8. Demostraciones Formales</a></li>
           </ul>
         </nav>
       </aside>
-
+    
       <section>
-          <h2></h2> <!-- Aquí pones un título representativo de la página, corto -->
-          <article> <!-- En cada article que haya tendrá que tener un id para poder ponerlo en la parte de secciones -->
-            <h2></h2>
-            <p></p>
+          <h2>Teoría Profunda de JSON</h2> 
+          <article id="fund-conc">
+            <h2>0. Fundamentos Conceptuales</h2>
+            <div class="note">
+              <p>JSON es más que un formato de intercambio: es un estándar de representación de datos que sigue el paradigma de <strong>serialización</strong> y <strong>deserialización</strong></p>
+            </div>
           </article>
-      </section>
-
-      <!-- 
-            BORRA ESTO CUANDO TERMINES
-
-            <section>
-              <h2>Titulo Pagina Corto</h2>
-              <article id="primer-punto">
-                <h2>Primer Punto</h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-              
-              <article id="segundo-punto">
-                <h2>Segundo Punto/h2>
-                <p>Lorem ipsum.....</p>
-              </article>
-            </section>
-              -->
-
-        <div class="navegacion">
-          <!-- Botón para ir al anterior punto -->
-          <a href="./12_yaml.html" class="btn-siguiente">
-            &larr; Volver al anterior punto
-          </a>
-        
-          <!-- Botón para ir al siguiente punto -->
-          <a href="./14_markdown.html" class="btn-siguiente">
-            Ir al siguiente punto &rarr;
-          </a>
-        </div>
-      </section>
+          <article id="mod-teorico">
+            <h2>1. Modelo Teórico de JSON</h2>
+            <p>JSON se basa en dos estructuras matemáticas fundamentales:</p>
+            <ol>
+              <li><strong>Diccionarios (Objetos):</strong> Pares clave-valor basados en teoría de conjuntos</li>
+              <li><strong>Listas ordenadas (Arrays):</strong> Secuencias indexadas</li>
+            </ol>
+            <p><strong>Teorema de Completitud:</strong> JSON puede representar cualquier estructura de datos jerárquica finita mediante anidamiento recursivo de estas dos estructuras.</p>
+          </article>
+          <article id="gramatica-formal">
+            <h2>2. Gramática Formal</h2>
+            <p>La sintaxis JSON se define mediante una gramática BNF (Backus-Naur Form):</p>
+            <pre><code>json ::= value
+    value ::= object | array | string | number | "true" | "false" | "null"
+    object ::= '{' [ pair (',' pair)* ] '}'
+    pair ::= string ':' value
+    array ::= '[' [ value (',' value)* ] ']'
+    </code></pre>
+            <div class="important">
+              <p>Esta definición formal permite implementar parsers deterministas en cualquier lenguaje</p>
+            </div>
+          </article>
+          <article id="teoria-tipos">
+            <h2>3. Teoría de Tipos en JSON</h2>
+            <p>JSON implementa un sistema de tipos simplificado:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo JSON</th>
+                  <th>Equivalente teórico</th>
+                  <th>Limitaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Number</td>
+                  <td>Número real (IEEE 754)</td>
+                  <td>No distingue enteros/floats</td>
+                </tr>
+                <tr>
+                  <td>String</td>
+                  <td>Secuencia Unicode</td>
+                  <td>Codificación UTF-8 obligatoria</td>
+                </tr>
+                <tr>
+                  <td>Boolean</td>
+                  <td>Álgebra booleana</td>
+                  <td>Solo true/false</td>
+                </tr>
+                <tr>
+                  <td>Null</td>
+                  <td>Valor unitario</td>
+                  <td>Único valor posible</td>
+                </tr>
+                <tr>
+                  <td>Array</td>
+                  <td>Lista homogénea/heterogénea</td>
+                  <td>Sin tipado estático</td>
+                </tr>
+                <tr>
+                  <td>Object</td>
+                  <td>Diccionario/mapa</td>
+                  <td>Claves solo strings</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <article id="complejidad-comp">
+            <h2>4. Complejidad Computacional</h2>
+            <h3>4.1. Análisis de Operaciones Básicas</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Operación</th>
+                  <th>Complejidad</th>
+                  <th>Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Parsing</td>
+                  <td>O(n)</td>
+                  <td>Usando autómatas finitos deterministas</td>
+                </tr>
+                <tr>
+                  <td>Serialización</td>
+                  <td>O(n)</td>
+                  <td>Recorrido en profundidad</td>
+                </tr>
+                <tr>
+                  <td>Búsqueda</td>
+                  <td>O(1)</td>
+                  <td>Acceso directo en objetos</td>
+                </tr>
+                <tr>
+                  <td>Validación</td>
+                  <td>O(n)</td>
+                  <td>Depende del esquema</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="warning">
+              <p>El anidamiento profundo puede causar desbordamiento de pila en parsers recursivos</p>
+            </div>
+            
+            <h3>4.2. Teorema de Parsing</h3>
+            <p><strong>Teorema</strong>: Todo documento JSON válido puede ser parseado en tiempo lineal mediante:</p>
+            <ol>
+              <li>Autómata de estados finitos</li>
+              <li>Analizador descendente recursivo (RD)</li>
+              <li>Analizador LR(1)</li>
+            </ol>
+            <p><strong>Corolario</strong>: No existe JSON ambiguo sintácticamente cuando se sigue la gramática oficial</p>
+          </article>
+          <article id="modelo-seguridad">
+            <h2>5. Modelo de Seguridad Formal</h2>
+            <h3>5.1. Problemas Teóricos</h3>
+            <ol>
+              <li><strong>Inyección JSON</strong>: Posible cuando hay mezcla de código y datos
+                <pre><code>// Vulnerabilidad teórica
+    const data = `{"attack": ${userInput}}`;</code></pre>
+              </li>
+              <li><strong>Problema de la Circularidad</strong>: JSON no soporta referencias circulares por diseño
+                <pre><code>const obj = {};
+    obj.self = obj; // No serializable a JSON</code></pre>
+              </li>
+            </ol>
+            
+            <h3>5.2. Soluciones Formales</h3>
+            <ol>
+              <li><strong>Sanitización</strong>:
+                <pre><code>sanitize(x) = { x ∈ String → escape(x) | x }</code></pre>
+              </li>
+              <li><strong>Validación mediante Esquemas</strong>:
+                <pre><code>type User = {
+      id: string;
+      name: string;
+    }
+    // Corresponde a JSON Schema</code></pre>
+              </li>
+            </ol>
+          </article>
+          <article id="teoria-informacion">
+            <h2>6. Teoría de la Información</h2>
+            <h3>6.1. Entropía de JSON</h3>
+            <p>La eficiencia de JSON como formato se puede medir mediante:</p>
+            <pre><code>H(X) = -Σ P(x) log₂ P(x)</code></pre>
+            <p>Donde:</p>
+            <ul>
+              <li><strong>Alta entropía</strong>: Datos impredecibles (mejor comprimir)</li>
+              <li><strong>Baja entropía</strong>: Estructuras regulares (ideal para JSON)</li>
+            </ul>
+            
+            <h3>6.2. Compresión Óptima</h3>
+            <p><strong>Límite teórico</strong>: JSON minificado tiene redundancia del ~15-20% frente a formatos binarios</p>
+            <p><strong>Técnicas avanzadas</strong>:</p>
+            <ol>
+              <li><strong>Compresión diferencial</strong>: Solo enviar cambios</li>
+              <li><strong>Tokens binarios</strong>: Reemplazar claves repetidas</li>
+            </ol>
+          </article>
+          <article id="extensiones">
+            <h2>7. Extensiones Teóricas</h2>
+            <h3>7.1. JSON Computable</h3>
+            <p>Propuesta teórica para incluir:</p>
+            <ul>
+              <li>Funciones λ-cálculo</li>
+              <li>Referencias ($ref)</li>
+              <li>Tipos algebraicos</li>
+            </ul>
+            <p><strong>Problema</strong>: Rompe la serialización pura</p>
+            
+            <h3>7.2. JSON Infinito</h3>
+            <p>Investigación sobre:</p>
+            <ol>
+              <li>Streams JSON (datos infinitos)</li>
+              <li>Lazy evaluation</li>
+              <li>Referencias circulares controladas</li>
+            </ol>
+            <div class="note">
+              <p>Estas extensiones contradicen el principio KISS (Keep It Simple, Stupid) de JSON</p>
+            </div>
+          </article>
+          <article id="demostraciones">
+            <h2>8. Demostraciones Formales</h2>
+            <h3>8.1. Teorema de Completitud</h3>
+            <p><strong>Enunciado</strong>: JSON puede representar cualquier estructura de datos finita y jerárquica</p>
+            <p><strong>Demostración</strong>:</p>
+            <ol>
+              <li>Base: Tipos primitivos son representables</li>
+              <li>Inducción: 
+                <ul>
+                  <li>Si A y B son representables, entonces [A,B] es representable</li>
+                  <li>Si k,v son representables, entonces {k:v} es representable</li>
+                </ul>
+              </li>
+            </ol>
+            
+            <h3>8.2. Lema de Parsing Unico</h3>
+            <p><strong>Enunciado</strong>: Todo string JSON válido tiene un único árbol de sintaxis abstracta</p>
+            <p><strong>Demostración</strong>: Se deriva de la gramática LL(1) no ambigua</p>
+            
+            <h2>Aplicaciones Teóricas</h2>
+            <ol>
+              <li><strong>Modelado de Bases de Datos</strong>: 
+                <ul>
+                  <li>Teorema de representación de documentos</li>
+                  <li>Isomorfismo con álgebra relacional</li>
+                </ul>
+              </li>
+              <li><strong>Lógica Formal</strong>:
+                <ul>
+                  <li>Representación de fórmulas lógicas</li>
+                  <li>Intercambio de teoremas/proofs</li>
+                </ul>
+              </li>
+              <li><strong>Teoría de Grafos</strong>:
+                <ul>
+                  <li>Serialización de grafos acíclicos dirigidos</li>
+                  <li>Representación de árboles n-arios</li>
+                </ul>
+              </li>
+            </ol>
+          </article>
+          <div class="navegacion">
+            <!-- Botón para ir al anterior punto -->
+            <a href="./12_yaml.html" class="btn-siguiente">
+              &larr; Volver al anterior punto
+            </a>
+          
+            <!-- Botón para ir al siguiente punto -->
+            <a href="./14_markdown.html" class="btn-siguiente">
+              Ir al siguiente punto &rarr;
+            </a>
+          </div>
+        </section>
     </main>
-
+    
     <footer>
       <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
     </footer>
