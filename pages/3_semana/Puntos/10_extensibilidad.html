@@ -164,105 +164,152 @@
       </nav>
     </div>
     
-    <main>
+<main>
         <aside class="sidebar">
             <nav class="nav-secundario">
               <h2>Secciones</h2>
               <ul>
-                <li><a href="#tipos">Tipos derivados en XML Schema</a></li>
+    
                 <li>
-                  <a href="#uso">Uso de esquemas en multiples documentos</a>
+                  <a href="#introduccion">Introducción</a>
                 </li>
-                <li><a href="#rest">Restricción</a></li>
-                <li><a href="#ext">Extensión</a></li>
-                <li><a href="#inc">Inclusión</a></li>
-                <li><a href="#imp">Importación</a></li>
-                <li><a href="#red">Redefinición</a></li>
-                
+                <li>
+                  <a href="#ext">Extensión de Tipos en XML Schema</a>
+                </li>
+                <li>
+                  <a href="#rest">Restricción de Tipos en XML Schema</a>
+                </li>
+                <li>
+                  <a href="#esq">Esquemas para Múltiples Documentos - Uso de include e import</a>
+                </li>
+                <li>
+                  <a href="#uso">Uso de redefine para Modificar Esquemas</a>
+                </li>
+    
               </ul>
             </nav>
           </aside>
-      <section>
-        <h2>Extensibilidad de los esquemas</h2>
-        <article id="tipos">
-          <h2>Tipos derivados en XML Schema</h2>
-          <p>Los tipos derivados permiten crear nuevos tipos de datos basados en otros existentes, lo que mejora la reutilización y flexibilidad de los esquemas XML. Esto se puede hacer de dos formas principales:</p>
-          <ul>
-            <li><strong>Restricción:</strong> Se crean reglas más estrictas sobre un tipo base. Por ejemplo, si tenemos un tipo "string", podemos restringirlo para que solo acepte valores con un patrón específico.</li>
-            <li><strong>Extensión:</strong> Se añaden nuevos elementos o atributos a un tipo base. Esto es útil cuando queremos ampliar la información de un elemento sin modificar su estructura original.</li>
-          </ul>
-          <p><strong>Ejemplo práctico:</strong> Imagina una tienda en línea donde hay un tipo base "Producto" con elementos como "nombre" y "precio". Si queremos definir un tipo "Electrodoméstico" que, además de esos atributos, incluya "potencia" y "voltaje", podemos extender el tipo "Producto".</p>
-        </article>
-        
-        <article id="uso">
-          <h2>Uso de esquemas en múltiples documentos</h2>
-          <p>Muchas veces, un mismo esquema XML puede ser usado por varios documentos XML distintos. Esto se logra mediante referencias a esquemas externos y modularización.</p>
-          <ul>
-            <li><strong>Inclusión (<code>&lt;include&gt;</code>):</strong> Permite dividir un esquema grande en varios archivos más pequeños y reutilizables.</li>
-            <li><strong>Importación (<code>&lt;import&gt;</code>):</strong> Se usa cuando los esquemas provienen de diferentes espacios de nombres.</li>
-            <li><strong>Redefinición (<code>&lt;redefine&gt;</code>):</strong> Facilita la modificación de esquemas sin alterar los archivos originales.</li>
-          </ul>
-          <p><strong>Ejemplo real:</strong> En una empresa de logística, se puede definir un esquema XML general para "Envío" y luego personalizarlo para distintas compañías sin necesidad de crear un esquema desde cero para cada una.</p>
-        </article>
-      </section>
+    
+          <section>
+            <h2>Validación de XML</h2> 
+    
+            <article id="introduccion"> 
+                <h2>2.1 Introducción a la Extensibilidad en XML Schema</h2>
+        <p><strong>¿Por qué es importante la extensibilidad?</strong> A medida que las aplicaciones crecen, los esquemas XML deben adaptarse sin romper la compatibilidad con documentos anteriores.</p>
+        <p><strong>Ejemplo de problema:</strong></p>
+        <ul>
+            <li>Un sistema define <em>Vehiculo</em> con marca y modelo.</li>
+            <li>Más tarde, se necesita agregar <em>numPuertas</em> para coches, pero las motos no tienen ese atributo.</li>
+        </ul>
+        <p>Para solucionar esto, XML Schema permite la <strong>extensión</strong> y <strong>restricción</strong> de tipos.</p>
+        <p>📌 <em>Curiosidad:</em> La extensibilidad en XML es como las actualizaciones de videojuegos. Se agregan nuevas funciones sin alterar las mecánicas básicas.</p>
 
-<h1>Extensibilidad en XML</h1>
-    <article id="rest">
-    <h2>Restricción</h2>
-    <p>La restricción permite limitar el contenido de un tipo de dato derivado a un subconjunto de los valores permitidos por el tipo base.</p>
-    <pre><code>&lt;xs:simpleType name="TextoCorto"&gt;
-  &lt;xs:restriction base="xs:string"&gt;
-    &lt;xs:maxLength value="10"/&gt;
-  &lt;/xs:restriction&gt;
-&lt;/xs:simpleType&gt;</code></pre>
-    <article id="ext">
-    <h2>Extensión</h2>
-    <p>La extensión permite ampliar un tipo base agregando nuevos elementos o atributos.</p>
-    <pre><code>&lt;xs:complexType name="Empleado"&gt;
+        <h3>Pregunta tipo test:</h3>
+        <p><strong>¿Por qué es importante la extensibilidad en XML?</strong></p>
+        <ol>
+            <li>Para que los esquemas sean más rígidos.</li>
+            <li><strong>Para permitir cambios sin afectar versiones anteriores. ✔️</strong></li>
+            <li>Para eliminar datos innecesarios.</li>
+            <li>Para evitar la validación de documentos XML.</li>
+        </ol>
+            </article>
+    
+            <article id="ext">
+              <h2>2.2 Extensión de Tipos en XML Schema</h2>
+        <p>Cuando queremos ampliar un tipo de dato existente, usamos <code>xs:extension</code>.</p>
+
+        <h3>Ejemplo:</h3>
+        <pre><code>&lt;xs:complexType name="Vehiculo"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="marca" type="xs:string"/&gt;
+    &lt;xs:element name="modelo" type="xs:string"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;xs:complexType name="Coche"&gt;
   &lt;xs:complexContent&gt;
-    &lt;xs:extension base="Persona"&gt;
+    &lt;xs:extension base="Vehiculo"&gt;
       &lt;xs:sequence&gt;
-        &lt;xs:element name="salario" type="xs:decimal"/&gt;
+        &lt;xs:element name="numPuertas" type="xs:int"/&gt;
       &lt;/xs:sequence&gt;
     &lt;/xs:extension&gt;
   &lt;/xs:complexContent&gt;
-&lt;/xs:complexType&gt;</code></pre>
-    <article id="inc">
-    <h2>Inclusión</h2>
-    <p>La inclusión permite dividir un esquema XML en varios archivos y reutilizar definiciones dentro del mismo espacio de nombres.</p>
-    <pre><code>&lt;xs:include schemaLocation="base.xsd"/&gt;</code></pre>
-    <article id="imp">
-    <h2>Importación</h2>
-    <p>La importación permite reutilizar esquemas XML que pertenecen a diferentes espacios de nombres.</p>
-    <pre><code>&lt;xs:import namespace="http://ejemplo.com/direccion" schemaLocation="direccion.xsd"/&gt;</code></pre>
-    <article id="red">
-    <h2>Redefinición</h2>
-    <p>La redefinición permite modificar tipos definidos en otro esquema sin necesidad de cambiar el esquema original.</p>
-    <pre><code>&lt;xs:redefine schemaLocation="base.xsd"&gt;
+&lt;/xs:complexType&gt;
+        </code></pre>
+
+        <p>📌 <em>Comparación con la vida real:</em> Es como una suscripción de Netflix 🎬: Todos los planes incluyen series y películas (Vehiculo), pero el plan premium añade contenido en 4K (numPuertas).</p>
+            </article>
+
+<article id="rest">
+              <h2>2.3 Restricción de Tipos en XML Schema</h2>
+        <p>Si en lugar de ampliar queremos limitar un tipo existente, usamos <code>xs:restriction</code>.</p>
+
+        <h3>Ejemplo:</h3>
+        <pre><code>&lt;xs:simpleType name="Temperatura"&gt;
+  &lt;xs:restriction base="xs:int"&gt;
+    &lt;xs:minInclusive value="-50"/&gt;
+    &lt;xs:maxInclusive value="50"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+        </code></pre>
+
+        <p>📌 <em>Comparación con la vida real:</em> Es como los límites de velocidad en carreteras 🚗: puedes conducir, pero dentro de un rango permitido.</p>
+            </article>
+
+    
+            <article id="esq">
+              <h2>2.4 Esquemas para Múltiples Documentos - Uso de include e import</h2>
+        <p>Para dividir esquemas en archivos reutilizables:</p>
+        <ul>
+            <li><strong>xs:include</strong> → Usa esquemas del mismo <em>namespace</em>.</li>
+            <li><strong>xs:import</strong> → Permite importar esquemas de otro <em>namespace</em>.</li>
+        </ul>
+
+        <h3>Ejemplo de include:</h3>
+        <pre><code>&lt;xs:include schemaLocation="definiciones_comunes.xsd"/&gt;</code></pre>
+
+        <h3>Ejemplo de import:</h3>
+        <pre><code>&lt;xs:import namespace="http://ejemplo.com/personas" schemaLocation="personas.xsd"/&gt;</code></pre>
+
+        <p>📌 <em>Curiosidad:</em> Es como una biblioteca de códigos de programación: puedes importar funciones sin escribirlas desde cero.</p>
+    
+            </article>
+    
+            <article id="uso">
+              <h2>2.5 Uso de redefine para Modificar Esquemas</h2>
+        <p>Si necesitamos modificar tipos ya definidos en otro esquema, usamos <code>xs:redefine</code>.</p>
+
+        <h3>Ejemplo:</h3>
+        <pre><code>&lt;xs:redefine schemaLocation="base.xsd"&gt;
   &lt;xs:complexType name="Persona"&gt;
     &lt;xs:complexContent&gt;
       &lt;xs:extension base="Persona"&gt;
         &lt;xs:sequence&gt;
-          &lt;xs:element name="telefono" type="xs:string"/&gt;
+          &lt;xs:element name="profesion" type="xs:string"/&gt;
         &lt;/xs:sequence&gt;
       &lt;/xs:extension&gt;
     &lt;/xs:complexContent&gt;
   &lt;/xs:complexType&gt;
-&lt;/xs:redefine&gt;</code></pre>
+&lt;/xs:redefine&gt;
+        </code></pre>
 
+        <p>📌 <em>Comparación con la vida real:</em> Es como un mod de un videojuego 🎮: cambias elementos del original sin modificar la base.</p>
+            </article>
+    
+                        <div class="navegacion">
+              <!-- Botón para ir al anterior punto -->
+              <a href="./09_validacion.html" class="btn-siguiente">
+                &larr; Volver al anterior punto
+              </a>
+            
+              <!-- Botón para ir al siguiente punto -->
+              <a href="./11_documentacion.html" class="btn-siguiente">
+                Ir al siguiente punto &rarr;
+              </a>
+            </div>
+          </section>
+        </main>
 
-<div class="navegacion">
-  <!-- Botón para ir al anterior punto -->
-  <a href="./09_validacion.html" class="btn-siguiente">
-    &larr; Volver al anterior punto
-  </a>
-
-  <!-- Botón para ir al siguiente punto -->
-  <a href="./11_documentacion.html" class="btn-siguiente">
-    Ir al siguiente punto &rarr;
-  </a>
-</div>
-</main>
 
 <footer>
 <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
