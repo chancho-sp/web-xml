@@ -1,162 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Semana 3 - Creación de Descripciones y Asociación con Documentos XML</title>
-    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon.ico">
-    <link rel="stylesheet" href="../../../css/main.css">
-    <link rel="stylesheet" href="../../../css/puntos.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10. Extensibilidad de los esquemas - tipos derivados y esquemas para múltiples documentos</title>
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="../../../css/puntos.css" />
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/favicon.ico" />
   </head>
   <body>
     <header>
-      <h1>Semana 3 - Creación de Descripciones y Asociación con Documentos XML</h1>
+        
+      <h1>10. Extensibilidad de los esquemas - tipos derivados y esquemas para múltiples documentos</h1>
       <p>Semana 3</p>
+          <!-- Agregar al inicio del archivo de cada página -->
+    <div class="overlay"></div>
+    <div class="navbar-container">
+      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="main-nav-li"><a href="../../../index.html"><strong>Inicio</strong></a></li>
+          <li class="main-nav-li">
+            <a href="../../1_semana/semana1.html" class="toggle-week"
+              ><strong>&darr; Semana 1</strong></a
+            >
+            <ul class="week-points">
+              <li>
+                <a href="../semana1.html">Ir a la Semana 1</a>
+              </li>
+              <li>
+                <a href="../Puntos/01_intro.html"
+                  >XML - Historia, estructura y sintáxis</a
+                >
+              </li>
+              <li>
+                <a href="../Puntos/02_etiquetas.html"
+                  >Etiquetas, instrucciones de procesamiento y referencia a
+                  entidades</a
+                >
+              </li>
+              <li>
+                <a href="../Puntos/03_declaracion.html"
+                  >Declaración de tipos de documento</a
+                >
+              </li>
+              <li><a href="../Puntos/01_ejercicios.html">Ejercicios 01</a></li>
+            </ul>
+          </li>
+          <li class="main-nav-li">
+            <a href="../../2_semana/semana2.html" class="toggle-week"
+              ><strong>&darr; Semana 2</strong></a
+            >
+            <ul class="week-points">
+              <li>
+                <a href="../../2_semana/semana2.html">Ir a la Semana 2</a>
+              </li>
+              <li>
+                <a href="../../2_semana/Puntos/04_elaboracion.html"
+                  >Elaboración de documentos XML válidos y bien formados</a
+                >
+              </li>
+              <li>
+                <a href="../../2_semana/Puntos/05_espacios.html">
+                  Uso de espacios de nombres en XML - definición, referencia y
+                  prefijos</a
+                >
+              </li>
+              <li>
+                <a href="../../2_semana/Puntos/06_ventajas.html"
+                  >Ventajas de los espacios de nombres</a
+                >
+              </li>
+              <li>
+                <a href="../../2_semana/Puntos/07_metodos.html"
+                  >Métodos de definición de documentos XML</a
+                >
+              </li>
+              <li>
+                <a href="../../2_semana/Puntos/02_ejercicios.html"
+                  >Ejercicios 02</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav-li">
+            <a href="../../3_semana/semana3.html" class="toggle-week"
+              ><strong>&darr; Semana 3</strong></a
+            >
+            <ul class="week-points">
+              <li>
+                <a href="../../3_semana/semana3.html">Ir a la Semana 3</a>
+              </li>
+              <li>
+                <a href="../../3_semana/Puntos/08_creacion.html"
+                  >Creación de descripciones y asociación con documentos XML</a
+                >
+              </li>
+              <li>
+                <a href="../../3_semana/Puntos/09_validacion.html"
+                  >Validación - herramientas de creación y validación</a
+                >
+              </li>
+              <li>
+                <a href="../../3_semana/Puntos/10_extensibilidad.html"
+                  >Extensibilidad de los esquemas - tipos derivados y esquemas
+                  para múltiples documentos</a
+                >
+              </li>
+              <li>
+                <a href="../../3_semana/Puntos/11_documentacion.html"
+                  >Documentación de especificaciones</a
+                >
+              </li>
+              <li>
+                <a href="../../3_semana/Puntos/03_ejercicios.html"
+                  >Ejercicios 03</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav-li">
+            <a href="../../4_semana/semana4.html" class="toggle-week"
+              ><strong>&darr; Semana 4</strong></a
+            >
+            <ul class="week-points">
+              <li>
+                <a href="../../4_semana/semana4.html">Ir a la Semana 4</a>
+              </li>
+              <li>
+                <a href="../../4_semana/Puntos/12_yaml.html"
+                  >Otros lenguajes - YAML</a
+                >
+              </li>
+              <li>
+                <a href="../../4_semana/Puntos/13_json.html"
+                  >Otros lenguajes - JSON</a
+                >
+              </li>
+              <li>
+                <a href="../../4_semana/Puntos/14_markdown.html"
+                  >Otros lenguajes - Markdown</a
+                >
+              </li>
+              <li>
+                <a href="../../4_semana/Puntos/04_ejercicios.html"
+                  >Ejercicios 04</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="main-nav-li">
+            <a href="../../formulario.html"><strong>Contacto</strong></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     </header>
-<!-- Agregar al inicio del archivo de cada página -->
-<div class="overlay"></div>
-<div class="navbar-container">
-  <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
-  <nav id="navbar" class="navbar">
-    <ul>
-      <li class="main-nav-li"><a href="../../../index.html"><strong>Inicio</strong></a></li>
-      <li class="main-nav-li">
-        <a href="../../1_semana/semana1.html" class="toggle-week"
-          ><strong>&darr; Semana 1</strong></a
-        >
-        <ul class="week-points">
-          <li>
-            <a href="../semana1.html">Ir a la Semana 1</a>
-          </li>
-          <li>
-            <a href="../Puntos/01_intro.html"
-              >XML - Historia, estructura y sintáxis</a
-            >
-          </li>
-          <li>
-            <a href="../Puntos/02_etiquetas.html"
-              >Etiquetas, instrucciones de procesamiento y referencia a
-              entidades</a
-            >
-          </li>
-          <li>
-            <a href="../Puntos/03_declaracion.html"
-              >Declaración de tipos de documento</a
-            >
-          </li>
-          <li><a href="../Puntos/01_ejercicios.html">Ejercicios 01</a></li>
-        </ul>
-      </li>
-      <li class="main-nav-li">
-        <a href="../../2_semana/semana2.html" class="toggle-week"
-          ><strong>&darr; Semana 2</strong></a
-        >
-        <ul class="week-points">
-          <li>
-            <a href="../../2_semana/semana2.html">Ir a la Semana 2</a>
-          </li>
-          <li>
-            <a href="../../2_semana/Puntos/04_elaboracion.html"
-              >Elaboración de documentos XML válidos y bien formados</a
-            >
-          </li>
-          <li>
-            <a href="../../2_semana/Puntos/05_espacios.html">
-              Uso de espacios de nombres en XML - definición, referencia y
-              prefijos</a
-            >
-          </li>
-          <li>
-            <a href="../../2_semana/Puntos/06_ventajas.html"
-              >Ventajas de los espacios de nombres</a
-            >
-          </li>
-          <li>
-            <a href="../../2_semana/Puntos/07_metodos.html"
-              >Métodos de definición de documentos XML</a
-            >
-          </li>
-          <li>
-            <a href="../../2_semana/Puntos/02_ejercicios.html"
-              >Ejercicios 02</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li class="main-nav-li">
-        <a href="../../3_semana/semana3.html" class="toggle-week"
-          ><strong>&darr; Semana 3</strong></a
-        >
-        <ul class="week-points">
-          <li>
-            <a href="../../3_semana/semana3.html">Ir a la Semana 3</a>
-          </li>
-          <li>
-            <a href="../../3_semana/Puntos/08_creacion.html"
-              >Creación de descripciones y asociación con documentos XML</a
-            >
-          </li>
-          <li>
-            <a href="../../3_semana/Puntos/09_validacion.html"
-              >Validación - herramientas de creación y validación</a
-            >
-          </li>
-          <li>
-            <a href="../../3_semana/Puntos/10_extensibilidad.html"
-              >Extensibilidad de los esquemas - tipos derivados y esquemas
-              para múltiples documentos</a
-            >
-          </li>
-          <li>
-            <a href="../../3_semana/Puntos/11_documentacion.html"
-              >Documentación de especificaciones</a
-            >
-          </li>
-          <li>
-            <a href="../../3_semana/Puntos/03_ejercicios.html"
-              >Ejercicios 03</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li class="main-nav-li">
-        <a href="../../4_semana/semana4.html" class="toggle-week"
-          ><strong>&darr; Semana 4</strong></a
-        >
-        <ul class="week-points">
-          <li>
-            <a href="../../4_semana/semana4.html">Ir a la Semana 4</a>
-          </li>
-          <li>
-            <a href="../../4_semana/Puntos/12_yaml.html"
-              >Otros lenguajes - YAML</a
-            >
-          </li>
-          <li>
-            <a href="../../4_semana/Puntos/13_json.html"
-              >Otros lenguajes - JSON</a
-            >
-          </li>
-          <li>
-            <a href="../../4_semana/Puntos/14_markdown.html"
-              >Otros lenguajes - Markdown</a
-            >
-          </li>
-          <li>
-            <a href="../../4_semana/Puntos/04_ejercicios.html"
-              >Ejercicios 04</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li class="main-nav-li">
-        <a href="../../formulario.html"><strong>Contacto</strong></a>
-      </li>
-    </ul>
-  </nav>
-</div>
-
     <div class="overlay"></div>
     <div class="navbar-container">
       <div class="hamburger" onclick="toggleNavbar()">&#9776;</div>
@@ -164,117 +163,125 @@
         <!-- Manteniendo el índice de semanas sin cambios -->
       </nav>
     </div>
+    
+<main>
+        <aside class="sidebar">
+            <nav class="nav-secundario">
+              <h2>Secciones</h2>
+              <ul>
+    
+                <li>
+                  <a href="#crea">Creación y Asociacion de Descripciones</a>
+                </li>
+                <li>
+                  <a href="#dtd">Validación con DTD</a>
+                </li>
+                <li>
+                  <a href="#xsd">Validación con XSD</a>
+                </li>
+                <li>
+                  <a href="#as">Asociacion de XML con su esquema</a>
+                </li>
+                <li>
+                  <a href="#owl">RDF y OWL - Uso de Metadatos en XML</a>
+                </li>
+    
+              </ul>
+            </nav>
+          </aside>
+    
+          <section>
+            <h2>Validación de XML</h2> 
+    
+            <article id="crea"> 
+                <h2>🔹 3.1 Introducción a la Descripción de XML</h2>
+            <p>Para que un documento XML sea <strong>comprensible</strong> y <strong>validable</strong>, necesitamos definir su estructura mediante:</p>
+            <ul>
+                <li><strong>DTD</strong> (Document Type Definition)</li>
+                <li><strong>XSD</strong> (XML Schema Definition)</li>
+            </ul>
+            <div class="ejemplo">
+                📌 <em>Comparación real:</em> ¡Es como un contrato de alquiler 🏠 donde todo debe seguir las reglas pactadas!
+            </div>
+            </article>
+    
+            <article id="dtd">
+              <h2>🔹 3.2 Validación con DTD</h2>
+            <p><strong>DTD</strong> es la forma más básica de definir la estructura de un documento XML.</p>
+            <pre><code>&lt;!DOCTYPE libro [
+    &lt;!ELEMENT libro (titulo, autor, precio)&gt;
+    &lt;!ELEMENT titulo (#PCDATA)&gt;
+    &lt;!ELEMENT autor (#PCDATA)&gt;
+    &lt;!ELEMENT precio (#PCDATA)&gt;
+]&gt;</code></pre>
+            <div class="ejemplo">
+                📌 <em>Curiosidad:</em> DTD solo maneja texto 📜, no puede validar números o fechas directamente.
+            </div>
+            </article>
 
-    <main>
-      <aside class="sidebar">
-        <nav class="nav-secundario">
-          <h2>Secciones</h2>
-          <ul>
-            <li><a href="#creacion">Creación y Asociacion de Descripciones</a></li>
-            <li><a href="#dtd">Validación con DTD</a></li>
-            <li><a href="#xsd">Validación con XSD</a></li>
-            <li><a href="#esquemas">Asociacion de XML con su esquema</a></li>
-            <li><a href="#metadatos">RDF y OWL - Uso de Metadatos en XML</a></li>
-          </ul>
-        </nav>
-      </aside>
+<article id="xsd">
+        <h2>🔹 3.3 Validación con XSD</h2>
+            <p><strong>XSD</strong> permite definir tipos de datos como decimales, fechas o booleanos.</p>
+            <pre><code>&lt;xs:element name="precio" type="xs:decimal"/&gt;</code></pre>
+            <div class="ejemplo">
+                📌 <em>Comparación real:</em> Es como rellenar un formulario digital 🖥️ donde cada campo tiene su propio tipo (texto, número, fecha).
+            </div>
+            </article>
 
-      <section>
-        <article id="creacion"></article>
-        <h2 class="titulo-section">Creación y Asociación de Descripciones</h2>
-          <p>Un XML sin descripción es difícil de entender y validar. Para mejorar la interpretación del documento y garantizar que los datos sean utilizados correctamente, se emplean DTD y XSD para definir la estructura de los datos.</p>
-          <p>Por ejemplo, si una empresa maneja datos de clientes en XML, definir una estructura con XSD asegurará que cada cliente tenga un nombre, dirección y teléfono correctamente formateados, evitando inconsistencias.</p>
-        </article>
-      </section>
-
-      <section>
-        <article id="dtd"></article>
-        <h2>Validación con DTD</h2>
-        <p>DTD define una estructura básica de XML. No permite definir tipos de datos específicos como números enteros o decimales, ya que todo es tratado como texto.</p>
-        <p>Ejemplo de un DTD simple:</p>
-        <pre>
-            
-         <h3>!DOCTYPE empresa [</h3>
-         <h3>!ELEMENT empresa (nombre, direccion, telefono)> </h3>
-         <h3>!ELEMENT nombre (#PCDATA)> </h3>
-         <h3>!ELEMENT direccion (#PCDATA)> </h3>
-         <h3>!ELEMENT telefono (#PCDATA)> </h3>
-        </pre>
-      </section>
-
-      <section>
-        <article id="xsd"></article>
-        <h2>Validación con XSD</h2>
-        <p>A diferencia de DTD, XSD permite definir tipos de datos específicos como números, fechas y booleanos.</p>
-        <p>Ejemplo de un esquema XSD que define un cliente:</p>
-        <pre>
-            <h3>xs:element name="cliente"> </h3>
-                <h3>xs:complexType> </h3>
-                <h3>xs:sequence> </h3>
-                <h3>xs:element name="nombre" type="xs:string" /> </h3>
-                    <h3>xs:element name="edad" type="xs:int" /> </h3>
-                    <h3>xs:element name="email" type="xs:string" /> </h3>
-                 <h3>/xs:sequence> </h3>
-                 <h3>/xs:complexType> </h3>
-                 <h3>/xs:element> </h3>
-        </pre>
-      </section>
-
-      <section>
-        <article id="esquemas"></article>
-        <h2>Asociación de XML con su Esquema</h2>
-        <p>Para vincular un XML con su XSD, se usa el atributo <code>xmlns:xsi</code> y <code>xsi:noNamespaceSchemaLocation</code>.</p>
-        <p>Ejemplo de un XML asociado con su XSD:</p>
-        <pre>
-            <h3>clientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="clientes.xsd"> </h3>
-                <h3>cliente> </h3>
-                    <h3>nombre>Juan Pérez</nombre> </h3>
-                    <h3>edad>30</edad> </h3>
-                    <h3>email>juan.perez@example.com</email> </h3>
-                    <h3>/cliente> </h3>
-                    <h3>/clientes> </h3>
-        </pre>
-      </section>
-
-      <section>
-        <article id="metadatos"></article>
-        <h2>RDF y OWL - Uso de Metadatos en XML</h2>
-        <p>RDF (Resource Description Framework) permite describir recursos en la web, facilitando su organización y recuperación.</p>
-        <p>OWL (Web Ontology Language) amplía RDF con estructuras más avanzadas, útiles para definir relaciones complejas.</p>
-        <p>Ejemplo práctico: En un catálogo de libros XML, RDF puede usarse para agregar metadatos sobre autores, fechas de publicación y géneros.</p>
-      </section>
-        <div class="navegacion">
-          <!-- Botón para ir al anterior punto -->
-          <a href="../semana1.html" class="btn-siguiente">
-            &larr; Volver a la Semana 1
-          </a>
-        
-          <!-- Botón para ir al siguiente punto -->
-          <a href="../Puntos/02_etiquetas.html" class="btn-siguiente">
-            Ir al siguiente punto &rarr;
-          </a>
-        </div>
-        <div class="navegacion">
-          <!-- Botón para ir al anterior punto -->
-          <a href="../semana3.html" class="btn-siguiente">
+    
+            <article id="as">
+              <h2>🔹 3.4 Asociación de XML con su Esquema</h2>
+            <p>Para vincular un documento XML con su esquema XSD, añadimos una referencia:</p>
+            <pre><code>&lt;?xml version="1.0"?&gt;
+&lt;libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="libro.xsd"&gt;
+&lt;/libro&gt;</code></pre>
+            <div class="ejemplo">
+                📌 <em>Curiosidad:</em> ¡Es como seguir una receta de cocina 🍲! El esquema (receta) guía cómo deben estar organizados los ingredientes (datos).
+            </div>
+    
+            </article>
+    
+            <article id="owl">
+              <h2>🔹 3.5 RDF y OWL - Metadatos en XML</h2>
+            <p>Cuando queremos añadir <strong>significado</strong> a los datos (no solo estructura), usamos:</p>
+            <ul>
+                <li><strong>RDF</strong> (Resource Description Framework)</li>
+                <li><strong>OWL</strong> (Web Ontology Language)</li>
+            </ul>
+            <p>Ejemplo sencillo en RDF:</p>
+            <pre><code>&lt;rdf:Description rdf:about="http://ejemplo.com/libro123"&gt;
+    &lt;dc:title&gt;XML Avanzado&lt;/dc:title&gt;
+    &lt;dc:creator&gt;Juan Pérez&lt;/dc:creator&gt;
+&lt;/rdf:Description&gt;</code></pre>
+            <div class="ejemplo">
+                📌 <em>Comparación real:</em> ¡Es como una etiqueta de producto 🏷️ en una tienda que muestra no solo el nombre sino también su precio, fabricante, etc.!
+            </div>
+            </article>
+    
+                        <div class="navegacion">
+              <a href="../semana3.html" class="btn-siguiente">
             &larr; Volver a la Semana 3
           </a>
-        
-          <!-- Botón para ir al siguiente punto -->
-          <a href="./09_validacion.html" class="btn-siguiente">
-            Ir al siguiente punto &rarr;
-          </a>
-        </div>
-      </section>
-    </main>
+            
+              <!-- Botón para ir al siguiente punto -->
+              <a href="./09_validacion.html" class="btn-siguiente">
+                Ir al siguiente punto &rarr;
+              </a>
+            </div>
+          </section>
+        </main>
 
-    <footer>
-      <p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
-    </footer>
 
-    <button id="btnSubir" class="btn-subir">▲</button>
+<footer>
+<p>&copy; 2025 Grupo XML 1º DAW - IES Serra Perenixa</p>
+</footer>
 
-    <script src="../../../js/navbar.js"></script>
-    <script src="../../../js/scrollToTop.js"></script>
+<button id="btnSubir" class="btn-subir">▲</button>
+
+<script src="../../../js/navbar.js"></script>
+<script src="../../../js/scrollToTop.js"></script>
+  </body>
+</html>
   </body>
 </html>
