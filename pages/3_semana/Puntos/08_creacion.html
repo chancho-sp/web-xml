@@ -279,9 +279,24 @@
 
 <button id="btnSubir" class="btn-subir">▲</button>
 
+<button onclick="playAudio()">🎵🎶🎵</button>
+<button onclick="pauseAudio()">🚫🎵</button>
+
+<audio id="miAudio" src="tu-audio.mp3" loop></audio>
+
+<script>
+function playAudio() {
+    const audio = document.getElementById('miAudio');
+    audio.play();
+}
+
+function pauseAudio() {
+    const audio = document.getElementById('miAudio');
+    audio.pause();
+}
+</script>
+
 <script src="../../../js/navbar.js"></script>
 <script src="../../../js/scrollToTop.js"></script>
-  </body>
-</html>
   </body>
 </html>
